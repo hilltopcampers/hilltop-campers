@@ -419,25 +419,36 @@ export default function BannerPage() {
                 <span className="text-primary">{config.description}</span>
               </p>
 
-              <div className="p-4 overflow-auto flex justify-center" style={{
-                maxHeight: selectedType === "instagram-story" ? "600px" : "auto"
-              }}>
+              <div className="p-4 overflow-x-auto flex justify-center">
+                {/* Preview wrapper - scales down for display */}
                 <div
-                  ref={bannerRef}
-                  className="relative overflow-hidden shrink-0"
+                  className="shrink-0"
                   style={{
-                    width: selectedType === "instagram-story" ? "270px" : `${config.width}px`,
-                    height: selectedType === "instagram-story" ? "480px" : `${config.height}px`,
-                    transform: selectedType === "instagram-story" ? "scale(1)" : "scale(1)",
+                    width: selectedType === "instagram-story" ? "216px" :
+                           selectedType === "instagram-post" ? "324px" :
+                           selectedType === "twitter" ? "600px" :
+                           selectedType === "profile" ? "180px" :
+                           "600px",
+                    height: selectedType === "instagram-story" ? "384px" :
+                            selectedType === "instagram-post" ? "324px" :
+                            selectedType === "twitter" ? "200px" :
+                            selectedType === "profile" ? "180px" :
+                            "228px",
                   }}
                 >
-                  {/* Actual size container for capture */}
+                  {/* Actual size container - this gets captured */}
                   <div
-                    className="absolute top-0 left-0 origin-top-left"
+                    ref={bannerRef}
+                    className="origin-top-left"
                     style={{
                       width: `${config.width}px`,
                       height: `${config.height}px`,
-                      transform: selectedType === "instagram-story" ? "scale(0.25)" : "scale(1)",
+                      transform: selectedType === "instagram-story" ? "scale(0.2)" :
+                                 selectedType === "instagram-post" ? "scale(0.3)" :
+                                 selectedType === "twitter" ? "scale(0.4)" :
+                                 selectedType === "profile" ? "scale(1)" :
+                                 "scale(0.732)",
+                      position: "relative",
                     }}
                   >
                     {renderBannerContent()}
@@ -447,9 +458,9 @@ export default function BannerPage() {
             </div>
 
             {/* Actual size note for scaled previews */}
-            {selectedType === "instagram-story" && (
+            {selectedType !== "profile" && (
               <p className="text-gray-500 text-sm mt-2 text-center">
-                Preview scaled to fit. Download will be full size (1080 x 1920 pixels).
+                Preview scaled to fit. Download will be full size ({config.description}).
               </p>
             )}
           </div>

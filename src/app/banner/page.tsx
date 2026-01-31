@@ -424,16 +424,16 @@ export default function BannerPage() {
                 <div
                   className="shrink-0"
                   style={{
-                    width: selectedType === "instagram-story" ? "216px" :
-                           selectedType === "instagram-post" ? "324px" :
-                           selectedType === "twitter" ? "600px" :
+                    width: selectedType === "instagram-story" ? "270px" :
+                           selectedType === "instagram-post" ? "400px" :
+                           selectedType === "twitter" ? "750px" :
                            selectedType === "profile" ? "180px" :
-                           "600px",
-                    height: selectedType === "instagram-story" ? "384px" :
-                            selectedType === "instagram-post" ? "324px" :
-                            selectedType === "twitter" ? "200px" :
+                           "820px",
+                    height: selectedType === "instagram-story" ? "480px" :
+                            selectedType === "instagram-post" ? "400px" :
+                            selectedType === "twitter" ? "250px" :
                             selectedType === "profile" ? "180px" :
-                            "263px",
+                            "360px",
                   }}
                 >
                   {/* Actual size container - this gets captured */}
@@ -443,11 +443,11 @@ export default function BannerPage() {
                     style={{
                       width: `${config.width}px`,
                       height: `${config.height}px`,
-                      transform: selectedType === "instagram-story" ? "scale(0.2)" :
-                                 selectedType === "instagram-post" ? "scale(0.3)" :
-                                 selectedType === "twitter" ? "scale(0.4)" :
+                      transform: selectedType === "instagram-story" ? "scale(0.25)" :
+                                 selectedType === "instagram-post" ? "scale(0.37)" :
+                                 selectedType === "twitter" ? "scale(0.5)" :
                                  selectedType === "profile" ? "scale(1)" :
-                                 "scale(0.732)",
+                                 "scale(1)",
                       position: "relative",
                     }}
                   >

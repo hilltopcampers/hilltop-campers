@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#f5f5f5"/>
+
+  <!-- Corner brackets -->
+  <path d="M50 50 L50 100 M50 50 L100 50" stroke="#666" stroke-width="3" fill="none"/>
+  <path d="M750 50 L750 100 M750 50 L700 50" stroke="#666" stroke-width="3" fill="none"/>
+  <path d="M50 550 L50 500 M50 550 L100 550" stroke="#666" stroke-width="3" fill="none"/>
+  <path d="M750 550 L750 500 M750 550 L700 550" stroke="#666" stroke-width="3" fill="none"/>
+
+  <!-- Camera icon -->
+  <g transform="translate(400, 260)">
+    <!-- Camera body -->
+    <rect x="-60" y="-30" width="120" height="80" rx="8" fill="none" stroke="#666" stroke-width="4"/>
+    <!-- Lens -->
+    <circle cx="0" cy="10" r="28" fill="none" stroke="#666" stroke-width="4"/>
+    <circle cx="0" cy="10" r="12" fill="none" stroke="#666" stroke-width="3"/>
+    <!-- Flash -->
+    <rect x="-40" y="-45" width="30" height="15" rx="3" fill="none" stroke="#666" stroke-width="3"/>
+  </g>
+
+  <!-- Text -->
+  <text x="400" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#666">IMAGE</text>
+  <text x="400" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#666">COMING SOON</text>
+</svg>

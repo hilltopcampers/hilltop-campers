@@ -17,7 +17,7 @@ interface BannerConfig {
 }
 
 const bannerConfigs: Record<BannerType, BannerConfig> = {
-  facebook: { width: 820, height: 360, name: "Facebook Cover", description: "820 x 360 pixels" },
+  facebook: { width: 1640, height: 720, name: "Facebook Cover", description: "1640 x 720 pixels (2x resolution)" },
   twitter: { width: 1500, height: 500, name: "Twitter/X Header", description: "1500 x 500 pixels" },
   "instagram-post": { width: 1080, height: 1080, name: "Instagram Post", description: "1080 x 1080 pixels" },
   "instagram-story": { width: 1080, height: 1920, name: "Instagram Story", description: "1080 x 1920 pixels" },
@@ -272,6 +272,7 @@ export default function BannerPage() {
 
     // Facebook and Twitter layouts
     const isTwitter = selectedType === "twitter";
+    const isFacebook = selectedType === "facebook";
 
     return (
       <>
@@ -292,52 +293,52 @@ export default function BannerPage() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 h-full flex flex-col justify-between" style={{ padding: isTwitter ? "24px 40px" : "20px 32px" }}>
+        <div className="relative z-10 h-full flex flex-col justify-between" style={{ padding: isFacebook ? "40px 64px" : isTwitter ? "24px 40px" : "20px 32px" }}>
           {/* Top - Logo */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center" style={{ gap: isFacebook ? "12px" : "12px" }}>
             <Image
               src="/images/hilltop-logo.png"
               alt="Hilltop Campers Logo"
-              width={isTwitter ? 56 : 48}
-              height={isTwitter ? 56 : 48}
+              width={isFacebook ? 96 : isTwitter ? 56 : 48}
+              height={isFacebook ? 96 : isTwitter ? 56 : 48}
               className="object-contain"
               unoptimized
             />
             <div>
-              <h2 style={{ fontSize: isTwitter ? "24px" : "20px" }} className="font-bold">
+              <h2 style={{ fontSize: isFacebook ? "40px" : isTwitter ? "24px" : "20px" }} className="font-bold">
                 <span className="text-primary">HILLTOP</span>{" "}
                 <span className="text-white">CAMPERS</span>
               </h2>
-              <p className="text-xs text-gray-300">Camper van conversion specialists</p>
+              <p style={{ fontSize: isFacebook ? "18px" : "12px" }} className="text-gray-300">Camper van conversion specialists</p>
             </div>
           </div>
 
           {/* Center - Main Text */}
-          <div style={{ maxWidth: isTwitter ? "700px" : "450px" }}>
-            <p className="text-primary font-semibold mb-1 tracking-wider" style={{ fontSize: isTwitter ? "16px" : "14px" }}>
+          <div style={{ maxWidth: isFacebook ? "900px" : isTwitter ? "700px" : "450px" }}>
+            <p className="text-primary font-semibold tracking-wider" style={{ fontSize: isFacebook ? "28px" : isTwitter ? "16px" : "14px", marginBottom: isFacebook ? "8px" : "4px" }}>
               {customText.tagline}
             </p>
-            <h1 className="font-black text-white leading-tight mb-1" style={{ fontSize: isTwitter ? "42px" : "30px" }}>
+            <h1 className="font-black text-white leading-tight" style={{ fontSize: isFacebook ? "64px" : isTwitter ? "42px" : "30px", marginBottom: isFacebook ? "8px" : "4px" }}>
               {customText.headline}
             </h1>
-            <h2 className="font-black text-primary leading-tight" style={{ fontSize: isTwitter ? "38px" : "28px" }}>
+            <h2 className="font-black text-primary leading-tight" style={{ fontSize: isFacebook ? "56px" : isTwitter ? "38px" : "28px" }}>
               {customText.subheadline}
             </h2>
           </div>
 
           {/* Bottom - Contact */}
           {showContact && (
-            <div className="flex items-center gap-6 text-white" style={{ fontSize: isTwitter ? "16px" : "14px" }}>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-primary" />
+            <div className="flex items-center text-white" style={{ fontSize: isFacebook ? "28px" : isTwitter ? "16px" : "14px", gap: isFacebook ? "24px" : "24px" }}>
+              <div className="flex items-center" style={{ gap: isFacebook ? "8px" : "8px" }}>
+                <div style={{ width: isFacebook ? "8px" : "8px", height: isFacebook ? "8px" : "8px" }} className="rounded-full bg-primary" />
                 <span>07869 169826</span>
               </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-primary" />
+              <div className="flex items-center" style={{ gap: isFacebook ? "8px" : "8px" }}>
+                <div style={{ width: isFacebook ? "8px" : "8px", height: isFacebook ? "8px" : "8px" }} className="rounded-full bg-primary" />
                 <span>hilltopcampers.co.uk</span>
               </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-primary" />
+              <div className="flex items-center" style={{ gap: isFacebook ? "8px" : "8px" }}>
+                <div style={{ width: isFacebook ? "8px" : "8px", height: isFacebook ? "8px" : "8px" }} className="rounded-full bg-primary" />
                 <span>Llandudno</span>
               </div>
             </div>
@@ -345,7 +346,7 @@ export default function BannerPage() {
         </div>
 
         {/* Green stripe */}
-        <div className="absolute bottom-0 left-0 right-0 h-1 bg-primary" />
+        <div className="absolute bottom-0 left-0 right-0 bg-primary" style={{ height: isFacebook ? "4px" : "2px" }} />
       </>
     );
   };
@@ -447,7 +448,7 @@ export default function BannerPage() {
                                  selectedType === "instagram-post" ? "scale(0.37)" :
                                  selectedType === "twitter" ? "scale(0.5)" :
                                  selectedType === "profile" ? "scale(1)" :
-                                 "scale(1)",
+                                 "scale(0.5)",
                       position: "relative",
                     }}
                   >

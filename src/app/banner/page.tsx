@@ -17,7 +17,7 @@ interface BannerConfig {
 }
 
 const bannerConfigs: Record<BannerType, BannerConfig> = {
-  facebook: { width: 1200, height: 350, name: "Facebook Cover", description: "1200 x 350 pixels" },
+  facebook: { width: 820, height: 312, name: "Facebook Cover", description: "820 x 312 pixels" },
   twitter: { width: 1500, height: 500, name: "Twitter/X Header", description: "1500 x 500 pixels" },
   "instagram-post": { width: 1080, height: 1080, name: "Instagram Post", description: "1080 x 1080 pixels" },
   "instagram-story": { width: 1080, height: 1920, name: "Instagram Story", description: "1080 x 1920 pixels" },
@@ -293,52 +293,52 @@ export default function BannerPage() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 h-full flex flex-col justify-between" style={{ padding: isFacebook ? "24px 40px" : isTwitter ? "24px 40px" : "20px 32px" }}>
+        <div className="relative z-10 h-full flex flex-col justify-between" style={{ padding: isFacebook ? "18px 28px" : isTwitter ? "24px 40px" : "20px 32px" }}>
           {/* Top - Logo */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             <Image
               src="/images/hilltop-logo.png"
               alt="Hilltop Campers Logo"
-              width={isFacebook ? 55 : isTwitter ? 56 : 48}
-              height={isFacebook ? 55 : isTwitter ? 56 : 48}
+              width={isFacebook ? 40 : isTwitter ? 56 : 48}
+              height={isFacebook ? 40 : isTwitter ? 56 : 48}
               className="object-contain"
               unoptimized
             />
             <div>
-              <h2 style={{ fontSize: isFacebook ? "26px" : isTwitter ? "24px" : "20px" }} className="font-bold">
+              <h2 style={{ fontSize: isFacebook ? "18px" : isTwitter ? "24px" : "20px" }} className="font-bold">
                 <span className="text-primary">HILLTOP</span>{" "}
                 <span className="text-white">CAMPERS</span>
               </h2>
-              <p style={{ fontSize: isFacebook ? "13px" : "12px" }} className="text-gray-300">Camper van conversion specialists</p>
+              <p style={{ fontSize: isFacebook ? "10px" : "12px" }} className="text-gray-300">Camper van conversion specialists</p>
             </div>
           </div>
 
           {/* Center - Main Text */}
-          <div style={{ maxWidth: isFacebook ? "650px" : isTwitter ? "700px" : "450px" }}>
-            <p className="text-primary font-semibold tracking-wider" style={{ fontSize: isFacebook ? "16px" : isTwitter ? "16px" : "14px", marginBottom: "4px" }}>
+          <div style={{ maxWidth: isFacebook ? "450px" : isTwitter ? "700px" : "450px" }}>
+            <p className="text-primary font-semibold tracking-wider" style={{ fontSize: isFacebook ? "12px" : isTwitter ? "16px" : "14px", marginBottom: "2px" }}>
               {customText.tagline}
             </p>
-            <h1 className="font-black text-white leading-tight" style={{ fontSize: isFacebook ? "38px" : isTwitter ? "42px" : "30px", marginBottom: "4px" }}>
+            <h1 className="font-black text-white leading-tight" style={{ fontSize: isFacebook ? "28px" : isTwitter ? "42px" : "30px", marginBottom: "2px" }}>
               {customText.headline}
             </h1>
-            <h2 className="font-black text-primary leading-tight" style={{ fontSize: isFacebook ? "34px" : isTwitter ? "38px" : "28px" }}>
+            <h2 className="font-black text-primary leading-tight" style={{ fontSize: isFacebook ? "24px" : isTwitter ? "38px" : "28px" }}>
               {customText.subheadline}
             </h2>
           </div>
 
           {/* Bottom - Contact */}
           {showContact && (
-            <div className="flex items-center gap-8 text-white" style={{ fontSize: isFacebook ? "15px" : isTwitter ? "16px" : "14px" }}>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-primary" />
+            <div className="flex items-center gap-5 text-white" style={{ fontSize: isFacebook ? "12px" : isTwitter ? "16px" : "14px" }}>
+              <div className="flex items-center gap-1">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                 <span>07869 169826</span>
               </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-primary" />
+              <div className="flex items-center gap-1">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                 <span>hilltopcampers.co.uk</span>
               </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-primary" />
+              <div className="flex items-center gap-1">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                 <span>Llandudno</span>
               </div>
             </div>
@@ -429,12 +429,12 @@ export default function BannerPage() {
                            selectedType === "instagram-post" ? "400px" :
                            selectedType === "twitter" ? "750px" :
                            selectedType === "profile" ? "180px" :
-                           "900px",
+                           "820px",
                     height: selectedType === "instagram-story" ? "480px" :
                             selectedType === "instagram-post" ? "400px" :
                             selectedType === "twitter" ? "250px" :
                             selectedType === "profile" ? "180px" :
-                            "262px",
+                            "312px",
                   }}
                 >
                   {/* Actual size container - this gets captured */}
@@ -448,7 +448,7 @@ export default function BannerPage() {
                                  selectedType === "instagram-post" ? "scale(0.37)" :
                                  selectedType === "twitter" ? "scale(0.5)" :
                                  selectedType === "profile" ? "scale(1)" :
-                                 "scale(0.75)",
+                                 "scale(1)",
                       position: "relative",
                     }}
                   >

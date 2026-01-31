@@ -17,7 +17,7 @@ interface BannerConfig {
 }
 
 const bannerConfigs: Record<BannerType, BannerConfig> = {
-  facebook: { width: 820, height: 312, name: "Facebook Cover", description: "820 x 312 pixels" },
+  facebook: { width: 820, height: 360, name: "Facebook Cover", description: "820 x 360 pixels" },
   twitter: { width: 1500, height: 500, name: "Twitter/X Header", description: "1500 x 500 pixels" },
   "instagram-post": { width: 1080, height: 1080, name: "Instagram Post", description: "1080 x 1080 pixels" },
   "instagram-story": { width: 1080, height: 1920, name: "Instagram Story", description: "1080 x 1920 pixels" },
@@ -433,7 +433,7 @@ export default function BannerPage() {
                             selectedType === "instagram-post" ? "324px" :
                             selectedType === "twitter" ? "200px" :
                             selectedType === "profile" ? "180px" :
-                            "228px",
+                            "263px",
                   }}
                 >
                   {/* Actual size container - this gets captured */}

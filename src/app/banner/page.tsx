@@ -134,19 +134,16 @@ export default function BannerPage() {
     if (selectedType === "instagram-story") {
       return (
         <>
-          {/* Background */}
-          <div className="absolute inset-0">
-            {selectedBackground.src ? (
-              <Image
-                src={selectedBackground.src}
-                alt="Background"
-                fill
-                className="object-cover object-center"
-                unoptimized
-              />
-            ) : (
-              <div className="w-full h-full bg-[#25272c]" />
-            )}
+          {/* Background - CSS for html2canvas compatibility */}
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: selectedBackground.src ? `url(${selectedBackground.src})` : 'none',
+              backgroundColor: selectedBackground.src ? undefined : '#25272c',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          >
             <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80" />
           </div>
 
@@ -204,19 +201,16 @@ export default function BannerPage() {
     if (selectedType === "instagram-post") {
       return (
         <>
-          {/* Background */}
-          <div className="absolute inset-0">
-            {selectedBackground.src ? (
-              <Image
-                src={selectedBackground.src}
-                alt="Background"
-                fill
-                className="object-cover object-center"
-                unoptimized
-              />
-            ) : (
-              <div className="w-full h-full bg-[#25272c]" />
-            )}
+          {/* Background - CSS for html2canvas compatibility */}
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: selectedBackground.src ? `url(${selectedBackground.src})` : 'none',
+              backgroundColor: selectedBackground.src ? undefined : '#25272c',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          >
             <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/70" />
           </div>
 

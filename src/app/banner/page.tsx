@@ -289,7 +289,7 @@ export default function BannerPage() {
         <div
           className={`relative z-10 h-full flex flex-col ${isYoutube ? 'items-center justify-center' : 'justify-between'}`}
           style={{
-            padding: isYoutube ? "80px 200px" : isFacebook ? "18px 28px" : isTwitter ? "24px 40px" : "20px 32px"
+            padding: isYoutube ? "40px 60px" : isFacebook ? "18px 28px" : isTwitter ? "24px 40px" : "20px 32px"
           }}
         >
           {/* Top - Logo (not centered for YouTube) */}
@@ -313,48 +313,61 @@ export default function BannerPage() {
             </div>
           )}
 
-          {/* YouTube - Centered layout with logo */}
+          {/* YouTube - Horizontal layout optimized for YouTube's safe area (center strip) */}
           {isYoutube && (
-            <div className="text-center">
-              <div className="flex items-center justify-center gap-6 mb-8">
-                <Image
-                  src="/images/hilltop-logo.png"
-                  alt="Hilltop Campers Logo"
-                  width={120}
-                  height={120}
-                  className="object-contain"
-                  unoptimized
-                />
-                <div className="text-left">
-                  <h2 className="text-6xl font-bold">
-                    <span className="text-primary">HILLTOP</span>{" "}
-                    <span className="text-white">CAMPERS</span>
-                  </h2>
-                  <p className="text-2xl text-gray-300">Camper van conversion specialists</p>
-                </div>
+            <div className="flex items-center justify-center gap-12 w-full">
+              {/* Logo */}
+              <Image
+                src="/images/hilltop-logo.png"
+                alt="Hilltop Campers Logo"
+                width={100}
+                height={100}
+                className="object-contain"
+                unoptimized
+              />
+
+              {/* Brand Name */}
+              <div>
+                <h2 className="text-5xl font-bold">
+                  <span className="text-primary">HILLTOP</span>{" "}
+                  <span className="text-white">CAMPERS</span>
+                </h2>
+                <p className="text-xl text-gray-300">Camper van conversion specialists</p>
               </div>
-              <p className="text-primary text-3xl font-semibold mb-6 tracking-wider">
-                {customText.tagline}
-              </p>
-              <h1 className="text-8xl font-black text-white leading-tight mb-4">
-                {customText.headline}
-              </h1>
-              <h2 className="text-7xl font-black text-primary leading-tight mb-8">
-                {customText.subheadline}
-              </h2>
+
+              {/* Divider */}
+              <div className="w-1 h-20 bg-primary" />
+
+              {/* Main Message */}
+              <div className="text-center">
+                <p className="text-primary text-lg font-semibold tracking-wider mb-1">
+                  {customText.tagline}
+                </p>
+                <h1 className="text-4xl font-black text-white leading-tight">
+                  {customText.headline}
+                </h1>
+                <h2 className="text-3xl font-black text-primary leading-tight">
+                  {customText.subheadline}
+                </h2>
+              </div>
+
+              {/* Divider */}
+              <div className="w-1 h-20 bg-primary" />
+
+              {/* Contact */}
               {showContact && (
-                <div className="flex items-center justify-center gap-12 text-white text-2xl mt-8">
-                  <div className="flex items-center gap-3">
-                    <div className="w-4 h-4 rounded-full bg-primary" />
+                <div className="text-white text-lg space-y-1">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-primary" />
                     <span>07869 169826</span>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-4 h-4 rounded-full bg-primary" />
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-primary" />
                     <span>hilltopcampers.co.uk</span>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-4 h-4 rounded-full bg-primary" />
-                    <span>Llandudno, North Wales</span>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-primary" />
+                    <span>Llandudno</span>
                   </div>
                 </div>
               )}

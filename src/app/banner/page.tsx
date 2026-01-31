@@ -4,10 +4,10 @@ import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Download, ArrowLeft, Facebook, Instagram, Twitter, User, Edit3 } from "lucide-react";
+import { Download, ArrowLeft, Facebook, Instagram, Twitter, User, Edit3, Youtube } from "lucide-react";
 import html2canvas from "html2canvas";
 
-type BannerType = "facebook" | "twitter" | "instagram-post" | "instagram-story" | "profile";
+type BannerType = "facebook" | "twitter" | "instagram-post" | "instagram-story" | "youtube" | "profile";
 
 interface BannerConfig {
   width: number;
@@ -21,6 +21,7 @@ const bannerConfigs: Record<BannerType, BannerConfig> = {
   twitter: { width: 1500, height: 500, name: "Twitter/X Header", description: "1500 x 500 pixels" },
   "instagram-post": { width: 1080, height: 1080, name: "Instagram Post", description: "1080 x 1080 pixels" },
   "instagram-story": { width: 1080, height: 1920, name: "Instagram Story", description: "1080 x 1920 pixels" },
+  youtube: { width: 2560, height: 1440, name: "YouTube Banner", description: "2560 x 1440 pixels" },
   profile: { width: 180, height: 180, name: "Profile Picture", description: "180 x 180 pixels" },
 };
 
@@ -264,9 +265,10 @@ export default function BannerPage() {
       );
     }
 
-    // Facebook and Twitter layouts
+    // Facebook, Twitter, and YouTube layouts
     const isTwitter = selectedType === "twitter";
     const isFacebook = selectedType === "facebook";
+    const isYoutube = selectedType === "youtube";
 
     return (
       <>
@@ -280,45 +282,102 @@ export default function BannerPage() {
             backgroundPosition: 'center',
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
+          <div className={`absolute inset-0 ${isYoutube ? 'bg-gradient-to-r from-black/70 via-black/40 to-black/70' : 'bg-gradient-to-r from-black/80 via-black/50 to-transparent'}`} />
         </div>
 
         {/* Content */}
-        <div className="relative z-10 h-full flex flex-col justify-between" style={{ padding: isFacebook ? "18px 28px" : isTwitter ? "24px 40px" : "20px 32px" }}>
-          {/* Top - Logo */}
-          <div className="flex items-center gap-2">
-            <Image
-              src="/images/hilltop-logo.png"
-              alt="Hilltop Campers Logo"
-              width={isFacebook ? 40 : isTwitter ? 56 : 48}
-              height={isFacebook ? 40 : isTwitter ? 56 : 48}
-              className="object-contain"
-              unoptimized
-            />
-            <div>
-              <h2 style={{ fontSize: isFacebook ? "18px" : isTwitter ? "24px" : "20px" }} className="font-bold">
-                <span className="text-primary">HILLTOP</span>{" "}
-                <span className="text-white">CAMPERS</span>
-              </h2>
-              <p style={{ fontSize: isFacebook ? "10px" : "12px" }} className="text-gray-300">Camper van conversion specialists</p>
+        <div
+          className={`relative z-10 h-full flex flex-col ${isYoutube ? 'items-center justify-center' : 'justify-between'}`}
+          style={{
+            padding: isYoutube ? "80px 200px" : isFacebook ? "18px 28px" : isTwitter ? "24px 40px" : "20px 32px"
+          }}
+        >
+          {/* Top - Logo (not centered for YouTube) */}
+          {!isYoutube && (
+            <div className="flex items-center gap-2">
+              <Image
+                src="/images/hilltop-logo.png"
+                alt="Hilltop Campers Logo"
+                width={isFacebook ? 40 : isTwitter ? 56 : 48}
+                height={isFacebook ? 40 : isTwitter ? 56 : 48}
+                className="object-contain"
+                unoptimized
+              />
+              <div>
+                <h2 style={{ fontSize: isFacebook ? "18px" : isTwitter ? "24px" : "20px" }} className="font-bold">
+                  <span className="text-primary">HILLTOP</span>{" "}
+                  <span className="text-white">CAMPERS</span>
+                </h2>
+                <p style={{ fontSize: isFacebook ? "10px" : "12px" }} className="text-gray-300">Camper van conversion specialists</p>
+              </div>
             </div>
-          </div>
+          )}
 
-          {/* Center - Main Text */}
-          <div style={{ maxWidth: isFacebook ? "450px" : isTwitter ? "700px" : "450px" }}>
-            <p className="text-primary font-semibold tracking-wider" style={{ fontSize: isFacebook ? "12px" : isTwitter ? "16px" : "14px", marginBottom: "2px" }}>
-              {customText.tagline}
-            </p>
-            <h1 className="font-black text-white leading-tight" style={{ fontSize: isFacebook ? "28px" : isTwitter ? "42px" : "30px", marginBottom: "2px" }}>
-              {customText.headline}
-            </h1>
-            <h2 className="font-black text-primary leading-tight" style={{ fontSize: isFacebook ? "24px" : isTwitter ? "38px" : "28px" }}>
-              {customText.subheadline}
-            </h2>
-          </div>
+          {/* YouTube - Centered layout with logo */}
+          {isYoutube && (
+            <div className="text-center">
+              <div className="flex items-center justify-center gap-6 mb-8">
+                <Image
+                  src="/images/hilltop-logo.png"
+                  alt="Hilltop Campers Logo"
+                  width={120}
+                  height={120}
+                  className="object-contain"
+                  unoptimized
+                />
+                <div className="text-left">
+                  <h2 className="text-6xl font-bold">
+                    <span className="text-primary">HILLTOP</span>{" "}
+                    <span className="text-white">CAMPERS</span>
+                  </h2>
+                  <p className="text-2xl text-gray-300">Camper van conversion specialists</p>
+                </div>
+              </div>
+              <p className="text-primary text-3xl font-semibold mb-6 tracking-wider">
+                {customText.tagline}
+              </p>
+              <h1 className="text-8xl font-black text-white leading-tight mb-4">
+                {customText.headline}
+              </h1>
+              <h2 className="text-7xl font-black text-primary leading-tight mb-8">
+                {customText.subheadline}
+              </h2>
+              {showContact && (
+                <div className="flex items-center justify-center gap-12 text-white text-2xl mt-8">
+                  <div className="flex items-center gap-3">
+                    <div className="w-4 h-4 rounded-full bg-primary" />
+                    <span>07869 169826</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-4 h-4 rounded-full bg-primary" />
+                    <span>hilltopcampers.co.uk</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-4 h-4 rounded-full bg-primary" />
+                    <span>Llandudno, North Wales</span>
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
 
-          {/* Bottom - Contact */}
-          {showContact && (
+          {/* Center - Main Text (for Facebook/Twitter) */}
+          {!isYoutube && (
+            <div style={{ maxWidth: isFacebook ? "450px" : isTwitter ? "700px" : "450px" }}>
+              <p className="text-primary font-semibold tracking-wider" style={{ fontSize: isFacebook ? "12px" : isTwitter ? "16px" : "14px", marginBottom: "2px" }}>
+                {customText.tagline}
+              </p>
+              <h1 className="font-black text-white leading-tight" style={{ fontSize: isFacebook ? "28px" : isTwitter ? "42px" : "30px", marginBottom: "2px" }}>
+                {customText.headline}
+              </h1>
+              <h2 className="font-black text-primary leading-tight" style={{ fontSize: isFacebook ? "24px" : isTwitter ? "38px" : "28px" }}>
+                {customText.subheadline}
+              </h2>
+            </div>
+          )}
+
+          {/* Bottom - Contact (for Facebook/Twitter) */}
+          {!isYoutube && showContact && (
             <div className="flex items-center gap-5 text-white" style={{ fontSize: isFacebook ? "12px" : isTwitter ? "16px" : "14px" }}>
               <div className="flex items-center gap-1">
                 <div className="w-1.5 h-1.5 rounded-full bg-primary" />
@@ -337,7 +396,7 @@ export default function BannerPage() {
         </div>
 
         {/* Green stripe */}
-        <div className="absolute bottom-0 left-0 right-0 h-1 bg-primary" />
+        <div className="absolute bottom-0 left-0 right-0 bg-primary" style={{ height: isYoutube ? "8px" : "4px" }} />
       </>
     );
   };
@@ -384,6 +443,7 @@ export default function BannerPage() {
                   twitter: Twitter,
                   "instagram-post": Instagram,
                   "instagram-story": Instagram,
+                  youtube: Youtube,
                   profile: User,
                 };
                 const Icon = icons[type];
@@ -419,11 +479,13 @@ export default function BannerPage() {
                     width: selectedType === "instagram-story" ? "270px" :
                            selectedType === "instagram-post" ? "400px" :
                            selectedType === "twitter" ? "750px" :
+                           selectedType === "youtube" ? "768px" :
                            selectedType === "profile" ? "180px" :
                            "820px",
                     height: selectedType === "instagram-story" ? "480px" :
                             selectedType === "instagram-post" ? "400px" :
                             selectedType === "twitter" ? "250px" :
+                            selectedType === "youtube" ? "432px" :
                             selectedType === "profile" ? "180px" :
                             "312px",
                   }}
@@ -438,6 +500,7 @@ export default function BannerPage() {
                       transform: selectedType === "instagram-story" ? "scale(0.25)" :
                                  selectedType === "instagram-post" ? "scale(0.37)" :
                                  selectedType === "twitter" ? "scale(0.5)" :
+                                 selectedType === "youtube" ? "scale(0.3)" :
                                  selectedType === "profile" ? "scale(1)" :
                                  "scale(1)",
                       position: "relative",

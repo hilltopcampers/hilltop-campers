@@ -91,8 +91,15 @@ export default function BannerPage() {
     try {
       const element = bannerRef.current;
 
+      // Store original transform and temporarily remove it for capture
+      const originalTransform = element.style.transform;
+      element.style.transform = 'scale(1)';
+
+      // Wait for the style to apply
+      await new Promise(resolve => setTimeout(resolve, 100));
+
       const canvas = await html2canvas(element, {
-        scale: 2,
+        scale: 1, // Use scale 1 since we're capturing at full size
         useCORS: true,
         allowTaint: true,
         backgroundColor: "#1a1c20",
@@ -100,6 +107,9 @@ export default function BannerPage() {
         width: config.width,
         height: config.height,
       });
+
+      // Restore original transform
+      element.style.transform = originalTransform;
 
       const link = document.createElement("a");
       link.download = `hilltop-campers-${selectedType}-${Date.now()}.png`;

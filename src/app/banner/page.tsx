@@ -276,19 +276,16 @@ export default function BannerPage() {
 
     return (
       <>
-        {/* Background */}
-        <div className="absolute inset-0">
-          {selectedBackground.src ? (
-            <Image
-              src={selectedBackground.src}
-              alt="Background"
-              fill
-              className="object-cover object-center"
-              unoptimized
-            />
-          ) : (
-            <div className="w-full h-full bg-[#25272c]" />
-          )}
+        {/* Background - using CSS background-image for better html2canvas compatibility */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: selectedBackground.src ? `url(${selectedBackground.src})` : 'none',
+            backgroundColor: selectedBackground.src ? undefined : '#25272c',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        >
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
         </div>
 

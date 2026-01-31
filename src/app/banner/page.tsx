@@ -21,7 +21,7 @@ const bannerConfigs: Record<BannerType, BannerConfig> = {
   twitter: { width: 1500, height: 500, name: "Twitter/X Header", description: "1500 x 500 pixels" },
   "instagram-post": { width: 1080, height: 1080, name: "Instagram Post", description: "1080 x 1080 pixels" },
   "instagram-story": { width: 1080, height: 1920, name: "Instagram Story", description: "1080 x 1920 pixels" },
-  youtube: { width: 2560, height: 1440, name: "YouTube Banner", description: "2560 x 1440 pixels" },
+  youtube: { width: 2048, height: 1152, name: "YouTube Banner", description: "2048 x 1152 pixels" },
   profile: { width: 180, height: 180, name: "Profile Picture", description: "180 x 180 pixels" },
 };
 
@@ -479,13 +479,13 @@ export default function BannerPage() {
                     width: selectedType === "instagram-story" ? "270px" :
                            selectedType === "instagram-post" ? "400px" :
                            selectedType === "twitter" ? "750px" :
-                           selectedType === "youtube" ? "768px" :
+                           selectedType === "youtube" ? "614px" :
                            selectedType === "profile" ? "180px" :
                            "820px",
                     height: selectedType === "instagram-story" ? "480px" :
                             selectedType === "instagram-post" ? "400px" :
                             selectedType === "twitter" ? "250px" :
-                            selectedType === "youtube" ? "432px" :
+                            selectedType === "youtube" ? "346px" :
                             selectedType === "profile" ? "180px" :
                             "312px",
                   }}

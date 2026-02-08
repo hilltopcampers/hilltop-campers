@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Eryri Adventurer | Premium 4 Berth Renault Trafic Campervan | From £49,950",
   description:
-    "The Eryri Adventurer - our flagship Renault Trafic campervan. 4 berth, pop-top roof, 200W solar, lithium power, Autoterm diesel heating. Gas-free option available. From £49,950. Finance available.",
+    "Eryri Adventurer - flagship 4 berth Renault Trafic campervan. Pop-top, 200W solar, lithium power, diesel heating. From £49,950. Finance available.",
   keywords: [
     "Eryri Adventurer campervan",
     "Renault Trafic 4 berth campervan",

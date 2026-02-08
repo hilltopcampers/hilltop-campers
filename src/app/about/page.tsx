@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About Hilltop Campers | Campervan Conversion Specialists | Llandudno, North Wales",
   description:
-    "Meet Hilltop Campers - premium campervan conversion specialists in North Wales. In-house CNC furniture manufacturing, bespoke upholstery workshop, 100% quality guaranteed. Based in Llandudno near Snowdonia National Park.",
+    "Hilltop Campers - premium campervan specialists in North Wales. In-house CNC furniture manufacturing & bespoke upholstery. Visit us in Llandudno.",
   keywords: [
     "about Hilltop Campers",
     "campervan manufacturer UK",

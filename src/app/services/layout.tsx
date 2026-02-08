@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Campervan Services | Pop Top Roof Fitting, Diesel Heaters, Solar Panels | North Wales",
   description:
-    "Professional campervan services in North Wales: pop-top roof fitting, Webasto & Autoterm diesel heater installation, solar power systems, and lithium leisure battery upgrades. Expert technicians at Hilltop Campers, Llandudno.",
+    "Expert campervan services in North Wales: pop-top roof fitting, diesel heater installation, solar panels & lithium battery upgrades. Get a quote today.",
   keywords: [
     "campervan services UK",
     "pop top roof fitting UK",

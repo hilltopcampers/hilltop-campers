@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | Hilltop Campers",
   },
   description:
-    "Premium Renault Trafic campervan conversions in North Wales. Specialists in converting Renault Trafic, Ford Transit Custom & VW Transporter vans into luxury campervans. Based in Llandudno, near Snowdonia (Eryri) National Park.",
+    "Premium Renault Trafic, Ford Transit & VW campervan conversions in North Wales. Luxury campervans built in Llandudno, near Snowdonia National Park.",
   keywords: [
     "Renault Trafic campervan",
     "Renault Trafic conversion",

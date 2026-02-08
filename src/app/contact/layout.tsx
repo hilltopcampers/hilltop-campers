@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact Hilltop Campers | Campervan Enquiries & Viewings | Llandudno, North Wales",
   description:
-    "Contact Hilltop Campers for campervan enquiries, viewing appointments, and custom conversion quotes. Call 07869 169826. Visit our workshop in Llandudno, near Snowdonia. Finance available.",
+    "Get in touch with Hilltop Campers for campervan enquiries, viewings and quotes. Call 07869 169826 or visit our Llandudno workshop near Snowdonia.",
   keywords: [
     "contact Hilltop Campers",
     "campervan enquiry UK",

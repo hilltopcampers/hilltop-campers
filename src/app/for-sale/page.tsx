@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Campervans For Sale UK | Renault Trafic & More | From £26,950",
   description:
-    "Quality campervans for sale from £26,950. Renault Trafic, Fiat Talento campervans ready to drive away. Pop-top roofs, 4 berth, diesel heaters, lithium power. Finance available. North Wales dealer.",
+    "Renault Trafic & Fiat Talento campervans for sale from £26,950. Pop-top, 4 berth, diesel heaters. Ready to drive away. Browse our range today.",
   keywords: [
     "campervans for sale UK",
     "Renault Trafic campervan for sale",

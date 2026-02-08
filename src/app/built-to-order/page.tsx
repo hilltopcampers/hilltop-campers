@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Custom Campervan Conversions | Build Your Own Campervan | From £20,500",
   description:
-    "Bespoke campervan conversions built to your specifications. Renault Trafic, Ford Transit Custom & VW Transporter. Choose finishes, features & layout. Conversions from £20,500. Quality craftsmanship in North Wales.",
+    "Bespoke Renault Trafic, Ford Transit & VW campervan conversions from £20,500. Choose your layout and finishes. Quality craftsmanship, North Wales.",
   keywords: [
     "bespoke campervan conversion UK",
     "custom campervan build",

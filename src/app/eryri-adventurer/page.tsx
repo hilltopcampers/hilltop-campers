@@ -241,7 +241,16 @@ export default function EryriAdventurerPage() {
                 className="inline-flex items-center gap-2 border-2 border-primary text-primary px-8 py-3 uppercase font-bold hover:bg-primary hover:text-black transition-colors rounded"
               >
                 <Download size={18} />
-                Download Brochure
+                Conversion Brochure
+              </Link>
+              <Link
+                href="https://cdn.group.renault.com/ren/gb/transversal-assets/brochures/van-ebrochures/TRAFIC-eBrochure.pdf.asset.pdf/2dcca0a7a9.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 border-2 border-white text-white px-8 py-3 uppercase font-bold hover:border-primary hover:text-primary transition-colors rounded"
+              >
+                <Download size={18} />
+                New Renault Trafic Brochure
               </Link>
             </div>
           </div>
@@ -603,13 +612,22 @@ export default function EryriAdventurerPage() {
                   Call 07869 169826
                 </Link>
               </div>
-              <div className="mt-6">
+              <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/brochure/eryri-adventurer"
                   className="inline-flex items-center justify-center gap-2 border-2 border-primary text-primary px-8 py-4 uppercase font-bold hover:bg-primary hover:text-black transition-colors rounded"
                 >
                   <Download size={18} />
-                  Download Brochure PDF
+                  Conversion Brochure
+                </Link>
+                <Link
+                  href="https://cdn.group.renault.com/ren/gb/transversal-assets/brochures/van-ebrochures/TRAFIC-eBrochure.pdf.asset.pdf/2dcca0a7a9.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 border-2 border-white text-white px-8 py-4 uppercase font-bold hover:border-primary hover:text-primary transition-colors rounded"
+                >
+                  <Download size={18} />
+                  New Renault Trafic Brochure
                 </Link>
               </div>
             </div>

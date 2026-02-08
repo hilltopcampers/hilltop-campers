@@ -59,6 +59,54 @@ const logoDownloads = [
   },
 ];
 
+const decalDownloads = [
+  {
+    name: "Eryri Adventurer Decal",
+    variants: [
+      { color: "White", svg: "/media/eryri-adventurer-decal-white.svg", png: "/media/eryri-adventurer-decal-white-large.png" },
+      { color: "Black", svg: "/media/eryri-adventurer-decal-black.svg", png: "/media/eryri-adventurer-decal-black-large.png" },
+      { color: "Green", svg: "/media/eryri-adventurer-decal-green.svg", png: "/media/eryri-adventurer-decal-green-large.png" },
+      { color: "Silver", svg: "/media/eryri-adventurer-decal-silver.svg", png: "/media/eryri-adventurer-decal-silver-large.png" },
+    ],
+  },
+  {
+    name: "Eryri Adventurer V2 Decal",
+    variants: [
+      { color: "White", svg: "/media/eryri-adventurer-decal-white-v2.svg", png: "/media/eryri-adventurer-decal-white-v2-large.png" },
+      { color: "Black", svg: "/media/eryri-adventurer-decal-black-v2.svg", png: "/media/eryri-adventurer-decal-black-v2-large.png" },
+      { color: "Green", svg: "/media/eryri-adventurer-decal-green-v2.svg", png: "/media/eryri-adventurer-decal-green-v2-large.png" },
+      { color: "Silver", svg: "/media/eryri-adventurer-decal-silver-v2.svg", png: "/media/eryri-adventurer-decal-silver-v2-large.png" },
+    ],
+  },
+  {
+    name: "Eryri Adventurer V3 Outline Decal",
+    variants: [
+      { color: "White", svg: "/media/eryri-adventurer-decal-white-v3-outline.svg", png: "/media/eryri-adventurer-decal-white-v3-outline-large.png" },
+      { color: "Black", svg: "/media/eryri-adventurer-decal-black-v3-outline.svg", png: "/media/eryri-adventurer-decal-black-v3-outline-large.png" },
+      { color: "Green", svg: "/media/eryri-adventurer-decal-green-v3-outline.svg", png: "/media/eryri-adventurer-decal-green-v3-outline-large.png" },
+      { color: "Silver", svg: "/media/eryri-adventurer-decal-silver-v3-outline.svg", png: "/media/eryri-adventurer-decal-silver-v3-outline-large.png" },
+    ],
+  },
+  {
+    name: "Eryri Nomad V3 Decal",
+    variants: [
+      { color: "White", svg: "/media/eryri-nomad-decal-white-v3.svg", png: "/media/eryri-nomad-decal-white-v3-large.png" },
+      { color: "Black", svg: "/media/eryri-nomad-decal-black-v3.svg", png: "/media/eryri-nomad-decal-black-v3-large.png" },
+      { color: "Green", svg: "/media/eryri-nomad-decal-green-v3.svg", png: "/media/eryri-nomad-decal-green-v3-large.png" },
+      { color: "Silver", svg: "/media/eryri-nomad-decal-silver-v3.svg", png: "/media/eryri-nomad-decal-silver-v3-large.png" },
+    ],
+  },
+  {
+    name: "Eryri Explorer V4 Decal",
+    variants: [
+      { color: "White", svg: "/media/eryri-explorer-decal-white-v4.svg", png: "/media/eryri-explorer-decal-white-v4-large.png" },
+      { color: "Black", svg: "/media/eryri-explorer-decal-black-v4.svg", png: "/media/eryri-explorer-decal-black-v4-large.png" },
+      { color: "Green", svg: "/media/eryri-explorer-decal-green-v4.svg", png: "/media/eryri-explorer-decal-green-v4-large.png" },
+      { color: "Silver", svg: "/media/eryri-explorer-decal-silver-v4.svg", png: "/media/eryri-explorer-decal-silver-v4-large.png" },
+    ],
+  },
+];
+
 const brandColors = [
   { name: "Hilltop Green", hex: "#7CB518", textColor: "white" },
   { name: "Dark Background", hex: "#1a1c20", textColor: "white" },
@@ -142,8 +190,59 @@ export default function MediaPage() {
         </div>
       </section>
 
-      {/* Brand Colors Section */}
+      {/* Decal Downloads Section */}
       <section className="py-20 bg-[#1a1c20]">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <span className="text-primary">DECAL</span> DOWNLOADS
+          </h2>
+          <p className="text-gray-400 mb-12 max-w-2xl">
+            Van side decals for the Eryri range. Available in SVG (scalable) and PNG formats.
+          </p>
+
+          <div className="space-y-12">
+            {decalDownloads.map((decal, index) => (
+              <div key={index} className="bg-[#25272c] rounded-lg p-6 border border-gray-700">
+                <h3 className="text-xl font-bold text-white mb-6">{decal.name}</h3>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {decal.variants.map((variant, vIndex) => (
+                    <div key={vIndex} className="bg-[#1a1c20] rounded-lg p-4">
+                      <div className="relative aspect-[3/1] mb-4 flex items-center justify-center rounded overflow-hidden" style={{ backgroundColor: variant.color === "White" || variant.color === "Silver" ? "#333" : "#f5f5f5" }}>
+                        <Image
+                          src={variant.png}
+                          alt={`${decal.name} - ${variant.color}`}
+                          fill
+                          className="object-contain p-2"
+                        />
+                      </div>
+                      <p className="text-white font-medium mb-3">{variant.color}</p>
+                      <div className="flex gap-2">
+                        <a
+                          href={variant.svg}
+                          download
+                          className="flex-1 text-center text-xs bg-primary text-black font-bold px-3 py-2 rounded hover:bg-primary/90 transition-colors"
+                        >
+                          SVG
+                        </a>
+                        <a
+                          href={variant.png}
+                          download
+                          className="flex-1 text-center text-xs bg-gray-600 text-white font-bold px-3 py-2 rounded hover:bg-gray-500 transition-colors"
+                        >
+                          PNG
+                        </a>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Brand Colors Section */}
+      <section className="py-20 bg-[#25272c]">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             <span className="text-primary">BRAND</span> COLORS

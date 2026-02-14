@@ -153,7 +153,7 @@ This 2016 Renault Trafic Sport Short Wheel Base has been fully converted at our 
 
 Features include our premium Hacienda Black cabinetry with black accents throughout, complemented by elegant black faux leather upholstery for a sophisticated, modern look. The light grey floor provides a beautiful contrast.
 
-With 94,000 miles and Euro 6 emissions compliance, this Sport model offers great reliability and fuel efficiency. The 6-speed manual gearbox provides smooth, responsive driving.
+With 98,000 miles and Euro 6 emissions compliance, this Sport model offers great reliability and fuel efficiency. The 6-speed manual gearbox provides smooth, responsive driving.
 
 Contact us now to arrange a viewing of this beautiful campervan. Finance available.`,
   price: "26,950",
@@ -164,6 +164,12 @@ Contact us now to arrange a viewing of this beautiful campervan. Finance availab
     "/images/campervans/van-7/interior-overview.jpg",
     "/images/campervans/van-7/poptop-raised.jpg",
     "/images/campervans/van-7/dashboard.jpg",
+    "/images/campervans/van-7/front-poptop-seaside.jpg",
+    "/images/campervans/van-7/rear-poptop-solar.jpg",
+    "/images/campervans/van-7/front-cab-seats.jpg",
+    "/images/campervans/van-7/rear-quarter-seaside.jpg",
+    "/images/campervans/van-7/interior-table.jpg",
+    "/images/campervans/van-7/interior-electrics-full.jpg",
     "/images/campervans/van-7/side-exterior.jpg",
     "/images/campervans/van-7/rear-three-quarter.jpg",
     "/images/campervans/van-7/rear-exterior.jpg",
@@ -177,7 +183,7 @@ Contact us now to arrange a viewing of this beautiful campervan. Finance availab
     "/images/campervans/van-7/water-system.jpg",
     "/images/campervans/van-7/sink-tap.jpg",
   ],
-  specs: ["94k Miles", "6 Speed Manual", "Euro 6", "4 Berth"],
+  specs: ["98k Miles", "6 Speed Manual", "Euro 6", "4 Berth"],
   features: [
     {
       category: "Vehicle Specifications",
@@ -187,7 +193,7 @@ Contact us now to arrange a viewing of this beautiful campervan. Finance availab
         "Transmission: 6-speed Manual",
         "Berths: 4 (2 in pop-top, 2 in rock & roll bed)",
         "Euro 6 Emissions",
-        "94,000 miles",
+        "98,000 miles",
       ],
     },
     {

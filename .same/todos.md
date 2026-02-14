@@ -29,6 +29,12 @@
 - [x] Eryri Adventurer Winter Deal - reduced price from £56,995 to £52,995
 - [x] Added sale styling with "Winter Deal" badge and crossed-out original price
 
+## Recently Completed (Feb 14, 2026)
+- [x] Changed 2016 Renault Trafic Sport SWB status from "Currently in Build" to "Available"
+- [x] Added 16 new high-quality photos to the 2016 Trafic Sport gallery
+- [x] Updated main image to side exterior view
+- [x] Updated short description and full description for the 2016 Trafic Sport
+
 ## Recently Completed (Feb 7, 2026) - SEO & Git Push
 - [x] Hidden Media & Downloads page from public navigation (removed from footer)
 - [x] Set Media page to noindex for search engines

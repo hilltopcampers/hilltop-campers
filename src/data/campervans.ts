@@ -146,21 +146,36 @@ export const campervan7: Campervan = {
   id: 7,
   slug: "2016-renault-trafic-sport-swb",
   title: "2016 Renault Trafic Sport SWB Campervan",
-  shortDescription: "Available from the 6th Feb. Currently in build.",
+  shortDescription: "Stunning Silver Renault Sport with Black Faux Leather Upholstery, Hacienda Black Cabinetry. Ready to view. Finance Available.",
   fullDescription: `Stunning Silver Renault Sport with Black Faux Leather Upholstery, with a light grey floor and Hacienda Black Cabinetry and black accents comes with all the usual Eryri Adventurer Specifications.
 
-This 2016 Renault Trafic Sport Short Wheel Base is currently being converted at our North Wales workshop to our popular Eryri Adventurer specification.
+This 2016 Renault Trafic Sport Short Wheel Base has been fully converted at our North Wales workshop to our popular Eryri Adventurer specification.
 
 Features include our premium Hacienda Black cabinetry with black accents throughout, complemented by elegant black faux leather upholstery for a sophisticated, modern look. The light grey floor provides a beautiful contrast.
 
 With 94,000 miles and Euro 6 emissions compliance, this Sport model offers great reliability and fuel efficiency. The 6-speed manual gearbox provides smooth, responsive driving.
 
-Contact us now to discuss this build or to arrange a viewing. Available from 6th February.`,
+Contact us now to arrange a viewing of this beautiful campervan. Finance available.`,
   price: "26,950",
-  status: "Currently in Build",
-  mainImage: "/images/campervans/van-7/silver-trafic-sport.jpg",
+  status: "Available",
+  mainImage: "/images/campervans/van-7/side-exterior.jpg",
   gallery: [
-    "/images/campervans/van-7/silver-trafic-sport.jpg",
+    "/images/campervans/van-7/side-exterior.jpg",
+    "/images/campervans/van-7/rear-three-quarter.jpg",
+    "/images/campervans/van-7/rear-exterior.jpg",
+    "/images/campervans/van-7/poptop-raised.jpg",
+    "/images/campervans/van-7/interior-wide.jpg",
+    "/images/campervans/van-7/interior-overview.jpg",
+    "/images/campervans/van-7/rear-seats.jpg",
+    "/images/campervans/van-7/interior-seating-electrical.jpg",
+    "/images/campervans/van-7/kitchen-cabinets.jpg",
+    "/images/campervans/van-7/kitchen-hob-sink.jpg",
+    "/images/campervans/van-7/control-panel.jpg",
+    "/images/campervans/van-7/power-sockets.jpg",
+    "/images/campervans/van-7/under-seat-storage.jpg",
+    "/images/campervans/van-7/water-system.jpg",
+    "/images/campervans/van-7/sink-tap.jpg",
+    "/images/campervans/van-7/dashboard.jpg",
   ],
   specs: ["94k Miles", "6 Speed Manual", "Euro 6", "4 Berth"],
   features: [

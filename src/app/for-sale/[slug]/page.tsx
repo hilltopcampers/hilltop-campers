@@ -72,6 +72,41 @@ function generateJsonLd(campervan: Campervan, slug: string) {
           itemCondition: year && parseInt(year) >= 2024
             ? "https://schema.org/NewCondition"
             : "https://schema.org/UsedCondition",
+          shippingDetails: {
+            "@type": "OfferShippingDetails",
+            shippingRate: {
+              "@type": "MonetaryAmount",
+              value: "0",
+              currency: "GBP",
+            },
+            shippingDestination: {
+              "@type": "DefinedRegion",
+              addressCountry: "GB",
+            },
+            deliveryTime: {
+              "@type": "ShippingDeliveryTime",
+              handlingTime: {
+                "@type": "QuantitativeValue",
+                minValue: 0,
+                maxValue: 7,
+                unitCode: "DAY",
+              },
+              transitTime: {
+                "@type": "QuantitativeValue",
+                minValue: 0,
+                maxValue: 1,
+                unitCode: "DAY",
+              },
+            },
+          },
+          hasMerchantReturnPolicy: {
+            "@type": "MerchantReturnPolicy",
+            applicableCountry: "GB",
+            returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
+            merchantReturnDays: 0,
+            returnMethod: "https://schema.org/ReturnByMail",
+            returnFees: "https://schema.org/FreeReturn",
+          },
         },
         aggregateRating: {
           "@type": "AggregateRating",
@@ -176,6 +211,41 @@ function generateJsonLd(campervan: Campervan, slug: string) {
           itemCondition: year && parseInt(year) >= 2024
             ? "https://schema.org/NewCondition"
             : "https://schema.org/UsedCondition",
+          shippingDetails: {
+            "@type": "OfferShippingDetails",
+            shippingRate: {
+              "@type": "MonetaryAmount",
+              value: "0",
+              currency: "GBP",
+            },
+            shippingDestination: {
+              "@type": "DefinedRegion",
+              addressCountry: "GB",
+            },
+            deliveryTime: {
+              "@type": "ShippingDeliveryTime",
+              handlingTime: {
+                "@type": "QuantitativeValue",
+                minValue: 0,
+                maxValue: 7,
+                unitCode: "DAY",
+              },
+              transitTime: {
+                "@type": "QuantitativeValue",
+                minValue: 0,
+                maxValue: 1,
+                unitCode: "DAY",
+              },
+            },
+          },
+          hasMerchantReturnPolicy: {
+            "@type": "MerchantReturnPolicy",
+            applicableCountry: "GB",
+            returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
+            merchantReturnDays: 0,
+            returnMethod: "https://schema.org/ReturnByMail",
+            returnFees: "https://schema.org/FreeReturn",
+          },
         },
         aggregateRating: {
           "@type": "AggregateRating",

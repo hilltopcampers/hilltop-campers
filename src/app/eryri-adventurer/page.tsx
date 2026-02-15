@@ -554,7 +554,7 @@ export default function EryriAdventurerPage() {
                 key={index}
                 className="bg-[#1a1c20] rounded-lg p-5 border border-gray-700 hover:border-primary transition-colors flex items-center justify-center text-center"
               >
-                <h4 className="text-white font-bold">{extra.name}</h4>
+                <p className="text-white font-bold">{extra.name}</p>
               </div>
             ))}
           </div>

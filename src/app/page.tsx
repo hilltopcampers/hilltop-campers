@@ -322,7 +322,7 @@ export default function Home() {
                         {feature.icon === "shield" && <Shield className="w-5 h-5 text-primary" />}
                       </div>
                       <div>
-                        <h4 className="text-white font-bold text-sm">{feature.title}</h4>
+                        <p className="text-white font-bold text-sm">{feature.title}</p>
                         <p className="text-gray-400 text-xs">{feature.description}</p>
                       </div>
                     </div>
@@ -424,7 +424,7 @@ export default function Home() {
                     {testimonial.name.charAt(0)}
                   </div>
                   <div>
-                    <h4 className="text-white font-bold">{testimonial.name}</h4>
+                    <p className="text-white font-bold">{testimonial.name}</p>
                     <p className="text-gray-300 text-sm">{testimonial.date}</p>
                   </div>
                 </div>

@@ -26,8 +26,9 @@ export default function Header() {
             <a
               href="mailto:hilltopcampers.co.uk@gmail.com"
               className="flex items-center gap-2 text-gray-300 hover:text-primary transition-colors"
+              aria-label="Email hilltopcampers.co.uk@gmail.com"
             >
-              <Mail size={14} />
+              <Mail size={14} aria-hidden="true" />
               <span className="hidden sm:inline">hilltopcampers.co.uk@gmail.com</span>
             </a>
             <a

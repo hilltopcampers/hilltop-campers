@@ -30,10 +30,10 @@ export const metadata: Metadata = {
     title: "Campervans For Sale UK | Ready To Drive Away | Hilltop Campers",
     description:
       "Quality campervans for sale from £26,950. Renault Trafic & more. Pop-top, 4 berth, diesel heating. Finance available. North Wales.",
-    url: "https://hilltopcampers.co.uk/for-sale",
+    url: "https://www.hilltopcampers.co.uk/for-sale",
     images: [
       {
-        url: "https://hilltopcampers.co.uk/images/eryri-adventurer/front-headon.jpg",
+        url: "https://www.hilltopcampers.co.uk/images/eryri-adventurer/front-headon.jpg",
         width: 1200,
         height: 630,
         alt: "Campervans For Sale - Hilltop Campers North Wales",
@@ -70,7 +70,7 @@ const sortedCampervans = [...campervans].sort((a, b) => {
 });
 
 // Generate JSON-LD structured data for the listing page
-const baseUrl = "https://hilltopcampers.co.uk";
+const baseUrl = "https://www.hilltopcampers.co.uk";
 
 // Helper to determine availability
 const getAvailability = (status: string, isSold?: boolean) => {

@@ -12,7 +12,7 @@ import ImageGallery from "@/components/ImageGallery";
 
 // Generate JSON-LD structured data for campervan
 function generateJsonLd(campervan: Campervan, slug: string) {
-  const baseUrl = "https://hilltopcampers.co.uk";
+  const baseUrl = "https://www.hilltopcampers.co.uk";
 
   // Determine availability based on status
   const getAvailability = (status: Campervan["status"], isSold?: boolean) => {
@@ -346,7 +346,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     };
   }
 
-  const baseUrl = "https://hilltopcampers.co.uk";
+  const baseUrl = "https://www.hilltopcampers.co.uk";
   const priceText = campervan.price ? `£${campervan.price}` : "POA";
   const specsText = campervan.specs.slice(0, 3).join(", ");
   const seoDescription = `${campervan.title} for sale at ${priceText}. ${specsText}. ${campervan.shortDescription} Finance available. Based in North Wales.`;

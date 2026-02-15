@@ -1,11 +1,11 @@
 # Hilltop Campers - Robots.txt
-# https://hilltopcampers.co.uk
+# https://www.hilltopcampers.co.uk
 
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://hilltopcampers.co.uk/sitemap.xml
+Sitemap: https://www.hilltopcampers.co.uk/sitemap.xml
 
 # Disallow admin/private paths (none currently)
 # Disallow: /admin/

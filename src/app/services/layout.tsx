@@ -23,10 +23,10 @@ export const metadata: Metadata = {
     title: "Campervan Services | Pop Top, Diesel Heaters, Solar | Hilltop Campers",
     description:
       "Professional campervan services in North Wales: pop-top roofs, diesel heater installation, solar power systems. Expert technicians, competitive prices.",
-    url: "https://hilltopcampers.co.uk/services",
+    url: "https://www.hilltopcampers.co.uk/services",
     images: [
       {
-        url: "https://hilltopcampers.co.uk/images/Camper_ai_2.jpeg",
+        url: "https://www.hilltopcampers.co.uk/images/Camper_ai_2.jpeg",
         width: 1200,
         height: 630,
         alt: "Campervan Services - Pop Top Roof Fitting by Hilltop Campers",

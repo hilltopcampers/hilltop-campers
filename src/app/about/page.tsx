@@ -26,10 +26,10 @@ export const metadata: Metadata = {
     title: "About Hilltop Campers | Campervan Conversion Specialists",
     description:
       "Premium campervan conversions in North Wales. In-house CNC manufacturing, bespoke upholstery, quality guaranteed. Visit us in Llandudno.",
-    url: "https://hilltopcampers.co.uk/about",
+    url: "https://www.hilltopcampers.co.uk/about",
     images: [
       {
-        url: "https://hilltopcampers.co.uk/images/Camper_ai_2.jpeg",
+        url: "https://www.hilltopcampers.co.uk/images/Camper_ai_2.jpeg",
         width: 1200,
         height: 630,
         alt: "Hilltop Campers Workshop - Campervan Conversion Specialists",

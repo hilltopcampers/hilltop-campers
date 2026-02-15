@@ -21,10 +21,10 @@ export const metadata: Metadata = {
     title: "Contact Hilltop Campers | Campervan Enquiries & Viewings",
     description:
       "Get in touch for campervan enquiries, viewings, and quotes. Call 07869 169826. Llandudno, North Wales.",
-    url: "https://hilltopcampers.co.uk/contact",
+    url: "https://www.hilltopcampers.co.uk/contact",
     images: [
       {
-        url: "https://hilltopcampers.co.uk/images/Camper_ai_2.jpeg",
+        url: "https://www.hilltopcampers.co.uk/images/Camper_ai_2.jpeg",
         width: 1200,
         height: 630,
         alt: "Contact Hilltop Campers - Campervan Specialists in North Wales",

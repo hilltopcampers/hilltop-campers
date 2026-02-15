@@ -19,10 +19,10 @@ export const metadata: Metadata = {
     title: "Media & Press Kit | Hilltop Campers",
     description:
       "Download official Hilltop Campers logos and brand assets for press and media use.",
-    url: "https://hilltopcampers.co.uk/media",
+    url: "https://www.hilltopcampers.co.uk/media",
     images: [
       {
-        url: "https://hilltopcampers.co.uk/images/hilltop-logo.png",
+        url: "https://www.hilltopcampers.co.uk/images/hilltop-logo.png",
         width: 1653,
         height: 734,
         alt: "Hilltop Campers Logo",

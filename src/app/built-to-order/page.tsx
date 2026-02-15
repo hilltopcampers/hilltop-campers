@@ -29,10 +29,10 @@ export const metadata: Metadata = {
     title: "Custom Campervan Conversions | Build Your Dream Campervan | Hilltop Campers",
     description:
       "Bespoke Renault Trafic, Ford Transit & VW Transporter campervan conversions from £20,500. Your specifications, our craftsmanship.",
-    url: "https://hilltopcampers.co.uk/built-to-order",
+    url: "https://www.hilltopcampers.co.uk/built-to-order",
     images: [
       {
-        url: "https://hilltopcampers.co.uk/images/black_brand_new_trafic.webp",
+        url: "https://www.hilltopcampers.co.uk/images/black_brand_new_trafic.webp",
         width: 1200,
         height: 630,
         alt: "Bespoke Renault Trafic Campervan Conversion - Hilltop Campers",

@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { campervans } from "@/data/campervans";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://hilltopcampers.co.uk";
+  const baseUrl = "https://www.hilltopcampers.co.uk";
 
   // Static pages
   const staticPages = [

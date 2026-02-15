@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://hilltopcampers.co.uk"),
+  metadataBase: new URL("https://www.hilltopcampers.co.uk"),
   alternates: {
     canonical: "/",
   },
@@ -66,11 +66,11 @@ export const metadata: Metadata = {
     title: "Hilltop Campers | Premium Campervan Conversions | North Wales UK",
     description:
       "Premium campervan conversions in North Wales. Renault Trafic, Ford Transit Custom & VW Transporter specialists. Campervans for sale from £26,950. Bespoke conversions from £20,500.",
-    url: "https://hilltopcampers.co.uk",
+    url: "https://www.hilltopcampers.co.uk",
     siteName: "Hilltop Campers",
     images: [
       {
-        url: "https://hilltopcampers.co.uk/images/Camper_ai_2.jpeg",
+        url: "https://www.hilltopcampers.co.uk/images/Camper_ai_2.jpeg",
         width: 1200,
         height: 630,
         alt: "Hilltop Campers - Premium Campervan Conversions in Snowdonia, North Wales",
@@ -122,24 +122,24 @@ const jsonLd = {
   "@graph": [
     {
       "@type": ["AutoDealer", "LocalBusiness", "Store"],
-      "@id": "https://hilltopcampers.co.uk/#organization",
+      "@id": "https://www.hilltopcampers.co.uk/#organization",
       name: "Hilltop Campers",
       alternateName: "Hilltop Campers Ltd",
       legalName: "Hilltop Campers Ltd",
       description: "Premium Renault Trafic campervan conversions in North Wales. Specialists in converting Renault Trafic, Ford Transit Custom & VW Transporter vans into luxury campervans.",
-      url: "https://hilltopcampers.co.uk",
+      url: "https://www.hilltopcampers.co.uk",
       telephone: "+44 7869 169826",
       email: "hilltopcampers.co.uk@gmail.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://hilltopcampers.co.uk/images/hilltop-logo.png",
+        url: "https://www.hilltopcampers.co.uk/images/hilltop-logo.png",
         width: 1653,
         height: 734,
       },
       image: [
-        "https://hilltopcampers.co.uk/images/Camper_ai_2.jpeg",
-        "https://hilltopcampers.co.uk/images/hilltop-logo.png",
-        "https://hilltopcampers.co.uk/images/eryri-adventurer/front-headon.jpg",
+        "https://www.hilltopcampers.co.uk/images/Camper_ai_2.jpeg",
+        "https://www.hilltopcampers.co.uk/images/hilltop-logo.png",
+        "https://www.hilltopcampers.co.uk/images/eryri-adventurer/front-headon.jpg",
       ],
       address: {
         "@type": "PostalAddress",
@@ -291,7 +291,7 @@ const jsonLd = {
     },
     {
       "@type": "FAQPage",
-      "@id": "https://hilltopcampers.co.uk/#faq",
+      "@id": "https://www.hilltopcampers.co.uk/#faq",
       mainEntity: [
         {
           "@type": "Question",
@@ -337,16 +337,16 @@ const jsonLd = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://hilltopcampers.co.uk/#website",
-      url: "https://hilltopcampers.co.uk",
+      "@id": "https://www.hilltopcampers.co.uk/#website",
+      url: "https://www.hilltopcampers.co.uk",
       name: "Hilltop Campers",
       description: "Premium campervan conversions in North Wales",
       publisher: {
-        "@id": "https://hilltopcampers.co.uk/#organization",
+        "@id": "https://www.hilltopcampers.co.uk/#organization",
       },
       potentialAction: {
         "@type": "SearchAction",
-        target: "https://hilltopcampers.co.uk/for-sale?q={search_term_string}",
+        target: "https://www.hilltopcampers.co.uk/for-sale?q={search_term_string}",
         "query-input": "required name=search_term_string",
       },
     },

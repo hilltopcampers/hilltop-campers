@@ -41,6 +41,12 @@
 - [x] Enhanced For Sale listing page with full Product schemas for all 7 campervans
 - [x] Pushed all fixes to GitHub
 
+## Recently Completed (Feb 15, 2026) - Product Schema Delivery Time Fix
+- [x] Fixed missing deliveryTime field in For Sale page Product schema
+- [x] Added complete deliveryTime with handlingTime and transitTime to shippingDetails
+- [x] All 7 campervan listings now have complete Product schema with no non-critical issues
+- [x] Pushed fix to GitHub
+
 ## Google Search Console Monitoring Checklist (Feb 15 - Feb 22, 2026)
 
 ### Pages to Monitor:

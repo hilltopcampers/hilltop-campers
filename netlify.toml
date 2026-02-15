@@ -10,3 +10,10 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+# Redirect non-www to www (primary domain)
+[[redirects]]
+  from = "https://hilltopcampers.co.uk/*"
+  to = "https://www.hilltopcampers.co.uk/:splat"
+  status = 301
+  force = true

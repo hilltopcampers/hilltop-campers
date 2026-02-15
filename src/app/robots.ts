@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/banner", "/brochure"],
       },
     ],
-    sitemap: "https://hilltopcampers.co.uk/sitemap.xml",
+    sitemap: "https://www.hilltopcampers.co.uk/sitemap.xml",
   };
 }

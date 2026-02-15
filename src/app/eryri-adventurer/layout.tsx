@@ -23,10 +23,10 @@ export const metadata: Metadata = {
     title: "Eryri Adventurer | Premium 4 Berth Campervan | Hilltop Campers",
     description:
       "Our flagship Renault Trafic 4 berth campervan. Pop-top, lithium power, diesel heating. From £49,950. Built in North Wales.",
-    url: "https://hilltopcampers.co.uk/eryri-adventurer",
+    url: "https://www.hilltopcampers.co.uk/eryri-adventurer",
     images: [
       {
-        url: "https://hilltopcampers.co.uk/images/eryri-adventurer/front-headon.jpg",
+        url: "https://www.hilltopcampers.co.uk/images/eryri-adventurer/front-headon.jpg",
         width: 1200,
         height: 630,
         alt: "Eryri Adventurer - Premium 4 Berth Renault Trafic Campervan by Hilltop Campers",

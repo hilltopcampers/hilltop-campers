@@ -72,6 +72,16 @@ const sortedCampervans = [...campervans].sort((a, b) => {
 // Generate JSON-LD structured data for the listing page
 const baseUrl = "https://hilltopcampers.co.uk";
 
+// Helper to determine availability
+const getAvailability = (status: string, isSold?: boolean) => {
+  if (status === "Sold" || isSold) return "https://schema.org/SoldOut";
+  if (status === "Currently in Build") return "https://schema.org/PreOrder";
+  return "https://schema.org/InStock";
+};
+
+// Price valid until end of next year
+const priceValidUntil = `${new Date().getFullYear() + 1}-12-31`;
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -82,13 +92,67 @@ const jsonLd = {
       name: "Campervans For Sale",
       description: "Browse our selection of quality Renault Trafic campervans for sale",
       numberOfItems: sortedCampervans.length,
-      itemListElement: sortedCampervans.map((van, index) => ({
-        "@type": "ListItem",
-        position: index + 1,
-        name: van.title,
-        url: `${baseUrl}/for-sale/${van.slug}`,
-        image: van.mainImage.startsWith("http") ? van.mainImage : `${baseUrl}${van.mainImage}`,
-      })),
+      itemListElement: sortedCampervans.map((van, index) => {
+        const yearMatch = van.title.match(/\b(20\d{2})\b/);
+        const year = yearMatch ? yearMatch[1] : undefined;
+
+        return {
+          "@type": "ListItem",
+          position: index + 1,
+          item: {
+            "@type": "Product",
+            "@id": `${baseUrl}/for-sale/${van.slug}#product`,
+            name: van.title,
+            description: van.shortDescription,
+            url: `${baseUrl}/for-sale/${van.slug}`,
+            image: van.mainImage.startsWith("http") ? van.mainImage : `${baseUrl}${van.mainImage}`,
+            brand: {
+              "@type": "Brand",
+              name: "Hilltop Campers",
+            },
+            offers: {
+              "@type": "Offer",
+              url: `${baseUrl}/for-sale/${van.slug}`,
+              priceCurrency: "GBP",
+              price: van.price ? van.price.replace(/,/g, "") : "0",
+              priceValidUntil: priceValidUntil,
+              availability: getAvailability(van.status, van.isSold),
+              seller: {
+                "@type": "Organization",
+                name: "Hilltop Campers",
+                url: baseUrl,
+              },
+              itemCondition: year && parseInt(year) >= 2024
+                ? "https://schema.org/NewCondition"
+                : "https://schema.org/UsedCondition",
+              shippingDetails: {
+                "@type": "OfferShippingDetails",
+                shippingRate: {
+                  "@type": "MonetaryAmount",
+                  value: "0",
+                  currency: "GBP",
+                },
+                shippingDestination: {
+                  "@type": "DefinedRegion",
+                  addressCountry: "GB",
+                },
+              },
+              hasMerchantReturnPolicy: {
+                "@type": "MerchantReturnPolicy",
+                applicableCountry: "GB",
+                returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
+              },
+            },
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: "5",
+              reviewCount: "27",
+              bestRating: "5",
+              worstRating: "1",
+            },
+          },
+        };
+      }),
     },
     // Organization Schema
     {
@@ -102,6 +166,7 @@ const jsonLd = {
         "@type": "PostalAddress",
         streetAddress: "Unit 1B, Builder Street West",
         addressLocality: "Llandudno",
+        addressRegion: "Conwy",
         postalCode: "LL30 1HH",
         addressCountry: "GB",
       },
@@ -110,7 +175,14 @@ const jsonLd = {
         telephone: "+44-7869-169826",
         contactType: "sales",
         email: "hilltopcampers.co.uk@gmail.com",
+        areaServed: "GB",
+        availableLanguage: "English",
       },
+      sameAs: [
+        "https://www.facebook.com/hilltopcampers",
+        "https://www.instagram.com/hilltop_campers",
+        "https://www.youtube.com/@HilltopCampers",
+      ],
     },
     // BreadcrumbList Schema
     {

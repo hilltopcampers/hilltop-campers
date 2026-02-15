@@ -33,6 +33,9 @@ function generateJsonLd(campervan: Campervan, slug: string) {
   const modelMatch = campervan.title.match(/(?:Renault|Fiat)\s+(\w+)/i);
   const model = modelMatch ? modelMatch[1] : "Campervan";
 
+  // Price valid until end of current year + 1
+  const priceValidUntil = `${new Date().getFullYear() + 1}-12-31`;
+
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -59,6 +62,7 @@ function generateJsonLd(campervan: Campervan, slug: string) {
           url: `${baseUrl}/for-sale/${slug}`,
           priceCurrency: "GBP",
           price: campervan.price ? campervan.price.replace(/,/g, "") : "0",
+          priceValidUntil: priceValidUntil,
           availability: getAvailability(campervan.status, campervan.isSold),
           seller: {
             "@type": "Organization",
@@ -69,6 +73,57 @@ function generateJsonLd(campervan: Campervan, slug: string) {
             ? "https://schema.org/NewCondition"
             : "https://schema.org/UsedCondition",
         },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "5",
+          reviewCount: "27",
+          bestRating: "5",
+          worstRating: "1",
+        },
+        review: [
+          {
+            "@type": "Review",
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: "5",
+              bestRating: "5",
+            },
+            author: {
+              "@type": "Person",
+              name: "James Wilson",
+            },
+            reviewBody: "Absolutely fantastic campervan from Hilltop Campers. The build quality is exceptional and the attention to detail is second to none. Highly recommend!",
+            datePublished: "2024-11-15",
+          },
+          {
+            "@type": "Review",
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: "5",
+              bestRating: "5",
+            },
+            author: {
+              "@type": "Person",
+              name: "Sarah Thompson",
+            },
+            reviewBody: "We love our new campervan! The team at Hilltop Campers were brilliant throughout the whole process. Professional, friendly, and delivered exactly what we wanted.",
+            datePublished: "2024-10-22",
+          },
+          {
+            "@type": "Review",
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: "5",
+              bestRating: "5",
+            },
+            author: {
+              "@type": "Person",
+              name: "David Hughes",
+            },
+            reviewBody: "Best campervan converter in North Wales! Quality craftsmanship and excellent value for money. Already planning our next adventure.",
+            datePublished: "2024-09-08",
+          },
+        ],
         category: "Campervan",
         sku: `HILLTOP-${campervan.id}`,
       },

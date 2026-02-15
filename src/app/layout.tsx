@@ -8,12 +8,16 @@ import Footer from "@/components/Footer";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
+  preload: true,
 });
 
 const bebasNeue = Bebas_Neue({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-bebas",
+  display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -361,18 +365,27 @@ export default function RootLayout({
   return (
     <html lang="en-GB">
       <head>
+        {/* Preload LCP hero image for faster discovery */}
+        <link
+          rel="preload"
+          href="/images/Camper_ai_2.jpeg"
+          as="image"
+          type="image/jpeg"
+          fetchPriority="high"
+        />
+
         {/* Preconnect to external domains for faster loading */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://i.ytimg.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://i.ytimg.com" />
 
-        {/* Google Analytics */}
+        {/* Google Analytics - deferred to not block rendering */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-N81PCVZF0D"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}

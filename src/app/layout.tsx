@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Bebas_Neue } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import DelayedAnalytics from "@/components/DelayedAnalytics";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -365,22 +365,6 @@ export default function RootLayout({
   return (
     <html lang="en-GB">
       <head>
-        {/* Preconnect to Google Analytics - kept minimal since script loads lazily */}
-        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-
-        {/* Google Analytics - deferred to not block rendering */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-N81PCVZF0D"
-          strategy="lazyOnload"
-        />
-        <Script id="google-analytics" strategy="lazyOnload">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-N81PCVZF0D');
-          `}
-        </Script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -390,6 +374,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <DelayedAnalytics />
       </body>
     </html>
   );

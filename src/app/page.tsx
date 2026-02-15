@@ -79,7 +79,7 @@ export default function Home() {
             Campervans North Wales
           </p>
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-4">
-            <span className="text-primary">north wales PREMIUM,</span>
+            <span className="text-primary">NORTH WALES PREMIUM,</span>
             <br />
             <span className="text-white">CAMPERVAN MANUFACTURER</span>
           </h1>

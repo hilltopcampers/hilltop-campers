@@ -69,6 +69,8 @@ export default function Home() {
             fill
             className="object-cover"
             priority
+            fetchPriority="high"
+            loading="eager"
             quality={75}
             sizes="100vw"
           />

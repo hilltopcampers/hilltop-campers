@@ -365,20 +365,8 @@ export default function RootLayout({
   return (
     <html lang="en-GB">
       <head>
-        {/* Preload LCP hero image for faster discovery */}
-        <link
-          rel="preload"
-          href="/images/Camper_ai_2.jpeg"
-          as="image"
-          type="image/jpeg"
-          fetchPriority="high"
-        />
-
-        {/* Preconnect to external domains for faster loading */}
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://i.ytimg.com" />
+        {/* Preconnect to Google Analytics - kept minimal since script loads lazily */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="https://i.ytimg.com" />
 
         {/* Google Analytics - deferred to not block rendering */}
         <Script

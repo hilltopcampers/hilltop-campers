@@ -69,7 +69,7 @@ export default function Home() {
             fill
             className="object-cover"
             priority
-            quality={100}
+            quality={75}
             sizes="100vw"
           />
           <div className="hero-overlay absolute inset-0" />
@@ -164,6 +164,9 @@ export default function Home() {
                   alt="Convert a pre-owned van - Black Renault Trafic"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  quality={70}
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
               </div>
@@ -181,6 +184,9 @@ export default function Home() {
                   alt="Convert a new van - Black Renault Trafic"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  quality={70}
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
               </div>
@@ -197,6 +203,9 @@ export default function Home() {
                   alt="Convert your own van - White Renault Trafic with pop-top"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  quality={70}
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
               </div>
@@ -233,6 +242,9 @@ export default function Home() {
                   alt={featuredCampervan.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  quality={75}
+                  loading="lazy"
                 />
                 <div className="absolute top-4 right-4 bg-primary text-black px-3 py-1 text-sm font-bold uppercase rounded transform rotate-12">
                   {featuredCampervan.status}
@@ -369,7 +381,16 @@ export default function Home() {
       </section>
 
       {/* Services Banner */}
-      <section className="relative py-24" style={{ backgroundImage: "url('https://ext.same-assets.com/2308322781/3538964224.jpeg')", backgroundSize: "cover", backgroundPosition: "center" }}>
+      <section className="relative py-24">
+        <Image
+          src="https://ext.same-assets.com/2308322781/3538964224.jpeg"
+          alt="Other services background"
+          fill
+          className="object-cover"
+          quality={60}
+          sizes="100vw"
+          loading="lazy"
+        />
         <div className="absolute inset-0 bg-black/60" />
         <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">

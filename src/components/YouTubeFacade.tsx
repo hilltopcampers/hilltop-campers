@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Play } from "lucide-react";
+import Image from "next/image";
 
 interface YouTubeFacadeProps {
   videoId: string;
@@ -11,10 +12,12 @@ interface YouTubeFacadeProps {
 
 export default function YouTubeFacade({ videoId, title, className = "" }: YouTubeFacadeProps) {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [imgError, setImgError] = useState(false);
 
   // YouTube thumbnail URL (maxresdefault or hqdefault)
-  const thumbnailUrl = `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
-  const fallbackThumbnail = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+  const thumbnailUrl = imgError
+    ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`
+    : `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
 
   if (isLoaded) {
     return (
@@ -40,15 +43,14 @@ export default function YouTubeFacade({ videoId, title, className = "" }: YouTub
       aria-label={`Play video: ${title}`}
     >
       {/* Thumbnail */}
-      <img
+      <Image
         src={thumbnailUrl}
         alt={title}
-        className="absolute inset-0 w-full h-full object-cover"
-        loading="lazy"
-        onError={(e) => {
-          // Fallback to lower quality thumbnail if maxres doesn't exist
-          (e.target as HTMLImageElement).src = fallbackThumbnail;
-        }}
+        fill
+        className="object-cover"
+        sizes="(max-width: 768px) 100vw, 800px"
+        quality={75}
+        onError={() => setImgError(true)}
       />
 
       {/* Dark overlay */}

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Check, ArrowUpRight, Play, Battery, Flame, Zap, Shield, Download } from "lucide-react";
+import { Check, ArrowUpRight, Battery, Flame, Zap, Shield, Download } from "lucide-react";
+import YouTubeFacade from "@/components/YouTubeFacade";
 
 // Featured campervan for sale
 const featuredCampervan = {
@@ -290,18 +291,11 @@ export default function Home() {
                   BCA Group. Upgrade to the Wallis Duo for a completely gas-free experience.
                 </p>
 
-                {/* YouTube Video */}
+                {/* YouTube Video - Facade pattern to avoid cookies until user clicks */}
                 <div className="relative aspect-video bg-black rounded-lg mb-6 overflow-hidden">
-                  <iframe
-                    width="560"
-                    height="315"
-                    src="https://www.youtube-nocookie.com/embed/K1FX-KHSO4Y"
+                  <YouTubeFacade
+                    videoId="K1FX-KHSO4Y"
                     title="Eryri Adventurer Campervan"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                    className="absolute inset-0 w-full h-full"
                   />
                 </div>
 

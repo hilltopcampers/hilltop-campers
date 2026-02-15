@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import YouTubeFacade from "@/components/YouTubeFacade";
 import {
   Check,
   ArrowUpRight,
@@ -361,16 +362,9 @@ export default function EryriAdventurerPage() {
 
           <div className="max-w-4xl mx-auto">
             <div className="relative aspect-video bg-black rounded-lg overflow-hidden shadow-2xl">
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube-nocookie.com/embed/K1FX-KHSO4Y"
+              <YouTubeFacade
+                videoId="K1FX-KHSO4Y"
                 title="Eryri Adventurer Campervan"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-                className="absolute inset-0 w-full h-full"
               />
             </div>
           </div>

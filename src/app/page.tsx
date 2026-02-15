@@ -71,7 +71,7 @@ export default function Home() {
             priority
             fetchPriority="high"
             loading="eager"
-            quality={75}
+            quality={60}
             sizes="100vw"
           />
           <div className="hero-overlay absolute inset-0" />
@@ -167,7 +167,7 @@ export default function Home() {
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  quality={70}
+                  quality={55}
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
@@ -187,7 +187,7 @@ export default function Home() {
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  quality={70}
+                  quality={55}
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
@@ -206,7 +206,7 @@ export default function Home() {
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  quality={70}
+                  quality={55}
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
@@ -245,7 +245,7 @@ export default function Home() {
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  quality={75}
+                  quality={60}
                   loading="lazy"
                 />
                 <div className="absolute top-4 right-4 bg-primary text-black px-3 py-1 text-sm font-bold uppercase rounded transform rotate-12">

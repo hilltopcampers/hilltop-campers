@@ -136,6 +136,21 @@ const jsonLd = {
                   "@type": "DefinedRegion",
                   addressCountry: "GB",
                 },
+                deliveryTime: {
+                  "@type": "ShippingDeliveryTime",
+                  handlingTime: {
+                    "@type": "QuantitativeValue",
+                    minValue: 0,
+                    maxValue: 7,
+                    unitCode: "DAY",
+                  },
+                  transitTime: {
+                    "@type": "QuantitativeValue",
+                    minValue: 0,
+                    maxValue: 1,
+                    unitCode: "DAY",
+                  },
+                },
               },
               hasMerchantReturnPolicy: {
                 "@type": "MerchantReturnPolicy",

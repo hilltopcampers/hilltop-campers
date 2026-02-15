@@ -319,7 +319,7 @@ export default function ForSalePage() {
                     <div className="mb-4">
                       {van.originalPrice && (
                         <div className="flex items-center gap-2 mb-1">
-                          <span className="bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded animate-pulse">
+                          <span className="bg-red-700 text-white text-xs font-bold px-2 py-0.5 rounded animate-pulse">
                             {van.saleLabel || "SALE"}
                           </span>
                           <span className="text-gray-400 line-through text-lg">
@@ -332,7 +332,7 @@ export default function ForSalePage() {
                       </p>
                     </div>
                   ) : (
-                    <p className="text-gray-500 text-2xl font-bold mb-4">
+                    <p className="text-gray-400 text-2xl font-bold mb-4">
                       POA
                     </p>
                   )}

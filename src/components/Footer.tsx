@@ -198,20 +198,20 @@ export default function Footer() {
       {/* Copyright */}
       <div className="bg-[#15171a] py-6">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-300 text-sm">
             &copy;2026 – HILLTOP CAMPERS
           </p>
           <div className="flex justify-center gap-4 mt-2 text-sm">
             <Link
               href="/terms"
-              className="text-gray-500 hover:text-primary transition-colors"
+              className="text-gray-300 hover:text-primary transition-colors"
             >
               Terms & Conditions
             </Link>
-            <span className="text-gray-600">•</span>
+            <span className="text-gray-400" aria-hidden="true">•</span>
             <Link
               href="/privacy"
-              className="text-gray-500 hover:text-primary transition-colors"
+              className="text-gray-300 hover:text-primary transition-colors"
             >
               Privacy Policy
             </Link>

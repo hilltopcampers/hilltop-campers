@@ -29,6 +29,14 @@
 - [x] Eryri Adventurer Winter Deal - reduced price from £56,995 to £52,995
 - [x] Added sale styling with "Winter Deal" badge and crossed-out original price
 
+## Recently Completed (Feb 15, 2026) - Accessibility Fixes
+- [x] Fixed low contrast "Winter Deal" badge: changed bg-red-500 to bg-red-700 for WCAG compliance
+- [x] Fixed footer text contrast: changed text-gray-400/gray-500 to text-gray-300 for copyright and links
+- [x] Updated testimonial dates from relative time ("9 months ago") to specific dates ("May 2025")
+- [x] Fixed all text-gray-500 instances to text-gray-400 on dark backgrounds
+- [x] Added aria-hidden to decorative bullet separator in footer
+- [x] Verified header social icons already have aria-labels
+
 ## Recently Completed (Feb 15, 2026) - Google Search Console Fixes
 - [x] Fixed critical Product schema errors - removed incomplete VW Transporter, Ford Transit, Renault Trafic Product schemas from global layout
 - [x] These incomplete schemas were appearing on all pages including individual campervan pages

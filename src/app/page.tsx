@@ -42,17 +42,17 @@ const eryriFeatures = [
 const testimonials = [
   {
     name: "Chris Townsend",
-    time: "9 months ago",
+    date: "May 2025",
     text: "Absolutely fantastic service from Hilltop Campers. They converted our van exactly as we wanted and the attention to detail is superb. Highly recommend!",
   },
   {
     name: "Martin Smith",
-    time: "12 months ago",
+    date: "February 2025",
     text: "Excellent conversion of my van and great service from Phil. If you're looking to modify your van or convert one, don't hesitate, they're brilliant.",
   },
   {
     name: "Steven Williams",
-    time: "1 year ago",
+    date: "January 2025",
     text: "Bought a pre-converted van from Hilltop and it's been brilliant. Any small issues were dealt with promptly. Great quality workmanship and excellent customer service.",
   },
 ];
@@ -257,7 +257,7 @@ export default function Home() {
                 <p className="text-gray-400 text-sm mb-4">{featuredCampervan.description}</p>
                 <div className="mb-4">
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded animate-pulse">
+                    <span className="bg-red-700 text-white text-xs font-bold px-2 py-0.5 rounded animate-pulse">
                       {featuredCampervan.saleLabel}
                     </span>
                     <span className="text-gray-400 line-through text-sm">
@@ -425,7 +425,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="text-white font-bold">{testimonial.name}</h4>
-                    <p className="text-gray-500 text-sm">{testimonial.time}</p>
+                    <p className="text-gray-300 text-sm">{testimonial.date}</p>
                   </div>
                 </div>
                 <div className="flex gap-1 mb-4">

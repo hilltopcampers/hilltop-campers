@@ -495,7 +495,7 @@ export default async function CampervanDetailPage({
                 <div>
                   {campervan.originalPrice && (
                     <div className="flex items-center gap-3 mb-2">
-                      <span className="bg-red-500 text-white text-sm font-bold px-3 py-1 rounded animate-pulse">
+                      <span className="bg-red-700 text-white text-sm font-bold px-3 py-1 rounded animate-pulse">
                         {campervan.saleLabel || "SALE"}
                       </span>
                       <span className="text-gray-400 line-through text-2xl">

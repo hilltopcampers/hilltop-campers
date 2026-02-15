@@ -304,7 +304,7 @@ export default function EryriAdventurerPage() {
             ))}
           </div>
 
-          <p className="text-center text-gray-500 text-sm mt-6">
+          <p className="text-center text-gray-400 text-sm mt-6">
             Click any image to view full size
           </p>
         </div>
@@ -578,12 +578,12 @@ export default function EryriAdventurerPage() {
               <div className="text-center p-6 bg-[#1a1c20] rounded-lg">
                 <p className="text-gray-400 mb-2">Starting Price</p>
                 <p className="text-4xl font-bold text-white mb-2">£49,950 SWB</p>
-                <p className="text-sm text-gray-500">Standard specification</p>
+                <p className="text-sm text-gray-400">Standard specification</p>
               </div>
               <div className="text-center p-6 bg-[#1a1c20] rounded-lg border-2 border-primary">
                 <p className="text-gray-400 mb-2">As Advertised</p>
                 <p className="text-4xl font-bold text-primary mb-2">£56,950</p>
-                <p className="text-sm text-gray-500">With extras included</p>
+                <p className="text-sm text-gray-400">With extras included</p>
               </div>
             </div>
 

@@ -288,36 +288,6 @@ const jsonLd = {
           name: "England",
         },
       ],
-      hasOfferCatalog: {
-        "@type": "OfferCatalog",
-        name: "Campervan Conversions",
-        itemListElement: [
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Product",
-              name: "Renault Trafic Campervan Conversion",
-              description: "Full campervan conversion on Renault Trafic base vehicle",
-            },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Product",
-              name: "Ford Transit Custom Campervan Conversion",
-              description: "Full campervan conversion on Ford Transit Custom base vehicle",
-            },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Product",
-              name: "VW Transporter Campervan Conversion",
-              description: "Full campervan conversion on VW Transporter T6/T6.1 base vehicle",
-            },
-          },
-        ],
-      },
     },
     {
       "@type": "FAQPage",

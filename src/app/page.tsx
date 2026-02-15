@@ -339,7 +339,7 @@ export default function Home() {
                       href="/eryri-adventurer"
                       className="inline-flex items-center gap-2 border-2 border-primary text-primary px-6 py-3 uppercase font-bold hover:bg-primary hover:text-black transition-colors rounded"
                     >
-                      Learn More
+                      Explore Eryri Adventurer
                       <ArrowUpRight size={18} />
                     </Link>
                     <Link
@@ -385,7 +385,7 @@ export default function Home() {
             href="/services"
             className="inline-flex items-center gap-2 text-white font-bold uppercase tracking-wide border-b-2 border-white pb-1 hover:border-primary hover:text-primary transition-colors"
           >
-            Learn More
+            View Our Services
             <ArrowUpRight size={18} />
           </Link>
         </div>

@@ -4,7 +4,7 @@ import { Check, ArrowUpRight } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Custom Campervan Conversions | Build Your Own Campervan | From £20,500",
+  title: "Renault Trafic Campervan Conversions | Build Your Own | From £20,500",
   description:
     "Bespoke Renault Trafic, Ford Transit & VW campervan conversions from £20,500. Choose your layout and finishes. Quality craftsmanship, North Wales.",
   keywords: [

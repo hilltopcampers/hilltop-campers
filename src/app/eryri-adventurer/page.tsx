@@ -32,27 +32,27 @@ import {
 const galleryImages = [
   {
     src: "/images/eryri-adventurer/front-headon.jpg",
-    alt: "Eryri Adventurer – Front head‑on view",
+    alt: "Eryri Adventurer Renault Trafic Campervan – Front head‑on view",
     caption: "Front Head‑on",
   },
   {
     src: "/images/eryri-adventurer/front-three-quarter.jpg",
-    alt: "Eryri Adventurer – Front three‑quarter view",
+    alt: "Eryri Adventurer Renault Trafic Campervan – Front three‑quarter view",
     caption: "Front Three‑quarter",
   },
   {
     src: "/images/eryri-adventurer/side-three-quarter.jpg",
-    alt: "Eryri Adventurer – Side view",
+    alt: "Eryri Adventurer Renault Trafic Campervan – Side view",
     caption: "Side View",
   },
   {
     src: "/images/eryri-adventurer/poptop-raised.jpg",
-    alt: "Eryri Adventurer – Pop‑top roof raised",
+    alt: "Eryri Adventurer Renault Trafic Campervan – Pop‑top roof raised",
     caption: "Pop‑top Raised",
   },
   {
     src: "/images/eryri-adventurer/rear-three-quarter.jpg",
-    alt: "Eryri Adventurer – Rear three‑quarter view",
+    alt: "Eryri Adventurer Renault Trafic Campervan – Rear three‑quarter view",
     caption: "Rear Three‑quarter",
   },
 ];

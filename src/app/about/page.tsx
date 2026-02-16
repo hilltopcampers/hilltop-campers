@@ -69,7 +69,7 @@ export default function AboutPage() {
         <div className="absolute inset-0">
           <Image
             src="https://ext.same-assets.com/2308322781/526399883.jpeg"
-            alt="About Hilltop Campers"
+            alt="About Hilltop Campers - Renault Trafic Campervan Specialists"
             fill
             className="object-cover"
             priority
@@ -127,7 +127,7 @@ export default function AboutPage() {
             <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
               <Image
                 src="https://ugc.same-assets.com/En1WqgBDU9oEraWcQijEQVCOhHgAleia.jpeg"
-                alt="Campervan interior"
+                alt="Renault Trafic Campervan interior by Hilltop Campers"
                 fill
                 className="object-cover"
               />
@@ -145,7 +145,7 @@ export default function AboutPage() {
                 <div className="relative aspect-square rounded-lg overflow-hidden">
                   <Image
                     src="https://ugc.same-assets.com/ZS6kyt2cRq3nmcFpIjWhYRNQ4Dnvpzio.jpeg"
-                    alt="Campervan furniture"
+                    alt="Renault Trafic Campervan custom furniture and cabinetry"
                     fill
                     className="object-cover"
                   />
@@ -153,7 +153,7 @@ export default function AboutPage() {
                 <div className="relative aspect-square rounded-lg overflow-hidden">
                   <Image
                     src="https://ext.same-assets.com/2308322781/1797965916.jpeg"
-                    alt="Campervan interior"
+                    alt="Renault Trafic Campervan interior living space"
                     fill
                     className="object-cover"
                   />

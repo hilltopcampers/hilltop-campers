@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Eryri Adventurer | Premium 4 Berth Renault Trafic Campervan | From £49,950",
+  title: "Renault Trafic Campervan - Eryri Adventurer | Premium 4 Berth | From £49,950",
   description:
     "Eryri Adventurer - flagship 4 berth Renault Trafic campervan. Pop-top, 200W solar, lithium power, diesel heating. From £49,950. Finance available.",
   keywords: [
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "Renault Trafic pop top",
   ],
   openGraph: {
-    title: "Eryri Adventurer | Premium 4 Berth Campervan | Hilltop Campers",
+    title: "Renault Trafic Campervan - Eryri Adventurer | Hilltop Campers",
     description:
       "Our flagship Renault Trafic 4 berth campervan. Pop-top, lithium power, diesel heating. From £49,950. Built in North Wales.",
     url: "https://www.hilltopcampers.co.uk/eryri-adventurer",

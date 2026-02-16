@@ -137,9 +137,9 @@ export default function BuiltToOrderPage() {
             THERE'S NOTHING LIKE A <span className="text-primary">NEW CAMPERVAN!</span>
           </h2>
           <p className="text-gray-300 max-w-3xl">
-            Create your <strong>dream with Hilltop Campers</strong>.
+            Create your <strong>dream Renault Trafic Campervan with Hilltop Campers</strong>.
             Customise your van to reflect your passion and tastes, with a choice of finishes to choose from.
-            Our campervans are also surprisingly affordable!
+            Our Renault Trafic Campervan conversions are also surprisingly affordable!
           </p>
         </div>
       </section>

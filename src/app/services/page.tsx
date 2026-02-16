@@ -73,7 +73,7 @@ export default function ServicesPage() {
               </h1>
               <p className="text-gray-300 text-lg mb-8 max-w-xl">
                 From pop-top roof fitting to solar power systems, we provide comprehensive
-                services to enhance your campervan experience. All work completed to the highest standards.
+                services for your Renault Trafic Campervan. All work completed to the highest standards.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link

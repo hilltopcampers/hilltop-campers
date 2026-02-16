@@ -208,6 +208,8 @@ export default function EryriAdventurerPage() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-4">
+              <span className="text-primary">RENAULT TRAFIC CAMPERVAN</span>
+              <br />
               <span className="text-white">THE </span>
               <span className="text-primary">ERYRI</span>
               <span className="text-white"> ADVENTURER</span>
@@ -218,7 +220,7 @@ export default function EryriAdventurerPage() {
             </p>
 
             <p className="text-gray-300 text-lg mb-8 max-w-2xl">
-              State of the art 4 berth campervan, built on the award-winning Renault Trafic platform.
+              State of the art 4 berth Renault Trafic Campervan, built on the award-winning Renault Trafic platform.
               Features lithium battery power and Victron products combined with our own bespoke wiring
               harness and controls supplied by industry-leading BCA Group.
             </p>

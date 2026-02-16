@@ -129,7 +129,7 @@ export default function Home() {
               Our conversions are completed entirely in-house, including the manufacturing of cabinetry on our CNC router and the bespoke upholstering in our upholstery workshop. This gives us complete design flexibility and ensures our customer receives a bespoke, quality product within a reliable time frame.
             </p>
             <p>
-              We specialise in the conversion of the Renault Trafic, Ford Transit Custom & VW Transporter T6, T6.1
+              We specialise in building the Renault Trafic Campervan, as well as Ford Transit Custom & VW Transporter T6, T6.1 conversions.
             </p>
           </div>
 

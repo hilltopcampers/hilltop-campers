@@ -105,7 +105,7 @@ export default function AboutPage() {
                 </p>
 
                 <p>
-                  Hill Top Camper Van Conversions specialises in making your Dreams a reality. supplying camper vans, to the highest specifications with whatever you need to make your adventures happen.
+                  Hilltop Campers specialises in building the Renault Trafic Campervan, making your dreams a reality with premium conversions to the highest specifications.
                 </p>
 
                 <p>

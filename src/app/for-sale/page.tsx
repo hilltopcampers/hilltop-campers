@@ -236,11 +236,11 @@ export default function ForSalePage() {
             <span className="text-primary">PRE-BUILT</span> CAMPERVANS
           </h1>
           <p className="text-gray-300 max-w-3xl text-lg">
-            Can't wait to get on the road? Purchase one of our completed Campervans!
+            Can't wait to get on the road? Purchase one of our completed Renault Trafic Campervans!
             They're ready to go on your adventures with no waiting time.
           </p>
           <p className="text-gray-400 mt-4">
-            With new conversions completed to our highest spec.
+            Browse our range of quality Renault Trafic Campervan conversions, completed to our highest spec.
           </p>
         </div>
       </section>

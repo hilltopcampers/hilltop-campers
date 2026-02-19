@@ -1,0 +1,58 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Renault Trafic Campervan - Eryri Adventurer | Premium 4 Berth | From £49,950",
+  description:
+    "Eryri Adventurer - flagship 4 berth Renault Trafic campervan. Pop-top, 200W solar, lithium power, diesel heating. From £49,950. Finance available.",
+  keywords: [
+    "Eryri Adventurer campervan",
+    "Renault Trafic 4 berth campervan",
+    "premium campervan UK",
+    "pop top campervan for sale",
+    "lithium battery campervan UK",
+    "gas free campervan",
+    "Autoterm diesel heater campervan",
+    "200W solar campervan",
+    "luxury campervan conversion",
+    "Snowdonia campervan",
+    "Welsh campervan manufacturer",
+    "family campervan UK",
+    "Renault Trafic pop top",
+  ],
+  openGraph: {
+    title: "Renault Trafic Campervan - Eryri Adventurer | Hilltop Campers",
+    description:
+      "Our flagship Renault Trafic 4 berth campervan. Pop-top, lithium power, diesel heating. From £49,950. Built in North Wales.",
+    url: "https://www.hilltopcampers.co.uk/eryri-adventurer",
+    images: [
+      {
+        url: "https://www.hilltopcampers.co.uk/images/eryri-adventurer/front-headon.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Eryri Adventurer - Premium 4 Berth Renault Trafic Campervan by Hilltop Campers",
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "/eryri-adventurer",
+  },
+};
+
+export default function EryriAdventurerLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return children;
+}

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="980" height="170" viewBox="0 0 980 170" xmlns="http://www.w3.org/2000/svg">
+  <!-- Eryri Adventurer Decal V3 - black -->
+  <!-- For light colored vans -->
+  <!-- OUTLINE VERSION - Mountain logo as outline only -->
+  <!-- Scalable Vector Graphics - Hilltop Campers -->
+
+  <!-- Mountain Logo Outline -->
+  <g transform="translate(0, 40) scale(1)">
+    
+    <!-- Left smaller mountain outline -->
+    <path d="M 0 88
+             C 8 88, 20 82, 35 65
+             C 50 48, 70 25, 90 15
+             C 105 8, 120 8, 135 15
+             C 145 20, 152 30, 158 42
+             C 168 60, 175 75, 185 85
+             C 190 88, 195 88, 200 88"
+          fill="none"
+          stroke="#1a1a1a"
+          stroke-width="5"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
+
+    <!-- Right larger mountain outline -->
+    <path d="M 140 88
+             C 155 82, 175 65, 200 45
+             C 225 25, 255 8, 285 5
+             C 315 2, 345 8, 370 20
+             C 390 30, 405 45, 418 62
+             C 430 78, 438 86, 450 88"
+          fill="none"
+          stroke="#1a1a1a"
+          stroke-width="5"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
+  
+  </g>
+
+  <!-- ERYRI text (smaller, above) -->
+  <text x="465" y="62"
+        font-family="Arial Black, Helvetica Neue, Arial, sans-serif"
+        font-size="29"
+        font-weight="900"
+        fill="#1a1a1a"
+        letter-spacing="2">ERYRI</text>
+
+  <!-- ADVENTURER text (larger, below) -->
+  <text x="465" y="115"
+        font-family="Arial Black, Helvetica Neue, Arial, sans-serif"
+        font-size="58"
+        font-weight="900"
+        fill="#1a1a1a"
+        letter-spacing="1">ADVENTURER</text>
+</svg>

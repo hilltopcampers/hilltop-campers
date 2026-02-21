@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/banner", "/brochure"],
+        disallow: ["/banner", "/brochure", "/media"],
       },
     ],
     sitemap: "https://www.hilltopcampers.co.uk/sitemap.xml",

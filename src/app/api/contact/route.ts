@@ -91,8 +91,19 @@ export async function POST(request: NextRequest) {
 
     if (error) {
       console.error("Resend error:", JSON.stringify(error, null, 2));
+      // Provide more specific error messages
+      let errorMessage = "Failed to send email";
+      if (error.name === "validation_error") {
+        errorMessage = "Email validation failed. Please check your email address.";
+      } else if (error.name === "not_found") {
+        errorMessage = "Email service configuration error.";
+      } else if (error.message?.includes("verify a domain")) {
+        errorMessage = "Email service requires domain verification.";
+      } else if (error.message) {
+        errorMessage = error.message;
+      }
       return NextResponse.json(
-        { error: `Failed to send email: ${error.message || "Unknown error"}` },
+        { error: errorMessage },
         { status: 500 }
       );
     }

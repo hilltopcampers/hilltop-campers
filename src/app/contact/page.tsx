@@ -138,8 +138,24 @@ export default function ContactPage() {
               className="max-w-4xl"
             >
               {error && (
-                <div className="mb-6 bg-red-500/20 border border-red-500 rounded-lg p-4 text-red-300">
-                  {error}
+                <div className="mb-6 bg-red-500/20 border border-red-500 rounded-lg p-4">
+                  <p className="text-red-300 mb-3">{error}</p>
+                  <div className="flex flex-wrap gap-3">
+                    <a
+                      href={`mailto:hello@hilltopcampers.co.uk?subject=${encodeURIComponent(formData.topic || "Website Enquiry")}&body=${encodeURIComponent(`Name: ${formData.name}\nPhone: ${formData.phone}\n\nMessage:\n${formData.message}`)}`}
+                      className="inline-flex items-center gap-2 bg-primary text-black px-4 py-2 rounded font-bold text-sm hover:bg-primary/90 transition-colors"
+                    >
+                      <Mail size={16} />
+                      Send via Email App
+                    </a>
+                    <a
+                      href="tel:07869169826"
+                      className="inline-flex items-center gap-2 bg-white/10 text-white px-4 py-2 rounded font-bold text-sm hover:bg-white/20 transition-colors"
+                    >
+                      <Phone size={16} />
+                      Call Us
+                    </a>
+                  </div>
                 </div>
               )}
 

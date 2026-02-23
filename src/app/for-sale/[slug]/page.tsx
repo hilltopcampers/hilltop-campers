@@ -28,10 +28,16 @@ function generateJsonLd(campervan: Campervan, slug: string) {
   // Extract brand and model from title
   const isFiat = campervan.title.toLowerCase().includes("fiat");
   const isRenault = campervan.title.toLowerCase().includes("renault");
+  const isTrafic = campervan.title.toLowerCase().includes("trafic");
   const brand = isFiat ? "Fiat" : isRenault ? "Renault" : "Campervan";
 
   const modelMatch = campervan.title.match(/(?:Renault|Fiat)\s+(\w+)/i);
   const model = modelMatch ? modelMatch[1] : "Campervan";
+
+  // Enhanced name for Renault Trafic campervans
+  const enhancedName = isRenault && isTrafic
+    ? `${campervan.title} - Renault Trafic Campervan Conversion by Hilltop Campers`
+    : campervan.title;
 
   // Price valid until end of current year + 1
   const priceValidUntil = `${new Date().getFullYear() + 1}-12-31`;
@@ -162,12 +168,14 @@ function generateJsonLd(campervan: Campervan, slug: string) {
         category: "Campervan",
         sku: `HILLTOP-${campervan.id}`,
       },
-      // Vehicle Schema
+      // Vehicle Schema - Enhanced for Renault Trafic
       {
         "@type": "Vehicle",
         "@id": `${baseUrl}/for-sale/${slug}#vehicle`,
-        name: campervan.title,
-        description: campervan.shortDescription,
+        name: enhancedName,
+        description: isRenault && isTrafic
+          ? `${campervan.shortDescription} Professional Renault Trafic campervan conversion by Hilltop Campers, North Wales' leading Renault Trafic conversion specialists.`
+          : campervan.shortDescription,
         image: campervan.mainImage.startsWith("http")
           ? campervan.mainImage
           : `${baseUrl}${campervan.mainImage}`,
@@ -178,10 +186,12 @@ function generateJsonLd(campervan: Campervan, slug: string) {
         model: model,
         vehicleModelDate: year,
         bodyType: "Campervan",
+        vehicleConfiguration: isRenault && isTrafic ? "Renault Trafic Campervan" : "Campervan",
         numberOfDoors: 4,
         vehicleSeatingCapacity: campervan.specs.find(s => s.includes("Berth"))?.match(/\d+/)?.[0] || "4",
         fuelType: campervan.engine?.fuelType || "Diesel",
         vehicleTransmission: campervan.engine?.transmission || "Manual",
+        driveWheelConfiguration: "FrontWheelDriveConfiguration",
         vehicleEngine: {
           "@type": "EngineSpecification",
           name: campervan.engine?.type || "Diesel Engine",
@@ -191,7 +201,7 @@ function generateJsonLd(campervan: Campervan, slug: string) {
           value: campervan.specs.find(s => s.includes("Miles"))?.match(/\d+/)?.[0] || "0",
           unitCode: "SMI",
         },
-        vehicleInteriorType: "Campervan Conversion",
+        vehicleInteriorType: isRenault && isTrafic ? "Renault Trafic Campervan Conversion" : "Campervan Conversion",
         manufacturer: {
           "@type": "Organization",
           name: "Hilltop Campers",

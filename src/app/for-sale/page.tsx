@@ -5,9 +5,9 @@ import { campervans } from "@/data/campervans";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Campervans For Sale UK | Renault Trafic & More | From £26,950",
+  title: "Renault Trafic Campervan & Conversions For Sale | Hilltop Campers",
   description:
-    "Renault Trafic & Fiat Talento campervans for sale from £26,950. Pop-top, 4 berth, diesel heaters. Ready to drive away. Browse our range today.",
+    "Explore pre-built campervans for sale from a leading campervan conversion company. We specialise in high-spec Renault Trafic campervan conversions. Find your Renault Trafic campervan today.",
   keywords: [
     "campervans for sale UK",
     "Renault Trafic campervan for sale",
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
     "campervan with pop top roof",
   ],
   openGraph: {
-    title: "Campervans For Sale UK | Ready To Drive Away | Hilltop Campers",
+    title: "Renault Trafic Campervan & Conversions For Sale | Hilltop Campers",
     description:
-      "Quality campervans for sale from £26,950. Renault Trafic & more. Pop-top, 4 berth, diesel heating. Finance available. North Wales.",
+      "Explore pre-built campervans for sale from a leading campervan conversion company. We specialise in high-spec Renault Trafic campervan conversions. Find your Renault Trafic campervan today.",
     url: "https://www.hilltopcampers.co.uk/for-sale",
     images: [
       {

@@ -4,9 +4,9 @@ import { ArrowUpRight, Check } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Hilltop Campers | Campervan Conversion Specialists | Llandudno, North Wales",
+  title: "About Our Campervan Conversion Company | Hilltop Campers",
   description:
-    "Hilltop Campers - premium campervan specialists in North Wales. In-house CNC furniture manufacturing & bespoke upholstery. Visit us in Llandudno.",
+    "Discover Hilltop Campers, a leading campervan conversion company in North Wales. We specialise in Renault Trafic campervan and campervan conversions. Contact us.",
   keywords: [
     "about Hilltop Campers",
     "campervan manufacturer UK",
@@ -23,9 +23,9 @@ export const metadata: Metadata = {
     "Welsh campervan company",
   ],
   openGraph: {
-    title: "About Hilltop Campers | Campervan Conversion Specialists",
+    title: "About Our Campervan Conversion Company | Hilltop Campers",
     description:
-      "Premium campervan conversions in North Wales. In-house CNC manufacturing, bespoke upholstery, quality guaranteed. Visit us in Llandudno.",
+      "Discover Hilltop Campers, a leading campervan conversion company in North Wales. We specialise in Renault Trafic campervan and campervan conversions. Contact us.",
     url: "https://www.hilltopcampers.co.uk/about",
     images: [
       {

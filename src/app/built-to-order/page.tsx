@@ -4,9 +4,9 @@ import { Check, ArrowUpRight } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Renault Trafic Campervan Conversions | Build Your Own | From £20,500",
+  title: "Built-to-Order Renault Trafic Campervan | Campervan Conversions by Hilltop",
   description:
-    "Bespoke Renault Trafic, Ford Transit & VW campervan conversions from £20,500. Choose your layout and finishes. Quality craftsmanship, North Wales.",
+    "Discover premier campervan conversions with Hilltop Campers, a leading UK campervan conversion company. Specialising in custom Renault Trafic campervan builds.",
   keywords: [
     "bespoke campervan conversion UK",
     "custom campervan build",
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
     "how much to convert van to campervan",
   ],
   openGraph: {
-    title: "Custom Campervan Conversions | Build Your Dream Campervan | Hilltop Campers",
+    title: "Built-to-Order Renault Trafic Campervan | Campervan Conversions by Hilltop",
     description:
-      "Bespoke Renault Trafic, Ford Transit & VW Transporter campervan conversions from £20,500. Your specifications, our craftsmanship.",
+      "Discover premier campervan conversions with Hilltop Campers, a leading UK campervan conversion company. Specialising in custom Renault Trafic campervan builds.",
     url: "https://www.hilltopcampers.co.uk/built-to-order",
     images: [
       {

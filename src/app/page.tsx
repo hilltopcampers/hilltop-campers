@@ -10,7 +10,7 @@ const featuredCampervan = {
   description: "Explore premium Renault Trafic campervans built in North Wales. Gas-free, pop-top conversions with warranty. View our range or build yours today.",
   price: "52,995",
   originalPrice: "56,995",
-  saleLabel: "Winter Deal",
+  saleLabel: "Spring Offer",
   status: "Available",
   image: "/images/eryri-adventurer/front-headon.jpg",
 };

@@ -57,7 +57,7 @@ Built on the award-winning Renault Trafic platform with lithium battery power, 2
 This vehicle is ready to drive away and start your adventures immediately.`,
   price: "52,995",
   originalPrice: "56,995",
-  saleLabel: "Winter Deal",
+  saleLabel: "Spring Offer",
   status: "Available",
   mainImage: "/images/campervans/van-1/image-2.jpeg",
   gallery: [
@@ -156,7 +156,9 @@ Features include our premium Hacienda Black cabinetry with black accents through
 With 98,000 miles and Euro 6 emissions compliance, this Sport model offers great reliability and fuel efficiency. The 6-speed manual gearbox provides smooth, responsive driving.
 
 Contact us now to arrange a viewing of this beautiful campervan. Finance available.`,
-  price: "26,950",
+  price: "23,950",
+  originalPrice: "26,950",
+  saleLabel: "SAVE £3000",
   status: "Available",
   mainImage: "/images/campervans/van-7/kitchen-hob-sink.jpg",
   gallery: [

@@ -42,7 +42,7 @@ export interface Campervan {
 export const campervan1: Campervan = {
   id: 1,
   slug: "2025-eryri-adventurer-renault-trafic",
-  title: "2025 Eryri Adventurer Renault Trafic Extra LWB 4 Berth Campervan",
+  title: "Renault Trafic Campervan - 2025 Eryri Adventurer Extra LWB 4 Berth",
   shortDescription: "Brand New Gas Free Top Spec, Hilltop Campers Conversion, Wallis Duo, Vanshades Blinds, Premium Full Leather, Warranty, Finance Available.",
   fullDescription: `This stunning 2025 Renault Trafic Extra Long Wheel Base has been fully converted by Hilltop Campers to our flagship Eryri Adventurer specification with TOP SPEC upgrades.
 
@@ -145,7 +145,7 @@ This vehicle is ready to drive away and start your adventures immediately.`,
 export const campervan7: Campervan = {
   id: 7,
   slug: "2016-renault-trafic-sport-swb",
-  title: "2016 Renault Trafic Sport SWB Campervan",
+  title: "Renault Trafic Campervan - 2016 Sport SWB",
   shortDescription: "Stunning Silver Renault Sport with Black Faux Leather Upholstery, Hacienda Black Cabinetry. Ready to view. Finance Available.",
   fullDescription: `Stunning Silver Renault Sport with Black Faux Leather Upholstery, with a light grey floor and Hacienda Black Cabinetry and black accents comes with all the usual Eryri Adventurer Specifications.
 
@@ -250,7 +250,7 @@ Contact us now to arrange a viewing of this beautiful campervan. Finance availab
 export const campervan2: Campervan = {
   id: 2,
   slug: "2020-fiat-talento-tecna-lwb",
-  title: "2020 Fiat Talento Tecna LWB Campervan",
+  title: "Fiat Talento Campervan - 2020 Tecna LWB",
   shortDescription: "Currently In Build with a black Pop top, 6 privacy windows and is Available to personalise with your choice of colours",
   fullDescription: `This 2020 Fiat Talento Tecna Long Wheel Base is currently being converted at our workshop in North Wales.
 
@@ -316,7 +316,7 @@ Contact us now to discuss your customisation options and make this van truly you
 export const campervan3: Campervan = {
   id: 3,
   slug: "2021-renault-trafic-sport-swb",
-  title: "2021 New Shape Renault Trafic Sport SWB Campervan",
+  title: "Renault Trafic Campervan - 2021 New Shape Sport SWB",
   shortDescription: "Currently In Build with a black Pop top, 6 privacy windows and is Available to personalise with your choice of colours",
   fullDescription: `The new shape 2021 Renault Trafic Sport Short Wheel Base offers excellent manoeuvrability while still providing comfortable living space.
 
@@ -381,7 +381,7 @@ Available to personalise with your choice of interior colours and finishes. Cont
 export const campervan4: Campervan = {
   id: 4,
   slug: "2019-renault-trafic-swb",
-  title: "2019 Renault Trafic SWB Campervan",
+  title: "Renault Trafic Campervan - 2019 SWB",
   shortDescription: "Brand New Hilltop Campers Conversion, Low Mileage, Finance Available.",
   fullDescription: `This 2019 Renault Trafic Short Wheel Base has been fully converted by Hilltop Campers to our high specification.
 
@@ -448,7 +448,7 @@ Ready to drive away and start your adventures today.`,
 export const campervan5: Campervan = {
   id: 5,
   slug: "2026-renault-trafic-sport-lwb",
-  title: "2026 Renault Trafic Sport LWB Campervan",
+  title: "Renault Trafic Campervan - 2026 Sport LWB",
   shortDescription: "Currently being built to order. Pop Top, Full Hilltop Adventurer Spec.",
   fullDescription: `This 2026 Renault Trafic Sport Long Wheel Base was built to order with our full Hilltop Adventurer specification.
 
@@ -483,7 +483,7 @@ This vehicle has now been sold but we can build you something similar. Contact u
 export const campervan6: Campervan = {
   id: 6,
   slug: "2016-renault-trafic-120bhp",
-  title: "2016 Renault Trafic 120bhp Campervan",
+  title: "Renault Trafic Campervan - 2016 120bhp",
   shortDescription: "New Conversion, Euro 6, Excellent Condition Throughout.",
   fullDescription: `This 2016 Renault Trafic 120bhp has received a brand new Hilltop Campers conversion and is in excellent condition throughout.
 

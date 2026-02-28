@@ -317,54 +317,107 @@ export const campervan3: Campervan = {
   id: 3,
   slug: "2021-renault-trafic-sport-swb",
   title: "Renault Trafic Campervan - 2021 New Shape Sport SWB",
-  shortDescription: "Currently In Build with a black Pop top, 6 privacy windows and is Available to personalise with your choice of colours",
-  fullDescription: `The new shape 2021 Renault Trafic Sport Short Wheel Base offers excellent manoeuvrability while still providing comfortable living space.
+  shortDescription: "Stunning 2021 New Shape Renault Trafic Sport with Grey Metallic finish, Black Quilted Faux Leather Upholstery, Silver Metallic Cabinetry, Pop-Top Roof, Solar Panel, Keyless Entry. Ready to view. Finance Available.",
+  fullDescription: `This stunning 2021 New Shape Renault Trafic Sport Short Wheel Base has been fully converted at our North Wales workshop to our popular Eryri Adventurer specification.
 
-This van is currently being converted with a sleek black pop-top roof and 6 privacy windows. The shorter wheelbase makes it perfect for navigating narrow country lanes and easier parking in towns.
+Finished in gorgeous Oyster Grey metallic paint with the new shape front grille and LED headlights, this Sport model looks absolutely stunning. Inside you'll find premium black quilted faux leather upholstery throughout, complemented by sleek silver metallic cabinetry with silver accents.
 
-With 83,000 miles and full Renault service history, this Sport model comes with enhanced specification including upgraded wheels and sports styling.
+The conversion features our signature black pop-top roof providing a second double bed upstairs, 6 privacy windows with matching curtains, and all the creature comforts you need for extended adventures. The keyless card entry system adds convenience and security.
 
-Available to personalise with your choice of interior colours and finishes. Contact us to discuss your requirements.`,
+With 83,000 miles and service history, this Sport model comes with enhanced specification including upgraded alloy wheels and sports styling. The 2.0 dCi 150bhp engine provides plenty of power while remaining economical.
+
+Features include Autoterm diesel heater, 2 burner gas hob with sink, Alpicool compressor fridge, Victron electrical system with solar panel, LED lighting throughout with control panel, rock and roll bed, and ample storage solutions.
+
+Contact us now to arrange a viewing of this beautiful campervan. Finance available.`,
   price: "35,950",
   status: "Available",
-  mainImage: "/images/Camper_ai_2.jpeg",
+  mainImage: "/images/campervans/van-3/exterior-front-side.jpg",
   gallery: [
-    "/images/Camper_ai_2.jpeg",
-    "/images/eryri-adventurer/front-three-quarter.jpg",
-    "/images/eryri-adventurer/front-headon.jpg",
-    "/images/eryri-adventurer/side-three-quarter.jpg",
-    "/images/eryri-adventurer/poptop-raised.jpg",
-    "/images/eryri-adventurer/rear-three-quarter.jpg",
+    "/images/campervans/van-3/exterior-front-side.jpg",
+    "/images/campervans/van-3/exterior-front-poptop.jpg",
+    "/images/campervans/van-3/exterior-poptop-side.jpg",
+    "/images/campervans/van-3/exterior-rear-poptop.jpg",
+    "/images/campervans/van-3/exterior-rear-side.jpg",
+    "/images/campervans/van-3/bonnet-decal.jpg",
+    "/images/campervans/van-3/interior-overview.jpg",
+    "/images/campervans/van-3/interior-kitchen-wide.jpg",
+    "/images/campervans/van-3/interior-bed.jpg",
+    "/images/campervans/van-3/kitchen-hob.jpg",
+    "/images/campervans/van-3/fridge.jpg",
+    "/images/campervans/van-3/control-panel.jpg",
+    "/images/campervans/van-3/electrical-panel.jpg",
+    "/images/campervans/van-3/dashboard.jpg",
+    "/images/campervans/van-3/front-seats.jpg",
+    "/images/campervans/van-3/rear-doors-open.jpg",
+    "/images/campervans/van-3/solar-panel.jpg",
   ],
-  specs: ["83k Miles", "6 Speed Manual", "Euro 6", "4 Berth"],
+  specs: ["83k Miles", "6 Speed Manual", "Euro 6", "4 Berth", "Solar Panel", "Keyless Entry"],
   features: [
+    {
+      category: "Vehicle Specifications",
+      items: [
+        "Base Vehicle: Renault Trafic Sport SWB",
+        "Engine: 2.0 dCi (150bhp)",
+        "Transmission: 6-speed Manual",
+        "Berths: 4 (2 in pop-top, 2 in rock & roll bed)",
+        "Euro 6 Emissions",
+        "83,000 miles",
+        "New Shape 2021 Model",
+        "Service History",
+        "Keyless Card Entry",
+      ],
+    },
+    {
+      category: "Interior Finish",
+      items: [
+        "Black Quilted Faux Leather Upholstery",
+        "Silver Metallic Cabinetry with Silver Accents",
+        "Grey Vinyl Floor",
+        "Custom CNC Manufactured Cabinetry",
+        "6 Privacy Windows with Curtains",
+      ],
+    },
+    {
+      category: "Electrical System",
+      items: [
+        "Victron SmartSolar MPPT Controller",
+        "Victron Orion DC-DC Charger",
+        "Rooftop Solar Panel",
+        "LED Lighting Throughout",
+        "Digital Control Panel",
+        "USB Charging Points",
+        "12V Sockets",
+      ],
+    },
     {
       category: "Living Area",
       items: [
+        "Black Pop-Top Roof with Double Bed",
         "Rock and Roll Bed",
-        "Black Pop-Top Roof with bed",
-        "6 Privacy Windows",
-        "Sport styling package",
-        "LED ambient lighting",
-        "Leisure battery with solar ready",
+        "LED Ambient Lighting",
+        "Blackout Curtains",
+        "Ample Storage Solutions",
       ],
     },
     {
-      category: "Kitchen",
+      category: "Kitchen & Utilities",
       items: [
-        "Compact kitchen unit",
-        "Wallis Duo Diesel induction hob/Heater",
-        "Sink with water system",
-        "Compressor fridge",
+        "Autoterm Diesel Heater",
+        "2 Burner Gas Hob with Glass Lids",
+        "Stainless Steel Sink",
+        "Alpicool Compressor Fridge",
+        "Compliant Vented Gas Locker",
+        "Fresh & Waste Water Containers",
       ],
     },
     {
-      category: "Exterior",
+      category: "Exterior Features",
       items: [
-        "Sport alloy wheels",
-        "Privacy glass",
-        "Metallic paint",
-        "Awning rail",
+        "Oyster Grey Metallic Paint",
+        "Sport Alloy Wheels",
+        "Privacy Glass",
+        "Eryri Adventurer Decals",
+        "Solar Panel on Pop-Top",
       ],
     },
   ],
@@ -376,7 +429,7 @@ Available to personalise with your choice of interior colours and finishes. Cont
   },
   engine: {
     type: "2.0 dCi",
-    power: "145bhp",
+    power: "150bhp",
     transmission: "6 Speed Manual",
     fuelType: "Diesel",
   },

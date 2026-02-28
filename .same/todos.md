@@ -1,13 +1,17 @@
-# Hilltop Campers - Todos
+# Hilltop Campers - Project Todos
 
 ## Completed
-- [x] Updated sitemap priorities to 1.0 for /for-sale, /eryri-adventurer, and all individual van pages
+- [x] Updated brochure buttons on Eryri Adventurer page
 - [x] Added decal downloads section to media page
-- [x] Updated Eryri Adventurer brochure buttons (Conversion Brochure + New Renault Trafic Brochure)
-- [x] Committed and pushed all changes to GitHub
-- [x] Repository synced with origin/main (latest: e52b7ed)
-- [x] Updated all van titles to start with "Renault Trafic Campervan" or "Fiat Talento Campervan" followed by year/model
+- [x] Fixed git repository and pushed changes
+- [x] Updated 2021 Renault Trafic Sport SWB listing with 17 new photos
+- [x] Changed 2021 Trafic Sport status to "Available"
+- [x] Enhanced listing description and features
 
 ## Pending
-- [ ] Upload New Renault Trafic brochure PDF file to host locally (user needs to provide the file)
-- [ ] Update brochure button link to point to local PDF instead of Renault website (once PDF is provided)
+- [ ] Upload New Renault Trafic brochure PDF for local hosting
+- [ ] Update brochure button to link to local PDF
+
+## Notes
+- 2021 Trafic Sport SWB (campervan3) updated with full photo gallery
+- 17 images added: exterior shots, interior views, kitchen, electrical system, etc.

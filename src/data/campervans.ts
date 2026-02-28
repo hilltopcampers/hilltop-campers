@@ -326,10 +326,15 @@ With 83,000 miles and full Renault service history, this Sport model comes with 
 
 Available to personalise with your choice of interior colours and finishes. Contact us to discuss your requirements.`,
   price: "35,950",
-  status: "Currently in Build",
-  mainImage: "/images/campervans/van-3/trafic-sport.jpg",
+  status: "Available",
+  mainImage: "/images/Camper_ai_2.jpeg",
   gallery: [
-    "/images/campervans/van-3/trafic-sport.jpg",
+    "/images/Camper_ai_2.jpeg",
+    "/images/eryri-adventurer/front-three-quarter.jpg",
+    "/images/eryri-adventurer/front-headon.jpg",
+    "/images/eryri-adventurer/side-three-quarter.jpg",
+    "/images/eryri-adventurer/poptop-raised.jpg",
+    "/images/eryri-adventurer/rear-three-quarter.jpg",
   ],
   specs: ["83k Miles", "6 Speed Manual", "Euro 6", "4 Berth"],
   features: [

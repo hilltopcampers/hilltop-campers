@@ -440,16 +440,14 @@ export const campervan4: Campervan = {
   id: 4,
   slug: "2019-renault-trafic-swb",
   title: "Renault Trafic Campervan - 2019 SWB",
-  shortDescription: "Brand New Hilltop Campers Conversion, Low Mileage, Finance Available.",
-  fullDescription: `This 2019 Renault Trafic Short Wheel Base has been fully converted by Hilltop Campers to our high specification.
+  shortDescription: "Brand New Hilltop Campers Conversion, Low Mileage. This vehicle has now been sold.",
+  fullDescription: `This 2019 Renault Trafic Short Wheel Base was fully converted by Hilltop Campers to our high specification.
 
-With just 89,000 miles and a brand new conversion, this campervan represents excellent value for money. The compact SWB design is perfect for couples who want easy manoeuvrability without compromising on comfort.
+With 89,000 miles and a brand new conversion, this campervan represented excellent value for money. The compact SWB design is perfect for couples who want easy manoeuvrability without compromising on comfort.
 
-Full finance options are available. Viewing highly recommended to appreciate the quality of our conversion work.
-
-Ready to drive away and start your adventures today.`,
-  price: "31,950",
-  status: "Available",
+This vehicle has now been sold but we have similar vehicles available. Contact us to discuss your requirements.`,
+  price: "",
+  status: "Sold",
   mainImage: "/images/campervans/van-4/trafic-swb.jpg",
   gallery: [
     "/images/campervans/van-4/trafic-swb.jpg",

@@ -329,7 +329,7 @@ With 83,000 miles and service history, this Sport model comes with enhanced spec
 Features include Autoterm diesel heater, 2 burner gas hob with sink, Alpicool compressor fridge, Victron electrical system with solar panel, LED lighting throughout with control panel, rock and roll bed, and ample storage solutions.
 
 Contact us now to arrange a viewing of this beautiful campervan. Finance available.`,
-  price: "35,950",
+  price: "32,950",
   status: "Available",
   mainImage: "/images/campervans/van-3/exterior-front-side.jpg",
   gallery: [

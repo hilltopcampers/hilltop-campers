@@ -1,17 +1,20 @@
 # Hilltop Campers - Project Todos
 
 ## Completed
-- [x] Updated brochure buttons on Eryri Adventurer page
-- [x] Added decal downloads section to media page
-- [x] Fixed git repository and pushed changes
-- [x] Updated 2021 Renault Trafic Sport SWB listing with 17 new photos
-- [x] Changed 2021 Trafic Sport status to "Available"
-- [x] Enhanced listing description and features
+- [x] Add brochure button for New Renault Trafic on Eryri Adventurer page
+- [x] Change existing brochure button text to "Conversion Brochure"
+- [x] Restore decal SVG files on media page
+- [x] Commit and push changes to GitHub
+- [x] Create high-quality marketing banners with homepage information
 
 ## Pending
-- [ ] Upload New Renault Trafic brochure PDF for local hosting
-- [ ] Update brochure button to link to local PDF
+- [ ] Upload New Renault Trafic brochure PDF to host locally
+- [ ] Update brochure button link to point to local PDF file
 
 ## Notes
-- 2021 Trafic Sport SWB (campervan3) updated with full photo gallery
-- 17 images added: exterior shots, interior views, kitchen, electrical system, etc.
+- Banner page available at `/banner` with multiple formats:
+  - Full Banner (1920 × 1080)
+  - Social Media Banner (1200 × 630)
+  - Leaderboard Banner (728 × 90)
+  - Instagram Square (1080 × 1080)
+  - Eryri Adventurer Feature Banner

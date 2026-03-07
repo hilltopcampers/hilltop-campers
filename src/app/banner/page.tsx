@@ -1,25 +1,108 @@
-import Image from "next/image";
-import { Battery, Flame, Zap, Shield, MapPin, Phone, Mail, Globe } from "lucide-react";
+"use client";
 
-export const metadata = {
-  title: "Marketing Banner | Hilltop Campers",
-  description: "High-quality marketing banner for Hilltop Campers",
-};
+import Image from "next/image";
+import { Battery, Flame, Zap, Shield, MapPin, Globe, Download, Loader2 } from "lucide-react";
+import { useRef, useState } from "react";
+import html2canvas from "html2canvas";
 
 export default function BannerPage() {
+  const mainBannerRef = useRef<HTMLDivElement>(null);
+  const socialBannerRef = useRef<HTMLDivElement>(null);
+  const leaderboardBannerRef = useRef<HTMLDivElement>(null);
+  const squareBannerRef = useRef<HTMLDivElement>(null);
+  const eryriFeatureBannerRef = useRef<HTMLDivElement>(null);
+
+  const [downloading, setDownloading] = useState<string | null>(null);
+
+  const downloadBanner = async (
+    ref: React.RefObject<HTMLDivElement | null>,
+    filename: string,
+    width: number,
+    height: number
+  ) => {
+    if (!ref.current) return;
+
+    setDownloading(filename);
+
+    try {
+      // Calculate scale to achieve target resolution
+      const currentWidth = ref.current.offsetWidth;
+      const scale = Math.max(3, width / currentWidth); // Minimum 3x scale for quality
+
+      const canvas = await html2canvas(ref.current, {
+        scale: scale,
+        useCORS: true,
+        allowTaint: true,
+        backgroundColor: "#0a0b0c",
+        logging: false,
+        width: ref.current.offsetWidth,
+        height: ref.current.offsetHeight,
+      });
+
+      // Create download link
+      const link = document.createElement("a");
+      link.download = `${filename}.png`;
+      link.href = canvas.toDataURL("image/png", 1.0);
+      link.click();
+    } catch (error) {
+      console.error("Error downloading banner:", error);
+      alert("Error downloading banner. Please try again.");
+    } finally {
+      setDownloading(null);
+    }
+  };
+
+  const DownloadButton = ({
+    bannerRef,
+    filename,
+    width,
+    height,
+    label,
+  }: {
+    bannerRef: React.RefObject<HTMLDivElement | null>;
+    filename: string;
+    width: number;
+    height: number;
+    label: string;
+  }) => (
+    <button
+      onClick={() => downloadBanner(bannerRef, filename, width, height)}
+      disabled={downloading !== null}
+      className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-black font-semibold px-4 py-2 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+    >
+      {downloading === filename ? (
+        <Loader2 size={18} className="animate-spin" />
+      ) : (
+        <Download size={18} />
+      )}
+      {downloading === filename ? "Generating..." : `Download ${label}`}
+    </button>
+  );
+
   return (
     <div className="min-h-screen bg-[#0a0b0c] pt-[104px] pb-20">
       <div className="container mx-auto px-4">
-        <h1 className="text-3xl font-bold text-white mb-8 text-center">Marketing Banner</h1>
-        <p className="text-gray-400 text-center mb-12">High-quality banner for print and digital use. Right-click to save the banner image.</p>
+        <h1 className="text-3xl font-bold text-white mb-4 text-center">Marketing Banners</h1>
+        <p className="text-gray-400 text-center mb-4">High-quality banners for print and digital use.</p>
+        <p className="text-primary text-center mb-12 text-sm">Click the download button below each banner to save as high-resolution PNG (3x scale for print quality)</p>
 
         {/* Banner Preview Container */}
         <div className="max-w-6xl mx-auto">
 
           {/* Main Banner - 1920x1080 aspect ratio */}
           <div className="mb-16">
-            <h2 className="text-xl font-semibold text-white mb-4">Full Banner (1920 × 1080)</h2>
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
+              <h2 className="text-xl font-semibold text-white">Full Banner (1920 × 1080)</h2>
+              <DownloadButton
+                bannerRef={mainBannerRef}
+                filename="hilltop-campers-full-banner-1920x1080"
+                width={1920}
+                height={1080}
+                label="PNG"
+              />
+            </div>
             <div
+              ref={mainBannerRef}
               id="main-banner"
               className="relative w-full aspect-[16/9] rounded-lg overflow-hidden shadow-2xl"
               style={{
@@ -140,8 +223,18 @@ export default function BannerPage() {
 
           {/* Social Media Banner - 1200x630 */}
           <div className="mb-16">
-            <h2 className="text-xl font-semibold text-white mb-4">Social Media Banner (1200 × 630)</h2>
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
+              <h2 className="text-xl font-semibold text-white">Social Media Banner (1200 × 630)</h2>
+              <DownloadButton
+                bannerRef={socialBannerRef}
+                filename="hilltop-campers-social-banner-1200x630"
+                width={1200}
+                height={630}
+                label="PNG"
+              />
+            </div>
             <div
+              ref={socialBannerRef}
               className="relative w-full max-w-4xl mx-auto aspect-[1200/630] rounded-lg overflow-hidden shadow-2xl"
               style={{
                 background: 'linear-gradient(135deg, #0a0b0c 0%, #1a1c20 100%)'
@@ -204,8 +297,18 @@ export default function BannerPage() {
 
           {/* Horizontal Banner - 728x90 */}
           <div className="mb-16">
-            <h2 className="text-xl font-semibold text-white mb-4">Leaderboard Banner (728 × 90)</h2>
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
+              <h2 className="text-xl font-semibold text-white">Leaderboard Banner (728 × 90)</h2>
+              <DownloadButton
+                bannerRef={leaderboardBannerRef}
+                filename="hilltop-campers-leaderboard-728x90"
+                width={728}
+                height={90}
+                label="PNG"
+              />
+            </div>
             <div
+              ref={leaderboardBannerRef}
               className="relative w-full max-w-3xl mx-auto aspect-[728/90] rounded-lg overflow-hidden shadow-2xl"
               style={{
                 background: 'linear-gradient(90deg, #0a0b0c 0%, #1a1c20 100%)'
@@ -251,8 +354,18 @@ export default function BannerPage() {
 
           {/* Square Banner - 1080x1080 */}
           <div className="mb-16">
-            <h2 className="text-xl font-semibold text-white mb-4">Instagram Square (1080 × 1080)</h2>
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
+              <h2 className="text-xl font-semibold text-white">Instagram Square (1080 × 1080)</h2>
+              <DownloadButton
+                bannerRef={squareBannerRef}
+                filename="hilltop-campers-instagram-1080x1080"
+                width={1080}
+                height={1080}
+                label="PNG"
+              />
+            </div>
             <div
+              ref={squareBannerRef}
               className="relative w-full max-w-lg mx-auto aspect-square rounded-lg overflow-hidden shadow-2xl"
               style={{
                 background: 'linear-gradient(180deg, #0a0b0c 0%, #1a1c20 100%)'
@@ -335,8 +448,18 @@ export default function BannerPage() {
 
           {/* Eryri Adventurer Feature Banner */}
           <div className="mb-16">
-            <h2 className="text-xl font-semibold text-white mb-4">Eryri Adventurer Feature Banner</h2>
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
+              <h2 className="text-xl font-semibold text-white">Eryri Adventurer Feature Banner</h2>
+              <DownloadButton
+                bannerRef={eryriFeatureBannerRef}
+                filename="hilltop-campers-eryri-feature-banner"
+                width={1920}
+                height={1080}
+                label="PNG"
+              />
+            </div>
             <div
+              ref={eryriFeatureBannerRef}
               className="relative w-full aspect-[16/9] rounded-lg overflow-hidden shadow-2xl border border-primary/30"
               style={{
                 background: 'linear-gradient(135deg, #0a0b0c 0%, #1a1c20 50%, #0f1012 100%)'
@@ -443,6 +566,18 @@ export default function BannerPage() {
               <div className="absolute bottom-0 left-0 w-full h-1 bg-primary" />
               <div className="absolute top-0 right-0 w-32 h-32 border-r-2 border-t-2 border-primary/20" />
             </div>
+          </div>
+
+          {/* Download All Section */}
+          <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-8 text-center">
+            <h3 className="text-xl font-bold text-white mb-2">Download Tips</h3>
+            <p className="text-gray-400 mb-4">All banners are exported at 3x scale for high-resolution print quality.</p>
+            <ul className="text-gray-500 text-sm space-y-1">
+              <li>Full Banner: ~5760 × 3240 pixels</li>
+              <li>Social Banner: ~3600 × 1890 pixels</li>
+              <li>Instagram Square: ~3240 × 3240 pixels</li>
+              <li>Leaderboard: ~2184 × 270 pixels</li>
+            </ul>
           </div>
 
         </div>

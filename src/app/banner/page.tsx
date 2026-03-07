@@ -1,10 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { Battery, Flame, Zap, Shield, MapPin, Globe, Download, Loader2, FileImage, FileType } from "lucide-react";
+import { Battery, Flame, Zap, Shield, MapPin, Globe, Download, Loader2, FileImage, FileType, FileText } from "lucide-react";
 import { useRef, useState } from "react";
 import html2canvas from "html2canvas";
-import { documentToSVG, elementToSVG, inlineResources } from "dom-to-svg";
+import { elementToSVG, inlineResources } from "dom-to-svg";
+import { jsPDF } from "jspdf";
 
 export default function BannerPage() {
   const mainBannerRef = useRef<HTMLDivElement>(null);
@@ -81,20 +82,69 @@ export default function BannerPage() {
     }
   };
 
+  const downloadBannerPDF = async (
+    ref: React.RefObject<HTMLDivElement | null>,
+    filename: string,
+    width: number,
+    height: number
+  ) => {
+    if (!ref.current) return;
+
+    setDownloading(filename + "-pdf");
+
+    try {
+      const currentWidth = ref.current.offsetWidth;
+      const scale = Math.max(3, width / currentWidth);
+
+      const canvas = await html2canvas(ref.current, {
+        scale: scale,
+        useCORS: true,
+        allowTaint: true,
+        backgroundColor: "#0a0b0c",
+        logging: false,
+        width: ref.current.offsetWidth,
+        height: ref.current.offsetHeight,
+      });
+
+      // Calculate PDF dimensions (in mm, assuming 300 DPI for print)
+      const imgWidth = width;
+      const imgHeight = height;
+
+      // Create PDF in landscape or portrait based on aspect ratio
+      const orientation = imgWidth > imgHeight ? "landscape" : "portrait";
+      const pdf = new jsPDF({
+        orientation: orientation,
+        unit: "px",
+        format: [imgWidth, imgHeight],
+      });
+
+      const imgData = canvas.toDataURL("image/png", 1.0);
+      pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
+      pdf.save(`${filename}.pdf`);
+    } catch (error) {
+      console.error("Error downloading PDF:", error);
+      alert("Error downloading PDF. Please try again.");
+    } finally {
+      setDownloading(null);
+    }
+  };
+
   const DownloadButtons = ({
     bannerRef,
     filename,
     width,
     height,
     showSVG = false,
+    showPDF = false,
   }: {
     bannerRef: React.RefObject<HTMLDivElement | null>;
     filename: string;
     width: number;
     height: number;
     showSVG?: boolean;
+    showPDF?: boolean;
   }) => (
-    <div className="flex gap-2">
+    <div className="flex flex-wrap gap-2">
       <button
         onClick={() => downloadBannerPNG(bannerRef, filename, width, height)}
         disabled={downloading !== null}
@@ -105,7 +155,7 @@ export default function BannerPage() {
         ) : (
           <FileImage size={18} />
         )}
-        {downloading === filename + "-png" ? "Generating..." : "PNG"}
+        {downloading === filename + "-png" ? "..." : "PNG"}
       </button>
       {showSVG && (
         <button
@@ -118,7 +168,21 @@ export default function BannerPage() {
           ) : (
             <FileType size={18} />
           )}
-          {downloading === filename + "-svg" ? "Generating..." : "SVG"}
+          {downloading === filename + "-svg" ? "..." : "SVG"}
+        </button>
+      )}
+      {showPDF && (
+        <button
+          onClick={() => downloadBannerPDF(bannerRef, filename, width, height)}
+          disabled={downloading !== null}
+          className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-4 py-2 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          {downloading === filename + "-pdf" ? (
+            <Loader2 size={18} className="animate-spin" />
+          ) : (
+            <FileText size={18} />
+          )}
+          {downloading === filename + "-pdf" ? "..." : "PDF"}
         </button>
       )}
     </div>
@@ -149,6 +213,7 @@ export default function BannerPage() {
                 width={1920}
                 height={1080}
                 showSVG={true}
+                showPDF={true}
               />
             </div>
             <div
@@ -277,6 +342,7 @@ export default function BannerPage() {
                 width={1200}
                 height={630}
                 showSVG={false}
+                showPDF={true}
               />
             </div>
             <div
@@ -351,6 +417,7 @@ export default function BannerPage() {
                 width={728}
                 height={90}
                 showSVG={true}
+                showPDF={true}
               />
             </div>
             <div
@@ -408,6 +475,7 @@ export default function BannerPage() {
                 width={1080}
                 height={1080}
                 showSVG={false}
+                showPDF={true}
               />
             </div>
             <div
@@ -502,6 +570,7 @@ export default function BannerPage() {
                 width={1920}
                 height={1080}
                 showSVG={false}
+                showPDF={true}
               />
             </div>
             <div
@@ -614,17 +683,51 @@ export default function BannerPage() {
             </div>
           </div>
 
-          {/* Download All Section */}
-          <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-8 text-center">
-            <h3 className="text-xl font-bold text-white mb-2">Download Tips</h3>
-            <p className="text-gray-400 mb-4">PNG files are exported at 3x scale for high-resolution print quality. SVG files are true vector format.</p>
-            <ul className="text-gray-500 text-sm space-y-1">
-              <li>Full Banner (PNG): ~5760 × 3240 pixels</li>
-              <li>Full Banner (SVG): Scalable vector - infinite resolution</li>
-              <li>Social Banner: ~3600 × 1890 pixels</li>
-              <li>Instagram Square: ~3240 × 3240 pixels</li>
-              <li>Leaderboard: ~2184 × 270 pixels</li>
-            </ul>
+          {/* Download Tips Section */}
+          <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-8">
+            <h3 className="text-xl font-bold text-white mb-4 text-center">Download Formats</h3>
+
+            <div className="grid md:grid-cols-3 gap-6 mb-6">
+              <div className="text-center">
+                <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <FileImage size={24} className="text-primary" />
+                </div>
+                <h4 className="text-white font-semibold mb-1">PNG</h4>
+                <p className="text-gray-500 text-sm">High-resolution raster at 3x scale. Best for web and digital use.</p>
+              </div>
+              <div className="text-center">
+                <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <FileType size={24} className="text-white" />
+                </div>
+                <h4 className="text-white font-semibold mb-1">SVG</h4>
+                <p className="text-gray-500 text-sm">Scalable vector format. Infinite resolution for any size.</p>
+              </div>
+              <div className="text-center">
+                <div className="w-12 h-12 bg-red-600/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <FileText size={24} className="text-red-500" />
+                </div>
+                <h4 className="text-white font-semibold mb-1">PDF</h4>
+                <p className="text-gray-500 text-sm">Print-ready format. Easy to convert to EPS.</p>
+              </div>
+            </div>
+
+            <div className="border-t border-gray-700 pt-6">
+              <h4 className="text-white font-semibold mb-2 text-center">Need EPS Format?</h4>
+              <p className="text-gray-400 text-sm text-center max-w-2xl mx-auto">
+                Download the SVG or PDF file and open it in Adobe Illustrator or Inkscape.
+                Then save/export as EPS format. This preserves the best quality for professional print production.
+              </p>
+            </div>
+
+            <div className="border-t border-gray-700 pt-6 mt-6">
+              <h4 className="text-white font-semibold mb-2 text-center">Output Resolutions (PNG)</h4>
+              <ul className="text-gray-500 text-sm space-y-1 text-center">
+                <li>Full Banner: ~5760 × 3240 pixels</li>
+                <li>Social Banner: ~3600 × 1890 pixels</li>
+                <li>Instagram Square: ~3240 × 3240 pixels</li>
+                <li>Leaderboard: ~2184 × 270 pixels</li>
+              </ul>
+            </div>
           </div>
 
         </div>

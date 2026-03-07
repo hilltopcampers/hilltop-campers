@@ -124,13 +124,7 @@ export default function BannerPage() {
     </div>
   );
 
-  // SVG Mountain Logo Component for vector rendering
-  const MountainLogoSVG = ({ className }: { className?: string }) => (
-    <svg viewBox="0 0 200 120" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M10 100 L50 30 L70 60 L90 20 L130 80 L150 50 L190 100 Z" fill="#7cb342" stroke="#7cb342" strokeWidth="2"/>
-      <path d="M30 100 L60 50 L80 70 L100 35 L140 85 L160 65 L180 100 Z" fill="#8bc34a" stroke="#8bc34a" strokeWidth="2"/>
-    </svg>
-  );
+
 
   return (
     <div className="min-h-screen bg-[#0a0b0c] pt-[104px] pb-20">
@@ -181,10 +175,18 @@ export default function BannerPage() {
                 <div className="flex items-start justify-between">
                   <div className="flex flex-col items-start">
                     <div className="flex items-start gap-6">
-                      <MountainLogoSVG className="w-64 h-40 lg:w-80 lg:h-48 flex-shrink-0" />
+                      <div className="relative w-64 h-40 lg:w-96 lg:h-60 flex-shrink-0">
+                        <Image
+                          src="/images/hilltop-logo.png"
+                          alt="Hilltop Mountain Logo"
+                          fill
+                          className="object-contain object-top"
+                          priority
+                        />
+                      </div>
                       <div className="flex flex-col items-center">
                         <span className="text-4xl lg:text-6xl font-bold tracking-wide leading-tight whitespace-nowrap">
-                          <span style={{ color: '#7cb342' }}>Hilltop</span> <span className="text-white">Campers</span>
+                          <span className="text-primary">Hilltop</span> <span className="text-white">Campers</span>
                         </span>
                         <span className="text-xs lg:text-sm text-gray-400 tracking-[0.2em] mt-2 uppercase whitespace-nowrap text-center">
                           Camper van conversion specialists
@@ -194,11 +196,11 @@ export default function BannerPage() {
                   </div>
                   <div className="text-right hidden md:block">
                     <div className="flex items-center justify-end gap-2 text-white text-sm mb-1">
-                      <MapPin size={14} style={{ color: '#7cb342' }} />
+                      <MapPin size={14} className="text-primary" />
                       <span>North Wales, UK</span>
                     </div>
                     <div className="flex items-center justify-end gap-2 text-white text-sm mb-1">
-                      <Globe size={14} style={{ color: '#7cb342' }} />
+                      <Globe size={14} className="text-primary" />
                       <span>www.hilltopcampers.co.uk</span>
                     </div>
                   </div>
@@ -210,7 +212,7 @@ export default function BannerPage() {
                     Campervans North Wales
                   </p>
                   <h1 className="text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-bold mb-4">
-                    <span style={{ color: '#7cb342' }}>NORTH WALES PREMIUM,</span>
+                    <span className="text-primary">NORTH WALES PREMIUM,</span>
                     <br />
                     <span className="text-white">CAMPERVAN MANUFACTURER</span>
                   </h1>
@@ -223,45 +225,45 @@ export default function BannerPage() {
                 <div className="flex flex-col lg:flex-row items-end justify-between gap-6">
                   {/* Features Grid */}
                   <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-6">
-                    <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm rounded-lg px-3 py-2 border border-[#7cb342]/30">
-                      <div className="w-8 h-8 rounded-full bg-[#7cb342]/20 flex items-center justify-center">
-                        <Battery className="w-4 h-4" style={{ color: '#7cb342' }} />
+                    <div className="flex items-center gap-2 bg-black/40 backdrop-blur-sm rounded-lg px-3 py-2 border border-primary/30">
+                      <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+                        <Battery className="w-4 h-4 text-primary" />
                       </div>
                       <span className="text-white text-xs lg:text-sm font-medium">Lithium Power</span>
                     </div>
-                    <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm rounded-lg px-3 py-2 border border-[#7cb342]/30">
-                      <div className="w-8 h-8 rounded-full bg-[#7cb342]/20 flex items-center justify-center">
-                        <Flame className="w-4 h-4" style={{ color: '#7cb342' }} />
+                    <div className="flex items-center gap-2 bg-black/40 backdrop-blur-sm rounded-lg px-3 py-2 border border-primary/30">
+                      <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+                        <Flame className="w-4 h-4 text-primary" />
                       </div>
                       <span className="text-white text-xs lg:text-sm font-medium">Autoterm Heating</span>
                     </div>
-                    <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm rounded-lg px-3 py-2 border border-[#7cb342]/30">
-                      <div className="w-8 h-8 rounded-full bg-[#7cb342]/20 flex items-center justify-center">
-                        <Zap className="w-4 h-4" style={{ color: '#7cb342' }} />
+                    <div className="flex items-center gap-2 bg-black/40 backdrop-blur-sm rounded-lg px-3 py-2 border border-primary/30">
+                      <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+                        <Zap className="w-4 h-4 text-primary" />
                       </div>
                       <span className="text-white text-xs lg:text-sm font-medium">BCA Wiring</span>
                     </div>
-                    <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm rounded-lg px-3 py-2 border border-[#7cb342]/30">
-                      <div className="w-8 h-8 rounded-full bg-[#7cb342]/20 flex items-center justify-center">
-                        <Shield className="w-4 h-4" style={{ color: '#7cb342' }} />
+                    <div className="flex items-center gap-2 bg-black/40 backdrop-blur-sm rounded-lg px-3 py-2 border border-primary/30">
+                      <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+                        <Shield className="w-4 h-4 text-primary" />
                       </div>
                       <span className="text-white text-xs lg:text-sm font-medium">Renault Platform</span>
                     </div>
                   </div>
 
                   {/* Pricing Badge */}
-                  <div className="px-6 py-4 rounded-lg text-center" style={{ backgroundColor: '#7cb342' }}>
-                    <p className="text-xs uppercase font-semibold text-black/70">Starting From</p>
-                    <p className="text-3xl lg:text-4xl font-black text-black">£20,500</p>
-                    <p className="text-xs uppercase font-semibold text-black/70">Convert Your Own Van</p>
+                  <div className="bg-primary text-black px-6 py-4 rounded-lg text-center">
+                    <p className="text-xs uppercase font-semibold opacity-80">Starting From</p>
+                    <p className="text-3xl lg:text-4xl font-black">£20,500</p>
+                    <p className="text-xs uppercase font-semibold opacity-80">Convert Your Own Van</p>
                   </div>
                 </div>
               </div>
 
               {/* Decorative Elements */}
-              <div className="absolute top-0 right-0 w-1/3 h-1" style={{ background: 'linear-gradient(to left, #7cb342, transparent)' }} />
-              <div className="absolute bottom-0 left-0 w-full h-1" style={{ backgroundColor: '#7cb342' }} />
-              <div className="absolute top-0 left-0 w-1 h-1/4" style={{ background: 'linear-gradient(to bottom, #7cb342, transparent)' }} />
+              <div className="absolute top-0 right-0 w-1/3 h-1 bg-gradient-to-l from-primary to-transparent" />
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-primary" />
+              <div className="absolute top-0 left-0 w-1 h-1/4 bg-gradient-to-b from-primary to-transparent" />
             </div>
           </div>
 
@@ -366,7 +368,14 @@ export default function BannerPage() {
               {/* Content */}
               <div className="relative z-10 h-full flex items-center justify-between px-6">
                 <div className="flex items-center gap-4">
-                  <MountainLogoSVG className="w-14 h-14 flex-shrink-0" />
+                  <div className="relative w-14 h-14 flex-shrink-0">
+                    <Image
+                      src="/hilltop-campers-logo-highres.png"
+                      alt="Logo"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
                   <div className="border-l border-gray-600 pl-4">
                     <p className="text-white font-bold text-lg">HILLTOP CAMPERS</p>
                     <p className="text-gray-400 text-xs">Premium Campervan Manufacturer</p>
@@ -375,17 +384,17 @@ export default function BannerPage() {
 
                 <div className="hidden md:flex items-center gap-6">
                   <div className="text-center">
-                    <p className="font-bold text-xl" style={{ color: '#7cb342' }}>From £20,500</p>
+                    <p className="text-primary font-bold text-xl">From £20,500</p>
                     <p className="text-gray-400 text-xs">Convert Your Van</p>
                   </div>
-                  <div className="px-4 py-2 rounded font-bold text-sm text-black" style={{ backgroundColor: '#7cb342' }}>
+                  <div className="bg-primary text-black px-4 py-2 rounded font-bold text-sm">
                     ENQUIRE NOW
                   </div>
                 </div>
               </div>
 
               {/* Accent */}
-              <div className="absolute bottom-0 left-0 w-full h-0.5" style={{ backgroundColor: '#7cb342' }} />
+              <div className="absolute bottom-0 left-0 w-full h-0.5 bg-primary" />
             </div>
           </div>
 

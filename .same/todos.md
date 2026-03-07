@@ -8,6 +8,9 @@
 - [x] Create high-quality marketing banners with homepage information
 - [x] Push latest changes to GitHub (March 6, 2026)
 - [x] Add download functionality to banner page with html2canvas at 3x scale
+- [x] Remove background photo from Full Banner for clean vector design
+- [x] Add SVG export functionality using dom-to-svg library
+- [x] Replace PNG logo with SVG mountain logo component
 
 ## Pending
 - [ ] Upload New Renault Trafic brochure PDF to host locally
@@ -15,10 +18,11 @@
 
 ## Notes
 - Banner page available at `/banner` with multiple formats:
-  - Full Banner (1920 × 1080) - Downloads at ~5760 × 3240 pixels
-  - Social Media Banner (1200 × 630) - Downloads at ~3600 × 1890 pixels
-  - Leaderboard Banner (728 × 90) - Downloads at ~2184 × 270 pixels
-  - Instagram Square (1080 × 1080) - Downloads at ~3240 × 3240 pixels
-  - Eryri Adventurer Feature Banner - Downloads at high resolution
-- All banners export at 3x scale for print quality
+  - Full Banner - Vector (1920 × 1080) - PNG at ~5760 × 3240 pixels + SVG (infinite resolution)
+  - Leaderboard Banner (728 × 90) - PNG + SVG export
+  - Social Media Banner (1200 × 630) - PNG at ~3600 × 1890 pixels
+  - Instagram Square (1080 × 1080) - PNG at ~3240 × 3240 pixels
+  - Eryri Adventurer Feature Banner - PNG export
+- All PNG files export at 3x scale for print quality
+- SVG files are true vector format - scalable to any size
 - GitHub repository: https://github.com/hilltopcampers/hilltop-campers

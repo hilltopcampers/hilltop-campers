@@ -255,6 +255,13 @@ export default function EryriAdventurerPage() {
                 <Download size={18} />
                 New Renault Trafic Brochure
               </Link>
+              <Link
+                href="/eryri-adventurer/user-manual"
+                className="inline-flex items-center gap-2 bg-[#25272c] border-2 border-gray-600 text-white px-8 py-3 uppercase font-bold hover:border-primary hover:text-primary transition-colors rounded"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+                User Manual
+              </Link>
             </div>
           </div>
         </div>

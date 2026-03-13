@@ -294,61 +294,49 @@ const manualSections = [
 
 export default function UserManualPage() {
   return (
-    <div className="pt-[104px] min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="pt-[104px] min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-16 md:py-24 bg-gradient-to-br from-[#1a1c20] via-[#2a2d32] to-[#1a1c20]">
-        <div className="absolute inset-0 opacity-10">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage:
-                "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%237cb342' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
-            }}
-          />
-        </div>
-
+      <section className="relative py-12 md:py-16 bg-[#1a1c20] border-b-4 border-primary">
         <div className="container mx-auto px-4 relative z-10">
           <Link
             href="/eryri-adventurer"
-            className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-gray-400 hover:text-primary transition-colors mb-6 text-sm"
           >
-            <ArrowLeft size={20} />
-            <span className="font-semibold">Back to Eryri Adventurer</span>
+            <ArrowLeft size={16} />
+            <span>Back to Eryri Adventurer</span>
           </Link>
 
           <div className="max-w-4xl">
-            <div className="flex items-center gap-3 mb-4">
-              <BookOpen className="w-10 h-10 text-primary" />
-              <span className="bg-primary text-black px-4 py-1.5 text-sm font-bold uppercase rounded">
-                User Manual
+            <div className="flex items-center gap-3 mb-3">
+              <span className="bg-primary text-black px-3 py-1 text-xs font-bold uppercase tracking-wider">
+                Owner&apos;s Manual
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-              <span className="text-primary">ERYRI ADVENTURER</span>
-              <br />
-              <span className="text-white">USER INSTRUCTION MANUAL</span>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 text-white">
+              Eryri Adventurer
             </h1>
-
-            <p className="text-gray-300 text-lg mb-8 max-w-3xl">
-              Congratulations on your purchase of the all-new Eryri Adventurer,
-              a state-of-the-art 4-berth camper built on the award-winning
-              Renault Trafic platform. Your vehicle is inspired by the rugged
-              landscapes of Eryri (Snowdonia) National Park and is designed for
-              those seeking high-spec, gas-free adventure.
+            <p className="text-primary text-lg font-medium mb-4">
+              User Instruction Manual
             </p>
 
-            <div className="flex flex-wrap gap-4">
+            <p className="text-gray-400 text-sm mb-6 max-w-2xl leading-relaxed">
+              Congratulations on your purchase of the all-new Eryri Adventurer,
+              a state-of-the-art 4-berth camper built on the award-winning
+              Renault Trafic platform.
+            </p>
+
+            <div className="flex flex-wrap gap-3">
               <Link
                 href="/brochure/eryri-adventurer"
-                className="inline-flex items-center gap-2 bg-primary text-black px-6 py-3 uppercase font-bold hover:bg-primary/90 transition-colors rounded shadow-lg shadow-primary/25"
+                className="inline-flex items-center gap-2 bg-primary text-black px-5 py-2.5 text-sm font-semibold hover:bg-primary/90 transition-colors"
               >
-                <Download size={18} />
-                Download Brochure
+                <Download size={16} />
+                Download PDF
               </Link>
               <Link
                 href="/contact?subject=Eryri%20Adventurer%20Support"
-                className="inline-flex items-center gap-2 border-2 border-white text-white px-6 py-3 uppercase font-bold hover:border-primary hover:text-primary transition-colors rounded"
+                className="inline-flex items-center gap-2 border border-gray-600 text-gray-300 px-5 py-2.5 text-sm font-semibold hover:border-primary hover:text-primary transition-colors"
               >
                 Contact Support
               </Link>
@@ -358,18 +346,18 @@ export default function UserManualPage() {
       </section>
 
       {/* Quick Navigation */}
-      <section className="py-6 bg-white border-b border-gray-200 sticky top-[104px] z-40 shadow-sm">
+      <section className="py-3 bg-gray-100 border-b border-gray-200 sticky top-[104px] z-40">
         <div className="container mx-auto px-4">
-          <div className="flex flex-wrap gap-2 justify-center">
-            {manualSections.map((section) => (
+          <div className="flex flex-wrap gap-1 justify-center">
+            {manualSections.map((section, index) => (
               <a
                 key={section.id}
                 href={`#${section.id}`}
-                className="flex items-center gap-2 px-4 py-2.5 bg-gray-100 hover:bg-primary hover:text-black text-gray-700 rounded-full transition-all text-sm font-semibold hover:shadow-md hover:shadow-primary/20"
+                className="flex items-center gap-1.5 px-3 py-1.5 text-gray-600 hover:text-primary hover:bg-gray-200 transition-colors text-xs font-medium"
               >
-                <section.icon size={16} />
+                <span className="text-gray-400">{String(index + 1).padStart(2, "0")}</span>
                 <span className="hidden sm:inline">{section.title.split(" ")[0]}</span>
-                <span className="sm:hidden">{section.title.split(" ")[0].slice(0, 3)}</span>
+                <span className="sm:hidden">{section.title.split(" ")[0].slice(0, 4)}</span>
               </a>
             ))}
           </div>
@@ -377,60 +365,51 @@ export default function UserManualPage() {
       </section>
 
       {/* Manual Sections */}
-      <section className="py-12 md:py-16">
+      <section className="py-8 md:py-12">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto space-y-8">
+          <div className="max-w-3xl mx-auto">
             {manualSections.map((section, index) => (
               <div
                 key={section.id}
                 id={section.id}
-                className="scroll-mt-48 bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-lg shadow-gray-200/50 hover:shadow-xl hover:shadow-gray-300/50 transition-shadow"
+                className="scroll-mt-40 mb-10 last:mb-0"
               >
                 {/* Section Header */}
-                <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-transparent border-b border-gray-100 p-6 md:p-8">
-                  <div className="flex items-start gap-4">
-                    <div className="w-14 h-14 rounded-xl bg-primary shadow-lg shadow-primary/30 flex items-center justify-center flex-shrink-0">
-                      <section.icon className="w-7 h-7 text-white" />
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-3 mb-1">
-                        <span className="bg-primary/10 text-primary px-2.5 py-0.5 rounded-full text-sm font-bold">
-                          Section {String(index + 1).padStart(2, "0")}
-                        </span>
-                      </div>
-                      <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-                        {section.title}
-                      </h2>
-                      <p className="text-gray-500 mt-1">{section.subtitle}</p>
-                    </div>
+                <div className="border-b-2 border-gray-200 pb-3 mb-6">
+                  <div className="flex items-center gap-3">
+                    <span className="text-xs font-bold text-gray-400 tracking-wider">
+                      SECTION {String(index + 1).padStart(2, "0")}
+                    </span>
                   </div>
+                  <h2 className="text-xl md:text-2xl font-bold text-gray-900 mt-1">
+                    {section.title}
+                  </h2>
+                  <p className="text-gray-500 text-sm mt-1">{section.subtitle}</p>
                 </div>
 
                 {/* Section Content */}
-                <div className="p-6 md:p-8 space-y-8">
+                <div className="space-y-6">
                   {section.content.map((subsection, subIndex) => (
-                    <div key={subIndex} className="bg-gray-50 rounded-xl p-5 border border-gray-100">
-                      <h3 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
-                        <span className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
-                          <ChevronDown size={18} className="text-primary" />
-                        </span>
+                    <div key={subIndex}>
+                      <h3 className="text-sm font-bold text-gray-800 uppercase tracking-wide mb-3 flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 bg-primary rounded-full" />
                         {subsection.heading}
                       </h3>
                       {"description" in subsection && (
-                        <p className="text-gray-600 mb-4 ml-10">
+                        <p className="text-gray-600 text-sm mb-3 ml-3.5 italic">
                           {subsection.description}
                         </p>
                       )}
-                      <ol className="space-y-3 ml-10">
+                      <ol className="space-y-2 ml-3.5">
                         {subsection.steps.map((step, stepIndex) => (
                           <li
                             key={stepIndex}
-                            className="flex items-start gap-3 text-gray-700"
+                            className="flex items-start gap-3 text-gray-700 text-sm"
                           >
-                            <span className="w-7 h-7 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm">
+                            <span className="w-5 h-5 rounded bg-gray-100 text-gray-500 text-xs font-semibold flex items-center justify-center flex-shrink-0 mt-0.5 border border-gray-200">
                               {stepIndex + 1}
                             </span>
-                            <span className="pt-0.5">{step}</span>
+                            <span className="leading-relaxed">{step}</span>
                           </li>
                         ))}
                       </ol>
@@ -439,13 +418,11 @@ export default function UserManualPage() {
 
                   {/* Warning Box */}
                   {section.warning && (
-                    <div className="mt-6 p-5 bg-gradient-to-r from-amber-50 to-yellow-50 border-2 border-amber-200 rounded-xl flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-full bg-amber-400 flex items-center justify-center flex-shrink-0">
-                        <AlertTriangle className="w-5 h-5 text-white" />
-                      </div>
+                    <div className="mt-6 p-4 bg-amber-50 border-l-4 border-amber-400 flex items-start gap-3">
+                      <AlertTriangle className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
                       <div>
-                        <p className="font-bold text-amber-800 mb-1">Safety Notice</p>
-                        <p className="text-amber-700">
+                        <p className="font-semibold text-amber-800 text-xs uppercase tracking-wide mb-1">Warning</p>
+                        <p className="text-amber-900 text-sm leading-relaxed">
                           {section.warning}
                         </p>
                       </div>
@@ -458,30 +435,29 @@ export default function UserManualPage() {
         </div>
       </section>
 
-      {/* Footer CTA */}
-      <section className="py-16 bg-gradient-to-br from-[#1a1c20] via-[#25272c] to-[#1a1c20]">
+      {/* Footer */}
+      <section className="py-10 bg-gray-100 border-t border-gray-200">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Need Additional Support?
-          </h2>
-          <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
-            Our team is here to help you get the most out of your Eryri
-            Adventurer. Contact us for any questions or support needs.
+          <p className="text-gray-500 text-sm mb-4">
+            Need assistance? Our support team is here to help.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               href="/contact?subject=Eryri%20Adventurer%20Support"
-              className="inline-flex items-center gap-2 bg-primary text-black px-8 py-3 uppercase font-bold hover:bg-primary/90 transition-colors rounded shadow-lg shadow-primary/25"
+              className="inline-flex items-center gap-2 bg-[#1a1c20] text-white px-5 py-2.5 text-sm font-semibold hover:bg-gray-800 transition-colors"
             >
               Contact Support
             </Link>
             <Link
               href="tel:07869169826"
-              className="inline-flex items-center gap-2 border-2 border-white text-white px-8 py-3 uppercase font-bold hover:border-primary hover:text-primary transition-colors rounded"
+              className="inline-flex items-center gap-2 text-gray-700 px-5 py-2.5 text-sm font-semibold hover:text-primary transition-colors"
             >
               Call 07869 169826
             </Link>
           </div>
+          <p className="text-gray-400 text-xs mt-8">
+            © {new Date().getFullYear()} Hilltop Campers. All rights reserved.
+          </p>
         </div>
       </section>
     </div>

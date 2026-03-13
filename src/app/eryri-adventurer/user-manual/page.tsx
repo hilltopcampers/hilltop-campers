@@ -294,11 +294,10 @@ const manualSections = [
 
 export default function UserManualPage() {
   return (
-    <div className="pt-[104px] min-h-screen bg-[#1a1c20]">
+    <div className="pt-[104px] min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section */}
-      <section className="relative py-16 md:py-24">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1a1c20] via-[#25272c] to-[#1a1c20]" />
-        <div className="absolute inset-0 opacity-5">
+      <section className="relative py-16 md:py-24 bg-gradient-to-br from-[#1a1c20] via-[#2a2d32] to-[#1a1c20]">
+        <div className="absolute inset-0 opacity-10">
           <div
             className="absolute inset-0"
             style={{
@@ -342,7 +341,7 @@ export default function UserManualPage() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/brochure/eryri-adventurer"
-                className="inline-flex items-center gap-2 bg-primary text-black px-6 py-3 uppercase font-bold hover:bg-primary/90 transition-colors rounded"
+                className="inline-flex items-center gap-2 bg-primary text-black px-6 py-3 uppercase font-bold hover:bg-primary/90 transition-colors rounded shadow-lg shadow-primary/25"
               >
                 <Download size={18} />
                 Download Brochure
@@ -359,14 +358,14 @@ export default function UserManualPage() {
       </section>
 
       {/* Quick Navigation */}
-      <section className="py-8 bg-[#25272c] border-y border-gray-800 sticky top-[104px] z-40">
+      <section className="py-6 bg-white border-b border-gray-200 sticky top-[104px] z-40 shadow-sm">
         <div className="container mx-auto px-4">
-          <div className="flex flex-wrap gap-3 justify-center">
+          <div className="flex flex-wrap gap-2 justify-center">
             {manualSections.map((section) => (
               <a
                 key={section.id}
                 href={`#${section.id}`}
-                className="flex items-center gap-2 px-4 py-2 bg-[#1a1c20] hover:bg-primary hover:text-black text-gray-300 rounded-lg transition-colors text-sm font-medium"
+                className="flex items-center gap-2 px-4 py-2.5 bg-gray-100 hover:bg-primary hover:text-black text-gray-700 rounded-full transition-all text-sm font-semibold hover:shadow-md hover:shadow-primary/20"
               >
                 <section.icon size={16} />
                 <span className="hidden sm:inline">{section.title.split(" ")[0]}</span>
@@ -380,29 +379,29 @@ export default function UserManualPage() {
       {/* Manual Sections */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto space-y-12">
+          <div className="max-w-4xl mx-auto space-y-8">
             {manualSections.map((section, index) => (
               <div
                 key={section.id}
                 id={section.id}
-                className="scroll-mt-48 bg-gradient-to-br from-[#25272c] to-[#1f2125] rounded-2xl border border-gray-800 overflow-hidden"
+                className="scroll-mt-48 bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-lg shadow-gray-200/50 hover:shadow-xl hover:shadow-gray-300/50 transition-shadow"
               >
                 {/* Section Header */}
-                <div className="bg-primary/10 border-b border-gray-800 p-6 md:p-8">
+                <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-transparent border-b border-gray-100 p-6 md:p-8">
                   <div className="flex items-start gap-4">
-                    <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center flex-shrink-0">
-                      <section.icon className="w-7 h-7 text-primary" />
+                    <div className="w-14 h-14 rounded-xl bg-primary shadow-lg shadow-primary/30 flex items-center justify-center flex-shrink-0">
+                      <section.icon className="w-7 h-7 text-white" />
                     </div>
                     <div>
                       <div className="flex items-center gap-3 mb-1">
-                        <span className="text-primary text-sm font-bold">
-                          {String(index + 1).padStart(2, "0")}
+                        <span className="bg-primary/10 text-primary px-2.5 py-0.5 rounded-full text-sm font-bold">
+                          Section {String(index + 1).padStart(2, "0")}
                         </span>
                       </div>
-                      <h2 className="text-2xl md:text-3xl font-bold text-white">
+                      <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
                         {section.title}
                       </h2>
-                      <p className="text-gray-400 mt-1">{section.subtitle}</p>
+                      <p className="text-gray-500 mt-1">{section.subtitle}</p>
                     </div>
                   </div>
                 </div>
@@ -410,26 +409,28 @@ export default function UserManualPage() {
                 {/* Section Content */}
                 <div className="p-6 md:p-8 space-y-8">
                   {section.content.map((subsection, subIndex) => (
-                    <div key={subIndex}>
-                      <h3 className="text-lg font-bold text-primary mb-4 flex items-center gap-2">
-                        <ChevronDown size={18} />
+                    <div key={subIndex} className="bg-gray-50 rounded-xl p-5 border border-gray-100">
+                      <h3 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
+                        <span className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                          <ChevronDown size={18} className="text-primary" />
+                        </span>
                         {subsection.heading}
                       </h3>
                       {"description" in subsection && (
-                        <p className="text-gray-400 mb-4 ml-6">
+                        <p className="text-gray-600 mb-4 ml-10">
                           {subsection.description}
                         </p>
                       )}
-                      <ol className="space-y-3 ml-6">
+                      <ol className="space-y-3 ml-10">
                         {subsection.steps.map((step, stepIndex) => (
                           <li
                             key={stepIndex}
-                            className="flex items-start gap-3 text-gray-300"
+                            className="flex items-start gap-3 text-gray-700"
                           >
-                            <span className="w-6 h-6 rounded-full bg-primary/20 text-primary text-sm font-bold flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <span className="w-7 h-7 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm">
                               {stepIndex + 1}
                             </span>
-                            <span>{step}</span>
+                            <span className="pt-0.5">{step}</span>
                           </li>
                         ))}
                       </ol>
@@ -438,11 +439,16 @@ export default function UserManualPage() {
 
                   {/* Warning Box */}
                   {section.warning && (
-                    <div className="mt-6 p-4 bg-yellow-500/10 border border-yellow-500/30 rounded-lg flex items-start gap-3">
-                      <AlertTriangle className="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" />
-                      <p className="text-yellow-200 text-sm">
-                        <strong>Safety Notice:</strong> {section.warning}
-                      </p>
+                    <div className="mt-6 p-5 bg-gradient-to-r from-amber-50 to-yellow-50 border-2 border-amber-200 rounded-xl flex items-start gap-4">
+                      <div className="w-10 h-10 rounded-full bg-amber-400 flex items-center justify-center flex-shrink-0">
+                        <AlertTriangle className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <p className="font-bold text-amber-800 mb-1">Safety Notice</p>
+                        <p className="text-amber-700">
+                          {section.warning}
+                        </p>
+                      </div>
                     </div>
                   )}
                 </div>
@@ -453,7 +459,7 @@ export default function UserManualPage() {
       </section>
 
       {/* Footer CTA */}
-      <section className="py-16 bg-gradient-to-br from-primary/10 via-[#25272c] to-[#1a1c20]">
+      <section className="py-16 bg-gradient-to-br from-[#1a1c20] via-[#25272c] to-[#1a1c20]">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Need Additional Support?
@@ -465,7 +471,7 @@ export default function UserManualPage() {
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               href="/contact?subject=Eryri%20Adventurer%20Support"
-              className="inline-flex items-center gap-2 bg-primary text-black px-8 py-3 uppercase font-bold hover:bg-primary/90 transition-colors rounded"
+              className="inline-flex items-center gap-2 bg-primary text-black px-8 py-3 uppercase font-bold hover:bg-primary/90 transition-colors rounded shadow-lg shadow-primary/25"
             >
               Contact Support
             </Link>

@@ -1,4 +1,6 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import {
   ArrowLeft,
@@ -11,32 +13,18 @@ import {
   Droplets,
   Lightbulb,
   Snowflake,
-  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   AlertTriangle,
   Download,
-  BookOpen,
 } from "lucide-react";
-
-export const metadata: Metadata = {
-  title: "Eryri Adventurer User Manual | Hilltop Campers",
-  description:
-    "Complete user instruction manual for the Eryri Adventurer 4-berth campervan. Learn how to operate the pop-top roof, rock & roll bed, heating, cooking, and all systems.",
-  keywords: [
-    "Eryri Adventurer manual",
-    "campervan user guide",
-    "Renault Trafic camper instructions",
-    "pop-top roof operation",
-    "rock and roll bed",
-    "diesel heater guide",
-  ],
-};
 
 const manualSections = [
   {
     id: "poptop",
     icon: Tent,
-    title: "Deluxe Pop-Top Roof",
-    subtitle: "Premium Scenic Canvas for panoramic views",
+    title: "Pop-Top Roof",
+    subtitle: "Premium Scenic Canvas",
     content: [
       {
         heading: "Opening the Roof",
@@ -49,15 +37,8 @@ const manualSections = [
       {
         heading: "Upper Bed",
         steps: [
-          "Push the gas-strut assisted bed board up for standing room during the day",
+          "Push the gas-strut assisted bed board up for standing room",
           "Pull it down at night to create the upper double bed",
-        ],
-      },
-      {
-        heading: "Scenic Canvas",
-        steps: [
-          "Zip open the front and side canvas sections for a panoramic view",
-          "Ensure all zippers are fully closed before lowering the roof",
         ],
       },
       {
@@ -65,36 +46,34 @@ const manualSections = [
         steps: [
           "Ensure the upper mattress is clear of all bedding",
           "Pull the roof down slowly using the handles",
-          "When halfway down, check that the canvas is folding inward and not pinching in the hinges",
-          "Tighten both safety straps firmly before driving to ensure a weather-tight seal",
+          "Check canvas is folding inward, not pinching",
+          "Tighten both safety straps firmly before driving",
         ],
       },
     ],
-    warning:
-      "Always secure both safety straps firmly before driving to ensure a weather-tight seal.",
+    warning: "Always secure both safety straps firmly before driving.",
   },
   {
     id: "bed",
     icon: Sofa,
-    title: "Vulcan M1 Tested Rock & Roll Bed",
-    subtitle: "Industry-leading Vulcan bed system",
+    title: "Rock & Roll Bed",
+    subtitle: "Vulcan M1 System",
     content: [
       {
         heading: "Converting to Bed",
         steps: [
           "Move the front seats forward for clearance",
-          "Lift the release lever at the front base of the seat",
-          "Pull the seatbelts slightly to take up tension and prevent locking",
-          "Pull the seat base forward using the front lever. The seat will transition smoothly into a flat double bed",
+          "Lift the release lever at the front base",
+          "Pull seatbelts slightly to prevent locking",
+          "Pull seat base forward - it transitions to a flat bed",
         ],
       },
       {
         heading: "Returning to Seat",
         steps: [
-          "Locate the pull-strap near the right-centre of the bed",
-          "Pull the strap upward and back at a 45-degree angle",
-          "The bed will smoothly transform back into the upright seating position",
-          "Ensure it clicks into the locked position before travel",
+          "Locate the pull-strap near the right-centre",
+          "Pull the strap upward at a 45-degree angle",
+          "Ensure it clicks into locked position before travel",
         ],
       },
     ],
@@ -102,106 +81,99 @@ const manualSections = [
   {
     id: "swivel",
     icon: RotateCcw,
-    title: "Vulcan Swivel Seat (Passenger)",
-    subtitle: "Swivel base on runners for maximum flexibility",
+    title: "Swivel Seat",
+    subtitle: "Passenger Seat System",
     content: [
       {
-        heading: "To Rotate the Seat",
+        heading: "To Rotate",
         steps: [
-          "Ensure the vehicle is stationary and the handbrake is firmly engaged",
-          "Unscrew the 5 locking bolts on the base plate",
-          "Use the runners to move the seat backwards into the living space to clear the B-pillar door frame",
-          "Rotate the seat anticlockwise to face the rear",
+          "Ensure vehicle is stationary, handbrake engaged",
+          "Unscrew the 5 locking bolts on base plate",
+          "Move seat backwards to clear the B-pillar",
+          "Rotate anticlockwise to face the rear",
         ],
       },
       {
         heading: "For Driving",
         steps: [
-          "The seat must face forward",
-          "Align the plates and tighten all 5 locking bolts until the seat is rock-solid",
+          "Seat must face forward",
+          "Tighten all 5 locking bolts until rock-solid",
         ],
       },
     ],
-    warning:
-      "All 5 locking bolts must be fully tightened before driving. Never drive with the seat in the swivelled position.",
+    warning: "All 5 bolts must be fully tightened before driving.",
   },
   {
     id: "cooking",
     icon: Flame,
-    title: "Cooking & Heating Systems",
-    subtitle: "Standard 2-Burner Gas Hob & Wallas Duo upgrade option",
+    title: "Cooking System",
+    subtitle: "Gas Hob & Wallas Duo",
     content: [
       {
-        heading: "Standard: 2-Burner Gas Hob",
+        heading: "2-Burner Gas Hob",
         steps: [
           "Open the gas valve at the cylinder",
-          "Push and turn the control knob to the 'large flame' position",
-          "Press the Piezo ignition button until the burner lights",
-          "Hold the knob for 5-10 seconds to allow the safety thermocouple to heat up",
+          "Push and turn knob to 'large flame' position",
+          "Press Piezo ignition until burner lights",
+          "Hold knob 5-10 seconds for thermocouple",
         ],
       },
       {
-        heading: "Upgrade: Wallas Duo (Gas-Free Option)",
-        description:
-          "Featured on high-spec models for an all-electric and diesel experience.",
+        heading: "Wallas Duo (Upgrade)",
         steps: [
-          "Power the unit via the digital panel. It draws fuel from the main diesel tank",
-          "Cooking: Functions as a flame-free induction-style hob",
-          "Heating: Close the blower lid to circulate warm air through the cabin",
-          "Shutdown: Press power once; allow the cool-down cycle to finish before isolating power",
+          "Power unit via digital panel - uses diesel tank",
+          "Functions as flame-free induction-style hob",
+          "Close blower lid for cabin heating",
         ],
       },
     ],
-    warning:
-      "Always ensure the glass lid is fully raised before lighting. Never close the lid until burners are cool to the touch.",
+    warning: "Ensure glass lid is raised before lighting.",
   },
   {
     id: "heater",
     icon: Thermometer,
-    title: "Autoterm Air 2kW Diesel Heater",
-    subtitle: "Reliable comfort from the Autoterm diesel heater system",
+    title: "Diesel Heater",
+    subtitle: "Autoterm 2kW System",
     content: [
       {
-        heading: "Basic Operation",
+        heading: "Operation",
         steps: [
-          "Power On: Press the rotary knob once to wake the screen",
-          "Start Heating: Enter the 'Heating' menu, select your mode, and set the duration (30 mins to continuous)",
-          "Adjusting Temperature: Turn the knob to increase or decrease target temperature",
-          "Stopping: Press and hold the rotary knob. The heater enters a 3-5 minute 'purge' (cool-down)",
+          "Press rotary knob once to wake screen",
+          "Enter 'Heating' menu, select mode and duration",
+          "Turn knob to adjust target temperature",
+          "Press and hold to stop - wait for purge cycle",
         ],
       },
       {
-        heading: "Heating Modes",
+        heading: "Modes",
         steps: [
-          "Temperature Mode: Maintains a set temperature (0°C-30°C) by reducing power",
-          "Thermostat Mode: Shuts down when target is reached; restarts when temperature drops",
-          "Power Mode: Constant fixed power level",
-          "Heat + Ventilation: Heats to setpoint, then switches to fan-only ventilation",
+          "Temperature: Maintains set temp (0-30°C)",
+          "Thermostat: Auto on/off at target",
+          "Power: Constant fixed level",
         ],
       },
     ],
-    warning:
-      "Do not cut main power until the heater is silent and the purge cycle is complete.",
+    warning: "Don't cut power until purge cycle is complete.",
   },
   {
-    id: "control-panel",
+    id: "panel",
     icon: Gauge,
-    title: "BCA Group Arizona Control Panel",
-    subtitle: "3.1-inch touch screen hub for electrical systems",
+    title: "Control Panel",
+    subtitle: "BCA Arizona System",
     content: [
       {
-        heading: "Interface & Features",
+        heading: "Features",
         steps: [
-          "Navigate via the capacitive touch screen or the physical rotary dial",
-          "App-compatible for iOS and Android via Bluetooth or Wi-Fi",
-          "Monitors the high-performance electrical setup including Victron components and 200W solar panel",
+          "3.1-inch capacitive touch screen",
+          "iOS/Android app via Bluetooth or Wi-Fi",
+          "Monitors Victron components & 200W solar",
         ],
       },
       {
-        heading: "BCA Mains Consumer Unit",
+        heading: "Safety",
         steps: [
-          "Features a 25A Double Pole RCD for safety",
-          "16A Double Pole MCB protects against 'reverse polarity' at campsites",
+          "25A Double Pole RCD protection",
+          "16A MCB for reverse polarity protection",
         ],
       },
     ],
@@ -209,64 +181,46 @@ const manualSections = [
   {
     id: "water",
     icon: Droplets,
-    title: "Water Management",
-    subtitle: "High-grade stainless steel sink with mono tap",
+    title: "Water System",
+    subtitle: "Fresh & Waste Management",
     content: [
       {
-        heading: "Fresh & Waste Water",
+        heading: "Containers",
         steps: [
-          "10L freshwater container for drinking and cooking",
-          "10L wastewater container for grey water",
+          "10L freshwater for drinking/cooking",
+          "10L wastewater container",
         ],
       },
       {
-        heading: "Pump Operation",
+        heading: "Operation",
         steps: [
-          "Toggle the pump via the Arizona control panel",
-          "Ensure the tank is filled and taps are closed before activation",
-        ],
-      },
-      {
-        heading: "12V Water Heater (where fitted)",
-        steps: [
-          "6L capacity water heater",
-          "Turn the control knob clockwise to reach the desired temperature",
-          "Turn anticlockwise to turn off",
+          "Toggle pump via Arizona control panel",
+          "Ensure tank filled and taps closed first",
+          "Water heater: turn clockwise for temp",
         ],
       },
     ],
   },
   {
-    id: "lighting",
+    id: "power",
     icon: Lightbulb,
     title: "Lighting & Power",
-    subtitle: "Comprehensive LED lighting and charging solutions",
+    subtitle: "LED & Charging",
     content: [
       {
-        heading: "Master Switch",
-        steps: ["Ensure the Master Switch on the Arizona Panel is ON"],
-      },
-      {
-        heading: "Charging Points",
+        heading: "Charging",
         steps: [
-          "4x USB-A ports for standard electronics",
-          "2x USB-C ports for fast charging",
-          "2x 12V cigarette sockets for heavy-duty appliances",
+          "4x USB-A + 2x USB-C ports",
+          "2x 12V cigarette sockets",
         ],
       },
       {
-        heading: "Interior Lighting",
+        heading: "Lighting",
         steps: [
-          "Dimmable LEDs: Press and hold the switch above the Rock & Roll bed to adjust the central bed strips",
-          "Zone Lighting: 4 touch Downlighters (left roof), 2 dimmable Reading lights (with USB), and dedicated kitchen LED strip",
-          "Roof Bed: Includes a touch light with integrated USB-C",
-        ],
-      },
-      {
-        heading: "Exterior Lighting",
-        steps: [
-          "Awning light controlled via a switch to the left of the sliding door",
-          "Turn off before driving",
+          "Dimmable LEDs - press and hold switch",
+          "4 touch downlighters on left roof",
+          "Kitchen LED strip + reading lights",
+          "Awning light - turn off before driving",
         ],
       },
     ],
@@ -274,18 +228,21 @@ const manualSections = [
   {
     id: "fridge",
     icon: Snowflake,
-    title: "Refrigeration (CR50X)",
-    subtitle: "50L compressor fridge with app control",
+    title: "Refrigeration",
+    subtitle: "CR50X 50L Fridge",
     content: [
       {
-        heading: "Activation",
-        steps: ["Ensure the 'Fridge' circuit is active on the control panel"],
+        heading: "Setup",
+        steps: [
+          "Activate 'Fridge' circuit on control panel",
+          "Download Alpicool app for Bluetooth control",
+        ],
       },
       {
-        heading: "App Control",
+        heading: "Modes",
         steps: [
-          "Download the Alpicool app to adjust temperatures via Bluetooth",
-          "Switch between 'Max' (fast cooling) and 'Eco' (battery saving) modes",
+          "Max: Fast cooling",
+          "Eco: Battery saving mode",
         ],
       },
     ],
@@ -293,173 +250,253 @@ const manualSections = [
 ];
 
 export default function UserManualPage() {
+  const [currentPage, setCurrentPage] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const totalPages = manualSections.length + 1;
+
+  const goToPage = (page: number) => {
+    if (page >= 0 && page < totalPages && !isAnimating && page !== currentPage) {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setCurrentPage(page);
+        setTimeout(() => setIsAnimating(false), 100);
+      }, 150);
+    }
+  };
+
+  const nextPage = () => goToPage(currentPage + 1);
+  const prevPage = () => goToPage(currentPage - 1);
+
   return (
-    <div className="pt-[104px] min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative py-12 md:py-16 bg-[#1a1c20] border-b-4 border-primary">
-        <div className="container mx-auto px-4 relative z-10">
+    <div className="pt-[104px] min-h-screen bg-black overflow-hidden">
+      {/* Animated Background */}
+      <div className="fixed inset-0 z-0">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[150px] animate-pulse" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[150px] animate-pulse" style={{ animationDelay: '1s' }} />
+      </div>
+
+      {/* Header Bar */}
+      <div className="fixed top-[104px] left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-b border-primary/20">
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link
             href="/eryri-adventurer"
-            className="inline-flex items-center gap-2 text-gray-400 hover:text-primary transition-colors mb-6 text-sm"
+            className="flex items-center gap-2 text-white/60 hover:text-primary transition-colors"
           >
-            <ArrowLeft size={16} />
-            <span>Back to Eryri Adventurer</span>
+            <ArrowLeft size={20} />
+            <span className="hidden sm:inline font-medium">Back</span>
           </Link>
 
-          <div className="max-w-4xl">
-            <div className="flex items-center gap-3 mb-3">
-              <span className="bg-primary text-black px-3 py-1 text-xs font-bold uppercase tracking-wider">
-                Owner&apos;s Manual
-              </span>
-            </div>
-
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 text-white">
-              Eryri Adventurer
-            </h1>
-            <p className="text-primary text-lg font-medium mb-4">
-              User Instruction Manual
-            </p>
-
-            <p className="text-gray-400 text-sm mb-6 max-w-2xl leading-relaxed">
-              Congratulations on your purchase of the all-new Eryri Adventurer,
-              a state-of-the-art 4-berth camper built on the award-winning
-              Renault Trafic platform.
-            </p>
-
-            <div className="flex flex-wrap gap-3">
-              <Link
-                href="/brochure/eryri-adventurer"
-                className="inline-flex items-center gap-2 bg-primary text-black px-5 py-2.5 text-sm font-semibold hover:bg-primary/90 transition-colors"
-              >
-                <Download size={16} />
-                Download PDF
-              </Link>
-              <Link
-                href="/contact?subject=Eryri%20Adventurer%20Support"
-                className="inline-flex items-center gap-2 border border-gray-600 text-gray-300 px-5 py-2.5 text-sm font-semibold hover:border-primary hover:text-primary transition-colors"
-              >
-                Contact Support
-              </Link>
-            </div>
+          <div className="flex items-center gap-4">
+            <span className="text-primary font-black text-xl tracking-wider">
+              {currentPage === 0 ? 'COVER' : `${String(currentPage).padStart(2, '0')} / ${String(totalPages - 1).padStart(2, '0')}`}
+            </span>
           </div>
-        </div>
-      </section>
 
-      {/* Quick Navigation */}
-      <section className="py-3 bg-gray-100 border-b border-gray-200 sticky top-[104px] z-40">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap gap-1 justify-center">
-            {manualSections.map((section, index) => (
-              <a
-                key={section.id}
-                href={`#${section.id}`}
-                className="flex items-center gap-1.5 px-3 py-1.5 text-gray-600 hover:text-primary hover:bg-gray-200 transition-colors text-xs font-medium"
-              >
-                <span className="text-gray-400">{String(index + 1).padStart(2, "0")}</span>
-                <span className="hidden sm:inline">{section.title.split(" ")[0]}</span>
-                <span className="sm:hidden">{section.title.split(" ")[0].slice(0, 4)}</span>
-              </a>
-            ))}
-          </div>
+          <Link
+            href="/brochure/eryri-adventurer"
+            className="flex items-center gap-2 bg-primary text-black px-4 py-2 font-bold hover:bg-white transition-colors"
+          >
+            <Download size={18} />
+            <span className="hidden sm:inline">PDF</span>
+          </Link>
         </div>
-      </section>
+      </div>
 
-      {/* Manual Sections */}
-      <section className="py-8 md:py-12">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            {manualSections.map((section, index) => (
-              <div
-                key={section.id}
-                id={section.id}
-                className="scroll-mt-40 mb-10 last:mb-0"
-              >
-                {/* Section Header */}
-                <div className="border-b-2 border-gray-200 pb-3 mb-6">
-                  <div className="flex items-center gap-3">
-                    <span className="text-xs font-bold text-gray-400 tracking-wider">
-                      SECTION {String(index + 1).padStart(2, "0")}
+      {/* Main Content */}
+      <div className="relative z-10 pt-20 pb-8 px-4 min-h-[calc(100vh-104px)] flex flex-col items-center justify-center">
+
+        {/* Booklet */}
+        <div className="relative w-full max-w-5xl mx-auto">
+
+          {/* Glow Effect */}
+          <div className="absolute -inset-8 bg-gradient-to-r from-primary/20 via-primary/5 to-primary/20 rounded-3xl blur-3xl opacity-50" />
+
+          {/* Book Container */}
+          <div
+            className={`relative bg-gradient-to-br from-[#111] via-[#0a0a0a] to-[#111] rounded-2xl border-2 border-primary/30 shadow-[0_0_80px_rgba(124,179,66,0.15)] overflow-hidden transition-all duration-300 ${
+              isAnimating ? 'scale-[0.98] opacity-80' : 'scale-100 opacity-100'
+            }`}
+          >
+            {/* Top Accent Bar */}
+            <div className="h-2 bg-gradient-to-r from-transparent via-primary to-transparent" />
+
+            {currentPage === 0 ? (
+              /* ========== COVER PAGE ========== */
+              <div className="p-8 md:p-16 min-h-[65vh] flex flex-col justify-center items-center text-center relative">
+                {/* Background Pattern */}
+                <div className="absolute inset-0 opacity-5" style={{
+                  backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(124,179,66,0.5) 35px, rgba(124,179,66,0.5) 70px)`
+                }} />
+
+                <div className="relative z-10">
+                  <div className="mb-8">
+                    <span className="inline-block bg-primary text-black px-8 py-3 text-sm font-black uppercase tracking-[0.3em] transform -skew-x-6">
+                      Owner&apos;s Manual
                     </span>
                   </div>
-                  <h2 className="text-xl md:text-2xl font-bold text-gray-900 mt-1">
-                    {section.title}
+
+                  <h1 className="text-7xl md:text-9xl font-black leading-none mb-4 tracking-tighter">
+                    <span className="text-white drop-shadow-[0_0_30px_rgba(255,255,255,0.3)]">ERYRI</span>
+                  </h1>
+                  <h2 className="text-5xl md:text-7xl font-black text-primary leading-none mb-12 tracking-tight drop-shadow-[0_0_40px_rgba(124,179,66,0.5)]">
+                    ADVENTURER
                   </h2>
-                  <p className="text-gray-500 text-sm mt-1">{section.subtitle}</p>
-                </div>
 
-                {/* Section Content */}
-                <div className="space-y-6">
-                  {section.content.map((subsection, subIndex) => (
-                    <div key={subIndex}>
-                      <h3 className="text-sm font-bold text-gray-800 uppercase tracking-wide mb-3 flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 bg-primary rounded-full" />
-                        {subsection.heading}
-                      </h3>
-                      {"description" in subsection && (
-                        <p className="text-gray-600 text-sm mb-3 ml-3.5 italic">
-                          {subsection.description}
-                        </p>
-                      )}
-                      <ol className="space-y-2 ml-3.5">
-                        {subsection.steps.map((step, stepIndex) => (
-                          <li
-                            key={stepIndex}
-                            className="flex items-start gap-3 text-gray-700 text-sm"
-                          >
-                            <span className="w-5 h-5 rounded bg-gray-100 text-gray-500 text-xs font-semibold flex items-center justify-center flex-shrink-0 mt-0.5 border border-gray-200">
-                              {stepIndex + 1}
-                            </span>
-                            <span className="leading-relaxed">{step}</span>
-                          </li>
-                        ))}
-                      </ol>
-                    </div>
-                  ))}
+                  <div className="flex items-center justify-center gap-4 mb-12">
+                    <div className="h-1 w-16 bg-gradient-to-r from-transparent to-primary" />
+                    <span className="text-white/40 text-sm font-medium tracking-widest">4-BERTH CAMPERVAN</span>
+                    <div className="h-1 w-16 bg-gradient-to-l from-transparent to-primary" />
+                  </div>
 
-                  {/* Warning Box */}
-                  {section.warning && (
-                    <div className="mt-6 p-4 bg-amber-50 border-l-4 border-amber-400 flex items-start gap-3">
-                      <AlertTriangle className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
-                      <div>
-                        <p className="font-semibold text-amber-800 text-xs uppercase tracking-wide mb-1">Warning</p>
-                        <p className="text-amber-900 text-sm leading-relaxed">
-                          {section.warning}
-                        </p>
-                      </div>
-                    </div>
-                  )}
+                  <button
+                    onClick={nextPage}
+                    className="group relative inline-flex items-center gap-4 bg-primary text-black px-12 py-5 font-black text-xl uppercase tracking-wider hover:bg-white transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_40px_rgba(124,179,66,0.5)]"
+                  >
+                    <span>Open Manual</span>
+                    <ChevronRight size={28} className="group-hover:translate-x-2 transition-transform" />
+                  </button>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
+            ) : (
+              /* ========== CONTENT PAGES ========== */
+              <div className="min-h-[65vh]">
+                {(() => {
+                  const section = manualSections[currentPage - 1];
+                  const SectionIcon = section.icon;
+                  return (
+                    <div className="flex flex-col md:flex-row min-h-[65vh]">
+                      {/* Left Side - Section Info */}
+                      <div className="md:w-2/5 bg-gradient-to-br from-primary via-primary to-[#5a8f30] p-8 md:p-10 flex flex-col justify-center relative overflow-hidden">
+                        {/* Pattern Overlay */}
+                        <div className="absolute inset-0 opacity-10" style={{
+                          backgroundImage: `radial-gradient(circle at 2px 2px, black 1px, transparent 0)`,
+                          backgroundSize: '20px 20px'
+                        }} />
 
-      {/* Footer */}
-      <section className="py-10 bg-gray-100 border-t border-gray-200">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-500 text-sm mb-4">
-            Need assistance? Our support team is here to help.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              href="/contact?subject=Eryri%20Adventurer%20Support"
-              className="inline-flex items-center gap-2 bg-[#1a1c20] text-white px-5 py-2.5 text-sm font-semibold hover:bg-gray-800 transition-colors"
-            >
-              Contact Support
-            </Link>
-            <Link
-              href="tel:07869169826"
-              className="inline-flex items-center gap-2 text-gray-700 px-5 py-2.5 text-sm font-semibold hover:text-primary transition-colors"
-            >
-              Call 07869 169826
-            </Link>
+                        <div className="relative z-10">
+                          <div className="w-20 h-20 bg-black/20 rounded-2xl flex items-center justify-center mb-6">
+                            <SectionIcon className="w-10 h-10 text-white" />
+                          </div>
+
+                          <span className="text-black/50 text-8xl font-black absolute top-4 right-4 leading-none">
+                            {String(currentPage).padStart(2, '0')}
+                          </span>
+
+                          <h2 className="text-4xl md:text-5xl font-black text-black leading-tight mb-3">
+                            {section.title}
+                          </h2>
+                          <p className="text-black/70 text-lg font-medium">
+                            {section.subtitle}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Right Side - Content */}
+                      <div className="md:w-3/5 p-8 md:p-10 overflow-y-auto max-h-[65vh]">
+                        <div className="space-y-8">
+                          {section.content.map((subsection, idx) => (
+                            <div key={idx}>
+                              <h3 className="flex items-center gap-3 text-xl font-black text-white mb-4">
+                                <span className="w-3 h-3 bg-primary transform rotate-45" />
+                                {subsection.heading}
+                              </h3>
+                              <div className="space-y-3 ml-6">
+                                {subsection.steps.map((step, stepIdx) => (
+                                  <div key={stepIdx} className="flex items-start gap-4 group">
+                                    <span className="w-8 h-8 bg-primary/20 border-2 border-primary text-primary text-sm font-black flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:text-black transition-colors">
+                                      {stepIdx + 1}
+                                    </span>
+                                    <span className="text-white/80 pt-1 leading-relaxed group-hover:text-white transition-colors">
+                                      {step}
+                                    </span>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          ))}
+
+                          {section.warning && (
+                            <div className="mt-8 p-5 bg-gradient-to-r from-amber-500/20 to-red-500/10 border-l-4 border-amber-500 rounded-r-lg">
+                              <div className="flex items-start gap-4">
+                                <AlertTriangle className="w-6 h-6 text-amber-500 flex-shrink-0" />
+                                <div>
+                                  <p className="font-black text-amber-400 text-sm uppercase tracking-wider mb-1">Warning</p>
+                                  <p className="text-amber-200/90">{section.warning}</p>
+                                </div>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })()}
+              </div>
+            )}
+
+            {/* Bottom Accent Bar */}
+            <div className="h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
           </div>
-          <p className="text-gray-400 text-xs mt-8">
-            © {new Date().getFullYear()} Hilltop Campers. All rights reserved.
-          </p>
+
+          {/* Navigation Buttons */}
+          <button
+            onClick={prevPage}
+            disabled={currentPage === 0 || isAnimating}
+            className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-6 w-14 h-14 md:w-16 md:h-16 bg-black border-2 border-primary/50 flex items-center justify-center text-primary transition-all duration-300 ${
+              currentPage === 0
+                ? 'opacity-20 cursor-not-allowed'
+                : 'hover:bg-primary hover:text-black hover:scale-110 hover:shadow-[0_0_30px_rgba(124,179,66,0.5)]'
+            }`}
+          >
+            <ChevronLeft size={28} />
+          </button>
+
+          <button
+            onClick={nextPage}
+            disabled={currentPage === totalPages - 1 || isAnimating}
+            className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-6 w-14 h-14 md:w-16 md:h-16 bg-black border-2 border-primary/50 flex items-center justify-center text-primary transition-all duration-300 ${
+              currentPage === totalPages - 1
+                ? 'opacity-20 cursor-not-allowed'
+                : 'hover:bg-primary hover:text-black hover:scale-110 hover:shadow-[0_0_30px_rgba(124,179,66,0.5)]'
+            }`}
+          >
+            <ChevronRight size={28} />
+          </button>
         </div>
-      </section>
+
+        {/* Page Indicators */}
+        <div className="mt-10 flex items-center gap-3">
+          {Array.from({ length: totalPages }).map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => goToPage(idx)}
+              className={`transition-all duration-300 ${
+                idx === currentPage
+                  ? 'w-12 h-3 bg-primary shadow-[0_0_20px_rgba(124,179,66,0.5)]'
+                  : 'w-3 h-3 bg-white/20 hover:bg-primary/50'
+              }`}
+            />
+          ))}
+        </div>
+
+        {/* Quick Jump Section Names */}
+        <div className="mt-6 flex flex-wrap justify-center gap-2 max-w-4xl">
+          {manualSections.map((section, idx) => (
+            <button
+              key={section.id}
+              onClick={() => goToPage(idx + 1)}
+              className={`px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
+                currentPage === idx + 1
+                  ? 'bg-primary text-black'
+                  : 'bg-white/5 text-white/40 hover:bg-primary/20 hover:text-primary border border-white/10 hover:border-primary/50'
+              }`}
+            >
+              {section.title.split(' ')[0]}
+            </button>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
